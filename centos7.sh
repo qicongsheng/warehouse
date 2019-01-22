@@ -1,14 +1,9 @@
 #关闭防火墙并安装shadowsocks
 systemctl stop firewalld.service
-
 systemctl disable firewalld.service
-
 yum -y install epel-release
-
 yum install python-pip -y
-
 pip install shadowsocks
-
 ssserver -p 19986 -k mimabujiandan -m rc4-md5 -d start
 
 #安装docker并启动文件服务器
