@@ -24,4 +24,8 @@ systemctl stop firewalld.service
 
 #常用开发环境
 yum install python-devel zlib-devel openssl-devel -y
+yum install https://centos7.iuscommunity.org/ius-release.rpm -y
+yum install python36u python36u-libs python36u-devel python36u-pip -y 
+ln -s /usr/bin/python3.6 /usr/bin/python3
+ln -s /usr/bin/pip3.6 /usr/bin/pip3
 
