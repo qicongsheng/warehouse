@@ -1,6 +1,7 @@
 #!/bin/sh
 
 yum install wget -y
+rm -fr /tmp/jdk-7u80-linux-x64.tar.gz
 wget -P /tmp https://github.com/frekele/oracle-java/releases/download/7u80-b15/jdk-7u80-linux-x64.tar.gz
 mkdir /usr/java
 
