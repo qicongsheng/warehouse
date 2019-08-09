@@ -14,3 +14,5 @@ echo "export CLASSPATH=.:\$JAVA_HOME/lib/dt.jar:\$JAVA_HOME/lib/tools.jar" >> /e
 echo "export PATH=\$PATH:/etc/sbin:\$JAVA_HOME/bin" >> /etc/profile
 
 source /etc/profile
+rm -fr /tmp/jdk-7u80-linux-x64.tar.gz
+
