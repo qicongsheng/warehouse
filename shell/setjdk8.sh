@@ -1,8 +1,7 @@
 #!/bin/sh
 
-yum install wget -y
 rm -fr /tmp/jdk-8u171-linux-x64.tar.gz
-wget -P /tmp https://github.com/frekele/oracle-java/releases/download/8u171-b11/jdk-8u171-linux-x64.tar.gz
+curl -o /tmp/jdk-8u171-linux-x64.tar.gz -L https://github.com/frekele/oracle-java/releases/download/8u171-b11/jdk-8u171-linux-x64.tar.gz
 mkdir /usr/java
 
 tar -zxvf /tmp/jdk-8u171-linux-x64.tar.gz -C /usr/java
