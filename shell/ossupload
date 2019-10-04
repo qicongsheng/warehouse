@@ -1,5 +1,5 @@
 #!/bin/sh
 
-/usr/bin/ossutil64 cp $1 oss://transferbkt
+/usr/bin/aliossutil64 cp $1 oss://transferbkt
 
 
