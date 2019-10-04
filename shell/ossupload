@@ -1,0 +1,5 @@
+#!/bin/sh
+
+/usr/bin/ossutil64 cp $1 oss://transferbkt
+
+
