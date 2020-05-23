@@ -4,7 +4,6 @@ hostnamectl --static set-hostname $1
 systemctl disable firewalld.service
 systemctl stop firewalld.service
 iptables -F
-systemctl status firewalld
 
 echo '[kubernetes]' >> /etc/yum.repos.d/kubernetes.repo
 echo 'name=Kubernetes' >> /etc/yum.repos.d/kubernetes.repo
@@ -18,7 +17,6 @@ echo '       https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg' 
 wget https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo -O /etc/yum.repos.d/docker-ce.repo
 yum -y install docker-ce-18.06.1.ce-3.el7
 systemctl enable docker && systemctl start docker
-docker --version
 
 # 1.18.3-0
 yum install -y --nogpgcheck kubelet kubeadm kubectl 
