@@ -15,7 +15,7 @@ echo 'gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg' >> /etc/
 echo '       https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg' >> /etc/yum.repos.d/kubernetes.repo
 
 wget https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo -O /etc/yum.repos.d/docker-ce.repo
-yum -y install docker-ce-18.06.1.ce-3.el7
+yum -y install docker-ce
 systemctl enable docker && systemctl start docker
 
 # 1.18.3-0
