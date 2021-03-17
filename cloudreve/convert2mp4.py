@@ -27,49 +27,49 @@ def convert():
             ffmpeg(file_path, target_file_path)
             cursor.execute("update files set name ='%s',source_name='%s' where ID=%s" % (target_file_name, target_file_path, id))
             conn.commit()
-        if not file_name.endswith('.mp4') and file_name.endswith('.avi'):
-            target_file_name = file_name.replace('.avi', '.mp4')
-            target_file_path = file_path.replace('.avi', '.mp4')
+        if not file_name.endswith('_convert.mp4') and file_name.endswith('.avi'):
+            target_file_name = file_name.replace('.avi', '_convert.mp4')
+            target_file_path = file_path.replace('.avi', '_convert.mp4')
             cursor.execute("update files set name ='%s' where ID=%s" % ("[转码中...]" + file_name, id))
             conn.commit()
             ffmpeg(file_path, target_file_path)
             cursor.execute("update files set name ='%s',source_name='%s' where ID=%s" % (target_file_name, target_file_path, id))
             conn.commit()
-        if not file_name.endswith('.mp4') and file_name.endswith('.flv'):
-            target_file_name = file_name.replace('.flv', '.mp4')
-            target_file_path = file_path.replace('.flv', '.mp4')
+        if not file_name.endswith('_convert.mp4') and file_name.endswith('.flv'):
+            target_file_name = file_name.replace('.flv', '_convert.mp4')
+            target_file_path = file_path.replace('.flv', '_convert.mp4')
             cursor.execute("update files set name ='%s' where ID=%s" % ("[转码中...]" + file_name, id))
             conn.commit()
             ffmpeg(file_path, target_file_path)
             cursor.execute("update files set name ='%s',source_name='%s' where ID=%s" % (target_file_name, target_file_path, id))
             conn.commit()
-        if not file_name.endswith('.mp4') and file_name.endswith('.rmvb'):
-            target_file_name = file_name.replace('.rmvb', '.mp4')
-            target_file_path = file_path.replace('.rmvb', '.mp4')
+        if not file_name.endswith('_convert.mp4') and file_name.endswith('.rmvb'):
+            target_file_name = file_name.replace('.rmvb', '_convert.mp4')
+            target_file_path = file_path.replace('.rmvb', '_convert.mp4')
             cursor.execute("update files set name ='%s' where ID=%s" % ("[转码中...]" + file_name, id))
             conn.commit()
             ffmpeg(file_path, target_file_path)
             cursor.execute("update files set name ='%s',source_name='%s' where ID=%s" % (target_file_name, target_file_path, id))
             conn.commit()
-        if not file_name.endswith('.mp4') and file_name.endswith('.3gp'):
-            target_file_name = file_name.replace('.3gp', '.mp4')
-            target_file_path = file_path.replace('.3gp', '.mp4')
+        if not file_name.endswith('_convert.mp4') and file_name.endswith('.3gp'):
+            target_file_name = file_name.replace('.3gp', '_convert.mp4')
+            target_file_path = file_path.replace('.3gp', '_convert.mp4')
             cursor.execute("update files set name ='%s' where ID=%s" % ("[转码中...]" + file_name, id))
             conn.commit()
             ffmpeg(file_path, target_file_path)
             cursor.execute("update files set name ='%s',source_name='%s' where ID=%s" % (target_file_name, target_file_path, id))
             conn.commit()
-        if not file_name.endswith('.mp4') and file_name.endswith('.rm'):
-            target_file_name = file_name.replace('.rm', '.mp4')
-            target_file_path = file_path.replace('.rm', '.mp4')
+        if not file_name.endswith('_convert.mp4') and file_name.endswith('.rm'):
+            target_file_name = file_name.replace('.rm', '_convert.mp4')
+            target_file_path = file_path.replace('.rm', '_convert.mp4')
             cursor.execute("update files set name ='%s' where ID=%s" % ("[转码中...]" + file_name, id))
             conn.commit()
             ffmpeg(file_path, target_file_path)
             cursor.execute("update files set name ='%s',source_name='%s' where ID=%s" % (target_file_name, target_file_path, id))
             conn.commit()
-        if not file_name.endswith('.mp4') and file_name.endswith('.wmv'):
-            target_file_name = file_name.replace('.wmv', '.mp4')
-            target_file_path = file_path.replace('.wmv', '.mp4')
+        if not file_name.endswith('_convert.mp4') and file_name.endswith('.wmv'):
+            target_file_name = file_name.replace('.wmv', '_convert.mp4')
+            target_file_path = file_path.replace('.wmv', '_convert.mp4')
             cursor.execute("update files set name ='%s' where ID=%s" % ("[转码中...]" + file_name, id))
             conn.commit()
             ffmpeg(file_path, target_file_path)
