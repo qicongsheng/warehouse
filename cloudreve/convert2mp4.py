@@ -19,9 +19,9 @@ def convert():
         id = str(row[0])
         file_name = str(row[4])
         file_path = str(row[5])
-        if file_name.endswith('.mp4'):
+        if not file_name.endswith('_convert.mp4') and file_name.endswith('.mp4'):
             target_file_name = file_name.replace('.mp4', '.mp4')
-            target_file_path = file_path.replace('.mp4', '.mp4')
+            target_file_path = file_path.replace('.mp4', '_convert.mp4')
             cursor.execute("update files set name ='%s' where ID=%s" % ("[转码中...]" + file_name, id))
             conn.commit()
             ffmpeg(file_path, target_file_path)
