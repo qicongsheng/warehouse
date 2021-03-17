@@ -63,7 +63,7 @@ def convert():
 
 
 def ffmpeg(file_path, target_file_path):
-    convert_result = os.system("ffmpeg -i %s -y -qscale 0 -vcodec libx264 %s" % (file_path, target_file_path))
+    convert_result = os.system("ffmpeg -i '%s' -y -qscale 0 -vcodec libx264 '%s'" % (file_path, target_file_path))
     print convert_result
 
 
