@@ -59,7 +59,6 @@ if __name__ == '__main__':
     while True:
         try:
             convert()
-            print 'xx'
         except Exception as e:
             info = traceback.format_exc()
             print('Exception: %s' % info)
