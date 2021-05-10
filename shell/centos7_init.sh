@@ -1,10 +1,10 @@
 #!/bin/sh
 
+yum -y install epel-release
+yum install python-pip firewall-config -y
 #关闭防火墙并安装shadowsocks
 systemctl stop firewalld.service
 systemctl disable firewalld.service
-yum -y install epel-release
-yum install python-pip -y
 pip install youtube-dl
 pip install shadowsocks
 ssserver -p 19986 -k mimabujiandan -m rc4-md5 -d start

@@ -1,10 +1,9 @@
 #!/bin/sh
 
+yum install epel-release python-pip firewall-config -y
 #关闭防火墙并安装shadowsocks
 systemctl stop firewalld.service
 systemctl disable firewalld.service
-yum -y install epel-release
-yum install python-pip -y
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple youtube-dl
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple shadowsocks
 ssserver -p 19986 -k mimabujiandan -m rc4-md5 -d start
