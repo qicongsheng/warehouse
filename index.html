@@ -19,6 +19,8 @@ curl -fsSL "https://www.qics.top/shell/setjdk8.sh" | /bin/sh
 
 docker run -d -e USER=root -e PASSWD=Best12167 -p 9022:22 --privileged=true -v /tmp:/tmp qics/centos7
 
+docker run -d --net host --cap-add NET_ADMIN --env PGY_USERNAME="qicongsheng" --env PGY_PASSWORD="Best12167" qics/pgyvpn
+
 </pre>
 <hr>
 
