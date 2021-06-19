@@ -17,10 +17,16 @@ curl -fsSL "http://www.qics.top/shell/centos7_china_init.sh" | /bin/sh
 <a href="./shell/setjdk8.sh">./shell/setjdk8.sh</a>
 curl -fsSL "https://www.qics.top/shell/setjdk8.sh" | /bin/sh
 
+# shodowsocks
+docker run -d -e USER=root -e PASSWD=Best12167 -p 8022:22 -p 19986:19986 --privileged=true -v /tmp:/tmp qics/centos7:shodowsocks
+
+# centos7
 docker run -d -e USER=root -e PASSWD=Best12167 -p 9022:22 --privileged=true -v /tmp:/tmp qics/centos7
 
+# pgyvpn
 docker run -d --net host --cap-add NET_ADMIN --env PGY_USERNAME="qicongsheng" --env PGY_PASSWORD="Best12167" qics/pgyvpn
 
+# playWithDocker
 curl -fsSL "http://www.qics.top/shell/play.sh" | /bin/sh
 
 </pre>
