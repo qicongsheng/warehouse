@@ -23,6 +23,9 @@ docker run -d -e USER=root -e PASSWD=Best12167 -p 8022:22 -p 19986:19986 --privi
 # centos7
 docker run -d -e USER=root -e PASSWD=Best12167 -p 9022:22 --privileged=true -v /tmp:/tmp qics/centos7
 
+# centos7:vnc
+docker run -d -e USER=root -e PASSWD=Best12167 -p 9022:22 -p 9023:5901 -p 9024:6901 --privileged=true -v /tmp:/tmp qics/centos7:vnc 
+
 # pgyvpn
 docker run -d --net host --cap-add NET_ADMIN --env PGY_USERNAME="qicongsheng" --env PGY_PASSWORD="Best12167" qics/pgyvpn
 
