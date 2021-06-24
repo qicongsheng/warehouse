@@ -18,6 +18,7 @@ curl -fsSL "http://www.qics.top/shell/centos7_china_init.sh" | /bin/sh
 curl -fsSL "https://www.qics.top/shell/setjdk8.sh" | /bin/sh
 
 # shodowsocks
+ssserver -p 19986 -k mimabujiandan -m rc4-md5 -d start
 docker run -d -e USER=root -e PASSWD=Best12167 -p 8022:22 -p 19986:19986 --privileged=true -v /tmp:/tmp qics/centos7:shodowsocks
 
 # centos7
