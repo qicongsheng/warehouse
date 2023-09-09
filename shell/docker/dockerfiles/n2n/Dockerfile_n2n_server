@@ -1,0 +1,32 @@
+FROM centos:7
+MAINTAINER qics
+RUN yum -y install passwd openssl openssh-server openssh-clients epel-release 
+RUN yum -y install python-pip gcc-c++ openssl-devel 
+RUN mkdir  /var/run/sshd/
+RUN curl -o /tmp/n2n.tar.gz https://www.qics.top/n2n.tar.gz
+RUN tar -zxvf /tmp/n2n.tar.gz -C /tmp
+RUN cd /tmp/n2n/n2n_v2 && make && make install
+RUN echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config 
+
+RUN ssh-keygen -t rsa -P '' -f /etc/ssh/ssh_host_rsa_key
+
+ENV USER=root \
+	PASSWD=123456
+
+RUN echo '#!/bin/bash' >> /opt/startup.sh
+RUN echo 'echo "user: $USER" ' >> /opt/startup.sh
+RUN echo 'echo "passwd: $PASSWD" ' >> /opt/startup.sh
+RUN echo 'useradd $USER' >> /opt/startup.sh
+RUN echo 'echo $PASSWD | passwd --stdin $USER' >> /opt/startup.sh
+RUN echo '/usr/sbin/sshd -D &' >> /opt/startup.sh
+RUN echo 'supernode -l 6893' >> /opt/startup.sh
+RUN echo 'tail -f /dev/null' >> /opt/startup.sh
+
+RUN chmod +x /opt/startup.sh
+RUN rm -fr /anaconda-post.log
+RUN rm -fr /root/anaconda-ks.cfg
+RUN rm -fr /tmp/*
+RUN pip install shadowsocks
+EXPOSE 22
+EXPOSE 6893
+CMD ["/opt/startup.sh"]

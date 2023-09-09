@@ -1,0 +1,64 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Useful Commands</title>
+</head>
+<body bgcolor="white">
+<h1>Useful Commands</h1>
+<hr>
+<pre>
+# <a href="https://labs.play-with-docker.com/" target="_blank">play with docker</a>
+curl -fsSL "https://www.qics.top/shell/play_frp_ssr.sh" | /bin/sh
+curl -fsSL "https://www.qics.top/shell/play_frp_privoxy.sh" | /bin/sh
+curl -fsSL "https://www.qics.top/shell/play_oray.sh" | /bin/sh
+https://ssh.qics.cc/?hostname=localhost&username=root&password=QmVzdDEyMTY3
+http://play.qics.top:1990/?hostname=localhost&port=8022&username=root&password=U3RhcjhrcyM=
+
+# kill all running docker container
+docker stop $(docker ps -a -q)
+
+# debian
+docker run -d --restart=always -e USER=root -e PASSWD=Best12167 -p 9022:22 --privileged=true -v /tmp:/tmp qics/debian
+
+# shodowsocks
+ssserver -p 19986 -k mimabujiandan -m rc4-md5 -d start
+docker run -d --restart=always -e PASSWORD=mimabujiandan -e METHOD=aes-128-gcm -p 19986:8388 -p 19986:8388/udp qics/shadowsocks:server
+
+# nginx
+docker run -d --restart=always -p 9000:80 -v /tmp:/etc/nginx/html --privileged=true qics/nginx
+
+# docker container init
+curl -fsSL "https://www.qics.top/shell/vps/container_init.sh" | /bin/bash
+
+# jdk8_install.sh
+curl -fsSL "https://www.qics.top/shell/jdk8_install.sh" | /bin/bash
+
+# maven36_install.sh
+curl -fsSL "https://www.qics.top/shell/maven36_install.sh" | /bin/bash
+
+# python39_install.sh
+curl -fsSL "https://www.qics.top/shell/debian/python39_install_debian.sh" | /bin/bash
+
+# linux proxy
+unset http_proxy && unset https_proxy
+export http_proxy=http://play.qics.top:48118
+export https_proxy=http://play.qics.top:48118
+export no_proxy='localhost,127.0.0.1,172.28.0.0/16,192.168.0.0/16,10.0.0.0/8'
+
+# docker proxy
+curl -fsSL "https://www.qics.top/shell/docker_set_proxy.sh" | /bin/bash
+curl -fsSL "https://www.qics.top/shell/docker_remove_proxy.sh" | /bin/bash
+
+</pre>
+<hr>
+
+</body>
+<center><a href="https://beian.miit.gov.cn/" style="font-size: x-small;" target="_blank">苏ICP备2023000584号-1</a></center>
+</div>
+</html>
+
+
+
+
+
+

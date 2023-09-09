@@ -1,0 +1,3 @@
+FROM bestoray/pgyvpn:latest
+MAINTAINER qicongsheng
+

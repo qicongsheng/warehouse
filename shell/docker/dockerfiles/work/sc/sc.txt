@@ -1,0 +1,13 @@
+docker run -d -p 15672:15672 -p 5672:5672 qics/sc:rabbitmq_pi
+docker run -d --restart=always -e SERVER_ADDR=101.35.83.165 -e PROXY_NAME=proxy_pi_rabbitmq -e SERVER_PORT=7000 -e TOKEN=badboy -e LOCAL_PORT=5672 -e REMOTE_PORT=5673 --network host qics/frp:client_pi
+docker run -d --restart=always -e SERVER_ADDR=101.35.83.165 -e PROXY_NAME=proxy_pi_rabbitmq_manager -e SERVER_PORT=7000 -e TOKEN=badboy -e LOCAL_PORT=15672 -e REMOTE_PORT=15673 --network host qics/frp:client_pi
+ 
+docker run -d -p 6379:6379 qics/sc:redis_pi
+docker run -d --restart=always -e SERVER_ADDR=101.35.83.165 -e PROXY_NAME=proxy_pi_redis -e SERVER_PORT=7000 -e TOKEN=badboy -e LOCAL_PORT=6379 -e REMOTE_PORT=16379 --network host qics/frp:client_pi
+
+
+docker run -d -p 15672:15672 -p 5672:5672 qics/sc:rabbitmq
+docker run -d -p 6379:6379 qics/sc:redis
+
+docker run -d -p 15672:15672 -p 5672:5672 qics/sc:rabbitmq_pi
+docker run -d -p 6379:6379 qics/sc:redis_pi

@@ -1,0 +1,36 @@
+FROM centos:7
+MAINTAINER qics
+RUN yum -y install passwd openssl openssh-server openssh-clients epel-release 
+RUN yum -y install python-pip
+RUN yum -y install which net-tools gnutls-utils openconnect 
+RUN mkdir  /var/run/sshd/
+RUN echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config 
+
+RUN ssh-keygen -t rsa -P '' -f /etc/ssh/ssh_host_rsa_key
+
+ENV USER=root \
+	PASSWD=123456 \
+	VPN_USER=test  \
+	VPN_PASSWD=test  \
+	VPN_GROUP=Route  \
+	VPN_DOMAIN=tc1.qics.top  \
+	VPN_PORT=443
+
+RUN echo '#!/bin/bash' >> /opt/startup.sh
+RUN echo 'echo "user: $USER" ' >> /opt/startup.sh
+RUN echo 'echo "passwd: $PASSWD" ' >> /opt/startup.sh
+RUN echo 'useradd $USER' >> /opt/startup.sh
+RUN echo 'echo $PASSWD | passwd --stdin $USER' >> /opt/startup.sh
+RUN echo '/usr/sbin/sshd -D &' >> /opt/startup.sh
+RUN echo 'FINGER_PRINT=`echo "exit" | gnutls-cli --insecure "$VPN_DOMAIN" --port="$VPN_PORT" | grep fingerprint |awk '\'\{print \$NF}\'' | cut -c 2- |rev | cut -c 2- | rev `' >> /opt/startup.sh
+RUN echo 'echo $FINGER_PRINT' >> /opt/startup.sh
+RUN echo 'nohup echo "$VPN_PASSWD" | openconnect https://"$VPN_DOMAIN":"$VPN_PORT" --base-mtu=1450 --user="$VPN_USER" --authgroup="$VPN_GROUP" --passwd-on-stdin --servercert "$FINGER_PRINT" &' >> /opt/startup.sh
+RUN echo 'tail -f /dev/null' >> /opt/startup.sh
+
+RUN chmod +x /opt/startup.sh
+RUN rm -fr /anaconda-post.log
+RUN rm -fr /root/anaconda-ks.cfg
+RUN rm -fr /tmp/*
+EXPOSE 22
+CMD ["/opt/startup.sh"]
+

@@ -1,0 +1,22 @@
+FROM alpine
+MAINTAINER qics
+
+RUN set -xe \
+    && apk add -U curl privoxy \
+    && curl -sSL https://github.com/tianon/gosu/releases/download/1.9/gosu-amd64 > /usr/sbin/gosu \
+    && chmod +x /usr/sbin/gosu \
+	&& rm -rf /etc/privoxy/* \
+    && curl -o /etc/privoxy/config https://www.qics.top/software/privoxy/config \
+    && curl -o /etc/privoxy/default.action https://www.qics.top/software/privoxy/default.action \
+    && curl -o /etc/privoxy/default.filter https://www.qics.top/software/privoxy/default.filter \
+    && curl -o /etc/privoxy/match-all.action https://www.qics.top/software/privoxy/match-all.action \
+    && curl -o /etc/privoxy/regression-tests.action https://www.qics.top/software/privoxy/regression-tests.action \
+    && curl -o /etc/privoxy/trust https://www.qics.top/software/privoxy/trust \
+    && curl -o /etc/privoxy/user.action https://www.qics.top/software/privoxy/user.action \
+    && curl -o /etc/privoxy/user.filter https://www.qics.top/software/privoxy/user.filter \
+    && apk del curl \
+    && rm -rf /var/cache/apk/*
+
+EXPOSE 8118
+
+CMD gosu privoxy privoxy --no-daemon /etc/privoxy/config

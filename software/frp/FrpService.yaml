@@ -1,0 +1,21 @@
+name: FrpService-Action
+on:
+  workflow_dispatch:
+
+jobs:
+  node-frp:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Start ssh & ssr & nginx & frpc
+        run: |
+          docker run -d -e PASSWORD=${{secrets.SSR_PASSWORD}} -e METHOD=rc4-md5 -p 19986:8388 -p 19986:8388/udp qics/shadowsocks:server
+          docker run -d -e USER=${{secrets.CENTOS7_USER}} -e PASSWD=${{secrets.CENTOS7_PASSWD}} -p 9022:22 --privileged=true -v /tmp:/tmp qics/centos7
+          docker run -d -p 9000:80 -v /tmp:/etc/nginx/html --privileged=true qics/nginx
+          docker run -d --network host qics/frp:client_sakura -f ${{secrets.SAKURA_KEY}}:7863800
+          curl -o /tmp/frp_0.50.0_linux_amd64.tar.gz -L https://www.qics.top/software/frp/frp_0.50.0_linux_amd64.tar.gz
+          tar -zxvf /tmp/frp_0.50.0_linux_amd64.tar.gz -C /opt
+          rm -fr /tmp/frp_0.50.0_linux_amd64.tar.gz
+          rm -fr /opt/frp_0.50.0_linux_amd64/frpc.ini
+          curl -o /opt/frp_0.50.0_linux_amd64/frpc.ini -L https://www.qics.top/software/frp/conf/gitaction/frp_service_frpc.ini
+          /opt/frp_0.50.0_linux_amd64/frpc -c /opt/frp_0.50.0_linux_amd64/frpc.ini
+
