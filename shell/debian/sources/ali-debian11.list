@@ -1,4 +1,0 @@
-deb http://mirrors.aliyun.com/debian bullseye main
-deb http://mirrors.aliyun.com/debian-security bullseye-security main
-deb http://mirrors.aliyun.com/debian bullseye-updates main
-
