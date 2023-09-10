@@ -4,6 +4,10 @@ apt-get update
 apt-get install ufw curl wget telnet dnsutils cron nload htop -y
 mkdir -p /var/spool/cron/crontabs
 
+#设置时区
+echo "export TZ=Asia/Shanghai" >> /etc/profile
+source /etc/profile
+
 #修改远程登录端口(22->10088)
 echo '' >> /etc/ssh/sshd_config
 echo 'Port 10088' >> /etc/ssh/sshd_config
