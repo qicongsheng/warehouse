@@ -2,23 +2,23 @@ FROM amd64/alpine:3.15
 MAINTAINER qics
 
 ENV FRP_VERSION=0.51.3 \
-	SERVER_ADDR= \
-	SERVER_PORT= \
-	TOKEN= \
-	LOCAL_PORT= \
-	REMOTE_PORT= \
-	PROXY_NAME=tcp
-	
+    SERVER_ADDR= \
+    SERVER_PORT= \
+    TOKEN= \
+    LOCAL_PORT= \
+    REMOTE_PORT= \
+    PROXY_NAME=tcp
+
 RUN cd /root \
     && wget --no-check-certificate -c https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/frp_${FRP_VERSION}_linux_amd64.tar.gz \
-    && tar zxvf frp_${FRP_VERSION}_linux_amd64.tar.gz  \
+    && tar zxvf frp_${FRP_VERSION}_linux_amd64.tar.gz \
     && cd frp_${FRP_VERSION}_linux_amd64/ \
     && cp frpc /usr/bin/ \
     && mkdir -p /etc/frp \
     && cp frpc.ini /etc/frp \
     && cd /root \
     && rm frp_${FRP_VERSION}_linux_amd64.tar.gz \
-    && rm -rf frp_${FRP_VERSION}_linux_amd64/  \
+    && rm -rf frp_${FRP_VERSION}_linux_amd64/ \
 
     && echo '#!/bin/sh' >> /opt/startup.sh \
     && echo 'rm -fr /etc/frp/frpc.ini >> /etc/frp/frpc.ini ' >> /opt/startup.sh \
