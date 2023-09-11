@@ -18,6 +18,7 @@ http://play.qics.top:1990/?hostname=localhost&port=8022&username=root&password=U
 docker stop $(docker ps -a -q)
 
 # debian
+docker run -d --restart=always -e USER=root -e PASSWD=Star8ks# -p 9022:22 --privileged=true -v /tmp:/tmp qics/debian
 docker run -d --restart=always -e USER=root -e PASSWD=Star8ks# -p 8022:22 --privileged=true -v /tmp:/tmp qics/debian
 
 # shodowsocks
