@@ -1,5 +1,4 @@
 FROM arm64v8/alpine:3.15
-
 MAINTAINER qics
 
 ENV FRP_VERSION=0.51.3 \
