@@ -1,5 +1,7 @@
 #!/bin/bash
 # curl -fsSL "https://www.qics.top/shell/vps/container_init.sh" | /bin/bash
+
+#setup
 apt-get update
 apt-get install curl wget telnet dnsutils cron nload htop nmap net-tools iputils-ping -y
 mkdir -p /var/spool/cron/crontabs
