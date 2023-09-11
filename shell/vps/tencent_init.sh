@@ -26,7 +26,7 @@ service docker start
 systemctl enable docker
 service docker restart
 docker run -d --restart=always -p 9000:80 -v /tmp:/etc/nginx/html --privileged=true qics/nginx
-docker run -d --restart=always -e PASSWORD=mimabujiandan -e SERVER_ADDR=host.qics.cc -e SERVER_PORT=19986 -e METHOD=aes-128-gcm -p 1080:1080 -p 1080:1080/udp --network host -d qics/shadowsocks:client
+docker run -d --restart=always -e PASSWORD=mimabujiandan -e SERVER_ADDR=127.0.0.1 -e SERVER_PORT=19986 -e METHOD=aes-128-gcm -p 1080:1080 -p 1080:1080/udp --network host -d qics/shadowsocks:client
 docker run -d --restart=always -e FORWARD_IP=127.0.0.1 -e FORWARD_PORT=1080 --cap-add NET_ADMIN --network host -p 8118:8118 -p 8118:8118/udp qics/privoxy:latest
 docker run -d --restart=always qics/cloudflared:latest tunnel --no-autoupdate run --token eyJhIjoiZTAwMWM4MzlmMTNiNzU2ZDc0YWI1NjE0MzFlM2ZlZDciLCJ0IjoiMTNjYmI4OTYtNjdkZS00NmY1LTkxOGEtZGE0YjA3NDNjMGE3IiwicyI6IlpUUTJaVGhpWXpjdE9HTXhZeTAwTm1OaUxXSmtZbU10TVRnd1lUZzVOelk0WldKaiJ9
 docker run -d --restart=always -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123#  qics/mysql:5.7
