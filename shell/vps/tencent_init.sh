@@ -1,5 +1,7 @@
 #!/bin/bash
 # curl -fsSL "https://www.qics.top/shell/vps/tencent_init.sh" | /bin/bash
+
+#setup
 apt-get update
 apt-get install ufw curl wget telnet dnsutils cron nload htop -y
 mkdir -p /var/spool/cron/crontabs
