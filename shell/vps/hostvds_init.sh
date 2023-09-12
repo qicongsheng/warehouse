@@ -1,15 +1,17 @@
 #!/bin/bash
 # curl -fsSL "https://www.qics.top/shell/vps/hostvds_init.sh" | /bin/bash
 
+#设置dns服务器
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
+
 #setup
 apt-get update
 apt-get install ufw curl wget telnet dnsutils cron nload htop shadowsocks-libev -y
 mkdir -p /var/spool/cron/crontabs
 
-#设置环境
+#设置时区
 echo "export TZ=Asia/Shanghai" >> /etc/profile
 source /etc/profile
-echo "nameserver 8.8.8.8" > /etc/resolv.conf
 
 #修改远程登录端口(22->10088)
 echo '' >> /etc/ssh/sshd_config
