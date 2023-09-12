@@ -6,9 +6,10 @@ apt-get update
 apt-get install ufw curl wget telnet dnsutils cron nload htop shadowsocks-libev -y
 mkdir -p /var/spool/cron/crontabs
 
-#设置时区
+#设置环境
 echo "export TZ=Asia/Shanghai" >> /etc/profile
 source /etc/profile
+echo "nameserver 8.8.8.8" > /etc/resolv.conf
 
 #修改远程登录端口(22->10088)
 echo '' >> /etc/ssh/sshd_config
