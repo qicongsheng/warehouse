@@ -29,7 +29,7 @@ systemctl disable shadowsocks-libev
 nohup ss-server -s 0.0.0.0 -p 19986 -k mimabujiandan -m aes-128-gcm -t 300 -d 8.8.8.8,8.8.4.4 > /var/log/shadowsocks.log 2>&1 &
 
 #安装docker并启动文件服务器
-curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+curl -fsSL https://get.docker.com | bash -s docker 
 service docker start
 systemctl enable docker
 service docker restart
