@@ -23,7 +23,7 @@ echo "alias ls='ls \$LS_OPTIONS --color'" >> /root/.bashrc
 echo "alias ll='ls \$LS_OPTIONS -l --color'" >> /root/.bashrc
 
 #安装docker并启动文件服务器
-curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+curl -fsSL https://get.docker.com | bash -s docker 
 service docker start
 systemctl enable docker
 service docker restart
