@@ -37,7 +37,6 @@ systemctl enable docker
 service docker restart
 docker run -d --restart=always -p 9000:80 -v /tmp:/etc/nginx/html --privileged=true qics/nginx
 docker run -d --restart=always -e BIND_PORT=7000 -e DASHBOARD_PORT=7777 -e DASHBOARD_USER=qics -e DASHBOARD_PWD=123456 -e TOKEN=badboy --network host qics/frp:server
-docker run -d --restart=always -e SERVER_ADDR=play.qics.top -e PROXY_NAME=proxy_host_ssr -e SERVER_PORT=7000 -e TOKEN=badboy -e LOCAL_PORT=19986 -e REMOTE_PORT=19986 --network host qics/frp:client
 docker run -d --restart=always -e USER=root -e PASSWD=Star8ks# -p 8022:22 --privileged=true -v /tmp:/tmp qics/debian
 
 #屏蔽暴力破解
