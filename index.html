@@ -17,6 +17,7 @@ http://play.qics.top:1990/?hostname=localhost&port=8022&username=root&password=U
 # debian
 docker run -d --restart=always -e USER=root -e PASSWD=Star8ks# -p 9022:22 --privileged=true -v /tmp:/tmp qics/debian
 docker run -d --restart=always -e USER=root -e PASSWD=Star8ks# -p 8022:22 --privileged=true -v /tmp:/tmp qics/debian
+curl -o /etc/apt/sources.list.d/ali-debian12.sources https://www.qics.top/shell/debian/sources/ali-debian12.sources
 
 # docker container init
 curl -fsSL "https://www.qics.top/shell/vps/container_init.sh" | /bin/bash
