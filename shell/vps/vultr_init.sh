@@ -21,6 +21,7 @@ systemctl restart sshd.service
 #ls & ll
 echo "alias ls='ls \$LS_OPTIONS --color'" >> /root/.bashrc
 echo "alias ll='ls \$LS_OPTIONS -l --color'" >> /root/.bashrc
+echo "/etc/init.d/cron restart" >> /root/.bashrc
 
 #启动ssr
 systemctl stop shadowsocks-libev
