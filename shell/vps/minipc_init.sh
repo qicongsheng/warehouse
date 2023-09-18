@@ -1,0 +1,2 @@
+#cloudflared
+docker run -d --restart=always --net host qics/cloudflared tunnel --no-autoupdate run --token eyJhIjoiZTAwMWM4MzlmMTNiNzU2ZDc0YWI1NjE0MzFlM2ZlZDciLCJ0IjoiMDM3N2MyNjYtMDg0OS00NTk0LWEzYTUtZTkyMThhYmRmNmQ0IiwicyI6IlltTm1OR1UyTURVdE5ESXpPUzAwTUdRNExXSTFOVEl0TVRCa05tRmpOemxqWW1FeCJ9
