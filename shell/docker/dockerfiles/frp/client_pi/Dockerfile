@@ -31,7 +31,15 @@ RUN cd /root \
     && echo 'echo "local_ip = 127.0.0.1 " >> /etc/frp/frpc.ini' >> /opt/startup.sh \
     && echo 'echo "local_port = $LOCAL_PORT " >> /etc/frp/frpc.ini' >> /opt/startup.sh \
     && echo 'echo "remote_port = $REMOTE_PORT " >> /etc/frp/frpc.ini' >> /opt/startup.sh \
-    && echo '/usr/bin/frpc -c /etc/frp/frpc.ini' >> /opt/startup.sh \
+
+    && echo "while true" >> /opt/startup.sh \
+    && echo "do" >> /opt/startup.sh \
+    && echo "	COUNT=\$(ps -ef |grep frpc |grep -v 'grep' |wc -l)" >> /opt/startup.sh \
+    && echo "	if [ \$COUNT -eq 0 ]; then" >> /opt/startup.sh \
+    && echo "		echo 'frpc is not running. start...'" >> /opt/startup.sh \
+    && echo "		/usr/bin/frpc -c /etc/frp/frpc.ini" >> /opt/startup.sh \
+    && echo "	fi" >> /opt/startup.sh \
+    && echo "done" >> /opt/startup.sh \
 
     && echo '/usr/sbin/sshd -D &' >> /opt/startup.sh \
     && echo 'tail -f /dev/null' >> /opt/startup.sh \
