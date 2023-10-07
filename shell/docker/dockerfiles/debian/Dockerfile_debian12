@@ -6,6 +6,7 @@ ENV USER=root \
     TZ=Asia/Shanghai 
 
 RUN apt-get update \
+    && apt-get upgrade -y \
     && apt-get install -y openssh-client openssh-server curl \
     && mkdir /var/run/sshd/ && echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config \
     && echo "alias ls='ls \$LS_OPTIONS --color'" >> /root/.bashrc \
