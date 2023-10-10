@@ -2,7 +2,7 @@
 apt-get update 
 apt-get install bzip2 build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev -y
 rm -fr /tmp/python3.9.12.tar.gz
-curl -o /tmp/python3.9.12.tar.gz https://public.sn.files.1drv.com/y4m3BfQRptBZ6oavtGJwh67y6YIDHzVkWsGHMIGdDIoo9hSQcjuf5O8qa977FswvVD9MRfBa1n2pC_dDOuG8hzikFAPGtTaDLGRNc6gnCjRQ_atvuV1Bj1NbyTp_pD29rpWTDRUKA9KHNC6BQ7I7ET_CiNMWZ9PSK3xXeA4jeY6aXuKSBReAlVKMi7E33304mPak6erAnmJo2sx909sJzm4PAOIu5nMzkZxSj5VVOcuiQg?AVOverride=1
+curl -o /tmp/python3.9.12.tar.gz https://ehckxq.sn.files.1drv.com/y4msFMU-V_ZIaEEvZiVvir06mZSmkmvvhHs-HkhmS5H21UgJsROtFyn32ycnmgE8iEqiv8uSqsyNyyT-KeKlcc7m7zcwy6TcuUj-U3_0HLWHnbuB-2PNeHUR6G3BpCssi9DhqrFrhP-Mr3ia5P6CeTeGsWj7ZLPimHcd3A59EOfuazyM5TadnnHocAeQSL38Oe90K1ug7JxftKsUULfVuMBjg
 tar -zxvf /tmp/python3.9.12.tar.gz -C /usr/local
 echo "export PATH=\$PATH:/etc/sbin:/usr/local/python3/bin" >> /etc/profile
 source /etc/profile
