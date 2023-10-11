@@ -22,7 +22,7 @@ curl -fsSL "https://www.qics.top/shell/play_oray_ssr.sh" | /bin/sh
 	
 # debian
 docker run -d --restart=always -e USER=root -e PASSWD=Star8ks# -p 9022:22 --privileged=true -v /tmp:/tmp qics/debian
-docker run -d --restart=always -e USER=root -e PASSWD=Star8ks# -p 8022:22 --privileged=true -v /tmp:/tmp qics/debian
+docker run -d --restart=always -e USER=root -e PASSWD=Star8ks# -p 8022:22 -p 8082:22 -p 8000:22 --privileged=true -v /tmp:/tmp qics/debian
 
 # docker container init
 curl -fsSL "https://www.qics.top/shell/vps/container_init.sh" | /bin/bash
