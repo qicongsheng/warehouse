@@ -1,4 +1,5 @@
 #!/bin/bash
+# curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/frp/docker_frp.sh" | /bin/sh
 rm -fr /tmp/work 
 mkdir /tmp/work 
 cd /tmp/work 
