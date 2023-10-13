@@ -21,14 +21,14 @@ RUN cd /root \
 
     && echo '#!/bin/sh' >> /opt/startup.sh \
     && echo 'rm -fr /etc/frp/frps.ini >> /etc/frp/frps.ini ' >> /opt/startup.sh \
-    && echo 'echo "[common]" >> /etc/frp/frps.ini ' >> /opt/startup.sh \
-    && echo 'echo "bind_port = $BIND_PORT " >> /etc/frp/frps.ini ' >> /opt/startup.sh \
-    && echo 'echo "token = $TOKEN " >> /etc/frp/frps.ini ' >> /opt/startup.sh \
-    && echo 'echo "dashboard_addr = 0.0.0.0 " >> /etc/frp/frps.ini' >> /opt/startup.sh \
-    && echo 'echo "dashboard_port = $DASHBOARD_PORT " >> /etc/frp/frps.ini' >> /opt/startup.sh \
-    && echo 'echo "dashboard_user = $DASHBOARD_USER " >> /etc/frp/frps.ini' >> /opt/startup.sh \
-    && echo 'echo "dashboard_pwd = $DASHBOARD_PWD " >> /etc/frp/frps.ini' >> /opt/startup.sh \
-    && echo '/usr/bin/frps -c /etc/frp/frps.ini' >> /opt/startup.sh \
+    && echo 'echo "bindAddr = 0.0.0.0" >> /etc/frp/frps.toml ' >> /opt/startup.sh \
+    && echo 'echo "bindPort = $BIND_PORT " >> /etc/frp/frps.toml ' >> /opt/startup.sh \
+    && echo 'echo "auth.token = $TOKEN " >> /etc/frp/frps.toml ' >> /opt/startup.sh \
+    && echo 'echo "webServer.addr = 0.0.0.0 " >> /etc/frp/frps.toml' >> /opt/startup.sh \
+    && echo 'echo "webServer.port = $DASHBOARD_PORT " >> /etc/frp/frps.toml' >> /opt/startup.sh \
+    && echo 'echo "webServer.user = $DASHBOARD_USER " >> /etc/frp/frps.toml' >> /opt/startup.sh \
+    && echo 'echo "webServer.password = $DASHBOARD_PWD " >> /etc/frp/frps.toml' >> /opt/startup.sh \
+    && echo '/usr/bin/frps -c /etc/frp/frps.toml' >> /opt/startup.sh \
 
     && echo '/usr/sbin/sshd -D &' >> /opt/startup.sh \
     && echo 'tail -f /dev/null' >> /opt/startup.sh \
