@@ -19,7 +19,7 @@ RUN cd /root \
     && rm -rf frp_${FRP_VERSION}_linux_amd64/ \
 
     && echo '#!/bin/sh' >> /opt/startup.sh \
-    && echo 'rm -fr /etc/frp/frps.ini' >> /opt/startup.sh \
+    && echo 'rm -fr /etc/frp/frps.toml' >> /opt/startup.sh \
     && echo 'echo "bindAddr = 0.0.0.0" >> /etc/frp/frps.toml' >> /opt/startup.sh \
     && echo 'echo "bindPort = $BIND_PORT " >> /etc/frp/frps.toml' >> /opt/startup.sh \
     && echo 'echo "auth.token = $TOKEN " >> /etc/frp/frps.toml' >> /opt/startup.sh \
