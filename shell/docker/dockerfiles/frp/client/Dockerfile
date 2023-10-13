@@ -27,7 +27,7 @@ RUN cd /root \
     && echo 'echo "[[proxies]] " >> /etc/frp/frpc.toml' >> /opt/startup.sh \
     && echo 'echo "name = \"$PROXY_NAME\" " >> /etc/frp/frpc.toml' >> /opt/startup.sh \
     && echo 'echo "type = \"tcp\" " >> /etc/frp/frpc.toml' >> /opt/startup.sh \
-    && echo 'echo "localIP = 127.0.0.1 " >> /etc/frp/frpc.toml' >> /opt/startup.sh \
+    && echo 'echo "localIP = \"127.0.0.1\" " >> /etc/frp/frpc.toml' >> /opt/startup.sh \
     && echo 'echo "localPort = $LOCAL_PORT " >> /etc/frp/frpc.toml' >> /opt/startup.sh \
     && echo 'echo "remotePort = $REMOTE_PORT " >> /etc/frp/frpc.toml' >> /opt/startup.sh \
     
