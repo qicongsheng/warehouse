@@ -14,16 +14,15 @@ RUN cd /root \
     && cd frp_${FRP_VERSION}_linux_amd64/ \
     && cp frps /usr/bin/ \
     && mkdir -p /etc/frp \
-    && cp frps.ini /etc/frp \
     && cd /root \
     && rm frp_${FRP_VERSION}_linux_amd64.tar.gz \
     && rm -rf frp_${FRP_VERSION}_linux_amd64/ \
 
     && echo '#!/bin/sh' >> /opt/startup.sh \
-    && echo 'rm -fr /etc/frp/frps.ini >> /etc/frp/frps.ini ' >> /opt/startup.sh \
-    && echo 'echo "bindAddr = 0.0.0.0" >> /etc/frp/frps.toml ' >> /opt/startup.sh \
-    && echo 'echo "bindPort = $BIND_PORT " >> /etc/frp/frps.toml ' >> /opt/startup.sh \
-    && echo 'echo "auth.token = $TOKEN " >> /etc/frp/frps.toml ' >> /opt/startup.sh \
+    && echo 'rm -fr /etc/frp/frps.ini' >> /opt/startup.sh \
+    && echo 'echo "bindAddr = 0.0.0.0" >> /etc/frp/frps.toml' >> /opt/startup.sh \
+    && echo 'echo "bindPort = $BIND_PORT " >> /etc/frp/frps.toml' >> /opt/startup.sh \
+    && echo 'echo "auth.token = $TOKEN " >> /etc/frp/frps.toml' >> /opt/startup.sh \
     && echo 'echo "webServer.addr = 0.0.0.0 " >> /etc/frp/frps.toml' >> /opt/startup.sh \
     && echo 'echo "webServer.port = $DASHBOARD_PORT " >> /etc/frp/frps.toml' >> /opt/startup.sh \
     && echo 'echo "webServer.user = $DASHBOARD_USER " >> /etc/frp/frps.toml' >> /opt/startup.sh \
