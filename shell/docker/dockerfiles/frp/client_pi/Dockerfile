@@ -16,8 +16,8 @@ RUN cd /root \
     && cp frpc /usr/bin/ \
     && mkdir -p /etc/frp \
     && cd /root \
-    && rm frp_${FRP_VERSION}_linux_amd64.tar.gz \
-    && rm -rf frp_${FRP_VERSION}_linux_amd64/ \
+    && rm frp_${FRP_VERSION}_linux_arm64.tar.gz \
+    && rm -rf frp_${FRP_VERSION}_linux_arm64/ \
 
     && echo '#!/bin/sh' >> /opt/startup.sh \
     && echo 'rm -fr /etc/frp/frpc.toml' >> /opt/startup.sh \
