@@ -1,4 +1,4 @@
 1.解压debian-vnc.zip
-2.cd debian-vnc
+2.cd debian-vnc && chmod -R 777 *
 3.docker build -t qics/test:gui .
 4.使用外侧的Dockerfile构建镜像。docker build -t qics/debian:vnc
