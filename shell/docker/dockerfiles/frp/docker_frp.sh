@@ -27,3 +27,4 @@ docker build -t qics/frp:client_pi_0.52.2 .
 docker push qics/frp:client_pi_0.52.2
 
 docker tag qics/frp:client_pi_0.52.2 qics/frp:client_pi
+docker push qics/frp:client_pi
