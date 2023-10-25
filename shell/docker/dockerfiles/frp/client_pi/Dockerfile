@@ -1,7 +1,7 @@
 FROM arm64v8/alpine:3.15
 MAINTAINER qics
 
-ENV FRP_VERSION=0.52.2 \
+ENV FRP_VERSION=0.52.3 \
     SERVER_ADDR= \
     SERVER_PORT= \
     TOKEN= \
