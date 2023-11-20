@@ -24,7 +24,7 @@ echo "alias ll='ls \$LS_OPTIONS -l --color'" >> /root/.bashrc
 echo "/etc/init.d/cron restart" >> /root/.bashrc
 
 #安装docker并启动文件服务器
-curl -fsSL https://get.docker.com | bash -s docker 
+curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 service docker start
 systemctl enable docker
 service docker restart
