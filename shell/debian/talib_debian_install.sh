@@ -12,7 +12,7 @@ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 echo 'export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH' >> /etc/profile
 source /etc/profile
 pip3 install pip --upgrade -i https://pypi.tuna.tsinghua.edu.cn/simple
-cd /tmp && pip3 install TA-Lib
+cd /tmp && pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple TA-Lib
 rm -fr /tmp/ta-lib* /tmp/TA-Lib*
 
 
