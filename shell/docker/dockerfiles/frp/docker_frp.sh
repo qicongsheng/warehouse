@@ -3,12 +3,12 @@
 rm -fr /tmp/work 
 mkdir /tmp/work 
 cd /tmp/work 
-curl -o /tmp/work/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/frp/server/Dockerfile
+curl -o /tmp/work/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/frp/Dockerfile_server
 docker build -t qics/frp:server_0.52.3 .
 docker push qics/frp:server_0.52.3
 
 rm -fr  /tmp/work/Dockerfile
-curl -o /tmp/work/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/frp/client/Dockerfile
+curl -o /tmp/work/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/frp/Dockerfile_client_amd64
 docker build -t qics/frp:client_0.52.3 .
 docker push qics/frp:client_0.52.3
 
@@ -22,7 +22,7 @@ docker push qics/frp:client
 rm -fr /tmp/work 
 mkdir /tmp/work 
 cd /tmp/work 
-curl -o /tmp/work/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/frp/client_pi/Dockerfile
+curl -o /tmp/work/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/frp/Dockerfile_arm64
 docker build -t qics/frp:client_pi_0.52.3 .
 docker push qics/frp:client_pi_0.52.3
 
