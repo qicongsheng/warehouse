@@ -1,7 +1,10 @@
 DockerRegisterCloud
 https://github.com/xausky/DockerRegisterCloud
 
-cp drc /usr/local/bin
+curl -o /tmp/drc-cli-linux.tar.gz https://www.qics.top/software/drc/drc-cli-linux.tar.gz
+tar -zxvf /tmp/drc-cli-linux.tar.gz -C /usr/local/bin
+rm -fr /tmp/drc-cli-linux.tar.gz
+
 drc login registry.cn-hangzhou.aliyuncs.com/qics/warehouse
 username: 875881559@qq.com
 password: Best12167
