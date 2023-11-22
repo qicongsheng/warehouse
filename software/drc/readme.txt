@@ -20,8 +20,8 @@ password: Best12167
 
 drc ls
 drc push z.mp4 /dirpath/z.mp4
+drc pull /dirpath/z.mp4 /tmp/z.mp4
 drc rm /dirpath/z.mp4
-drc pull /dirpath/z.mp4
 mv data z.mp4
 
 
