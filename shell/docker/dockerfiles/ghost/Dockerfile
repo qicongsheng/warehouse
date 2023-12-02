@@ -1,0 +1,2 @@
+FROM ghost
+MAINTAINER qics
