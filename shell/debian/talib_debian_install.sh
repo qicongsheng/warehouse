@@ -4,7 +4,10 @@
 # =================================
 apt-get install gcc-multilib build-essential -y
 rm -fr /tmp/ta-lib*
-curl -o /tmp/ta-lib-0.4.0-src.tar.gz https://www.qics.top/software/ta-lib/ta-lib-0.4.0-src.tar.gz
+curl --connect-timeout 600 -m 7200 -o /tmp/ta-lib-0.4.0-src.tar.gz https://www.qics.top/software/ta-lib/ta-lib-0.4.0-src.tar.gz
+echo "sleep 5s start"
+sleep 5
+echo "sleep 5s end"
 cd /tmp && tar -zxvf /tmp/ta-lib-0.4.0-src.tar.gz
 cd /tmp/ta-lib && ./configure --prefix=/usr
 make && make install
