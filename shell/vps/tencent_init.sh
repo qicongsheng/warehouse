@@ -32,7 +32,6 @@ docker run -d --restart=always -p 8066:8080 -e HOST=0.0.0.0 qics/shellngn
 docker run -d --restart=always -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123#  qics/mysql:5.7
 docker run -d --restart=always -e BIND_PORT=7000 -e DASHBOARD_PORT=7777 -e DASHBOARD_USER=qics -e DASHBOARD_PWD=123456 -e TOKEN=badboy --network host qics/frp:server
 docker run -d --restart=always --net host qics/cloudflared tunnel --no-autoupdate run --token eyJhIjoiZTAwMWM4MzlmMTNiNzU2ZDc0YWI1NjE0MzFlM2ZlZDciLCJ0IjoiMTNjYmI4OTYtNjdkZS00NmY1LTkxOGEtZGE0YjA3NDNjMGE3IiwicyI6IlpUUTJaVGhpWXpjdE9HTXhZeTAwTm1OaUxXSmtZbU10TVRnd1lUZzVOelk0WldKaiJ9
-docker run -d --restart=always -e WEB_PORT=1990 --net host qics/webssh
 docker run -d --restart=always -p 8088:8978 qics/cloudbeaver
 docker run -d --restart=always -e PASSWORD=mimabujiandan -e SERVER_ADDR=127.0.0.1 -e SERVER_PORT=19986 -e METHOD=aes-128-gcm -p 1080:1080 -p 1080:1080/udp --network host -d qics/shadowsocks:client
 docker run -d --restart=always -e FORWARD_IP=127.0.0.1 -e FORWARD_PORT=1080 --cap-add NET_ADMIN --network host -p 8118:8118 -p 8118:8118/udp qics/privoxy
