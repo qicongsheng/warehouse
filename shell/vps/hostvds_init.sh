@@ -19,7 +19,7 @@ echo 'Port 10088' >> /etc/ssh/sshd_config
 systemctl restart sshd.service
 
 #修改root密码
-echo root:@Best121^6789#@ | chpasswd
+echo root:@Best1216^78#9#@ | chpasswd
 
 #ls & ll
 echo "alias ls='ls \$LS_OPTIONS --color'" >> /root/.bashrc
@@ -39,7 +39,7 @@ docker run -d --restart=always -p 9000:80 -v /tmp:/etc/nginx/html --privileged=t
 docker run -d --restart=always qics/traffmonetizer start accept --token 5xijhElDM8IqEwMj0VolDEVsbUDCGS3GFpRCFckxix8=
 docker run -d --restart=always -e BIND_PORT=7000 -e DASHBOARD_PORT=7777 -e DASHBOARD_USER=qics -e DASHBOARD_PWD=123456 -e TOKEN=badboy --network host qics/frp:server
 docker run -d --restart=always --net host -e --WEB_PORT=1990 qics/webssh
-docker run -d --restart=always -e USER=root -e PASSWD=Star8ks# -p 9022:22 --privileged=true -v /tmp:/tmp qics/debian
+docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 9022:22 --privileged=true -v /tmp:/tmp qics/debian
 
 #屏蔽暴力破解
 echo "*/1 * * * * curl -fsSL 'http://www.qics.top/shell/blockip.sh' | /bin/bash" >> /var/spool/cron/crontabs/root
