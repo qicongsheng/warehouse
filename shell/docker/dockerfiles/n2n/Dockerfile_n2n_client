@@ -6,7 +6,7 @@ ENV DEVICE_NAME= \
     PASSWD= \
     EDGE_IP= \
     SERVER_IP= \
-    SERVER_PORT= \
+    SERVER_PORT=
 
 RUN apk add n2n \
     && echo '#!/bin/sh' >> /opt/startup.sh \
