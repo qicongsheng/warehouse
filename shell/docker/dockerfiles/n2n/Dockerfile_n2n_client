@@ -1,7 +1,7 @@
 FROM alpine:3.15
 MAINTAINER qics
 
-ENV DEVICE_NAME=0.52.3 \
+ENV DEVICE_NAME= \
     NET_GROUP= \
     PASSWD= \
     EDGE_IP= \
