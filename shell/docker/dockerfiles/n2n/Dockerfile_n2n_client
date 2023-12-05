@@ -9,8 +9,15 @@ ENV DEVICE_NAME= \
     SERVER_PORT=
 
 RUN apk add n2n \
+    && mkdir -p /etc/n2n \
     && echo '#!/bin/sh' >> /opt/startup.sh \
-    && echo 'edge -d ${DEVICE_NAME} -a ${IP} -c ${NET_GROUP} -k ${PASSWD} -l ${SERVER_IP}:${SERVER_PORT}' >> /opt/startup.sh \
+    && echo 'rm -fr /etc/n2n/edge.cfg' >> /opt/startup.sh \
+    && echo 'echo "-d=$DEVICE_NAME " >> /etc/n2n/edge.cfg ' >> /opt/startup.sh \
+    && echo 'echo "-a=$IP " >> /etc/n2n/edge.cfg ' >> /opt/startup.sh \
+    && echo 'echo "-c=$NET_GROUP " >> /etc/n2n/edge.cfg ' >> /opt/startup.sh \
+    && echo 'echo "-k=$PASSWD " >> /etc/n2n/edge.cfg ' >> /opt/startup.sh \
+    && echo 'echo "-l=$SERVER_IP:$SERVER_PORT " >> /etc/n2n/edge.cfg ' >> /opt/startup.sh \
+    && echo 'edge /etc/n2n/edge.cfg' >> /opt/startup.sh \
     && echo 'tail -f /dev/null' >> /opt/startup.sh \
 
     && chmod +x /opt/startup.sh \
