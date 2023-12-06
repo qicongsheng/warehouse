@@ -18,17 +18,4 @@ docker tag qics/frp:client_0.52.3 qics/frp:client
 docker push qics/frp:server
 docker push qics/frp:client
 
-# -------------------------------------------------
-rm -fr /tmp/work 
-mkdir /tmp/work 
-cd /tmp/work 
-curl -o /tmp/work/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/frp/Dockerfile_arm64
-docker build -t qics/frp:client_pi_0.52.3 .
-docker push qics/frp:client_pi_0.52.3
-
-docker tag qics/frp:client_pi_0.52.3 qics/frp:client_pi
-docker push qics/frp:client_pi
-
-
-
 
