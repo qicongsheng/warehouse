@@ -16,9 +16,9 @@ curl -fsSL "https://www.qics.top/shell/play_oray_ssr.sh" | /bin/sh
 <a href="https://forex.qics.top/orders/open" target="_blank">open orders</a> | <a href="https://forex.qics.top/orders/close" target="_blank">close orders</a>
 
 # debian
-docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 9022:22 --privileged=true -v /tmp:/tmp qics/debian
-docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 8022:22 -p 8082:8082 -p 8000:8000 --privileged=true -v /tmp:/tmp qics/debian
-docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 9022:22 -p 9023:5901 -p 9024:6901 --privileged=true -v /tmp:/tmp qics/debian:vnc
+docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 172.17.0.1:9022:22 --privileged=true -v /tmp:/tmp qics/debian
+docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 172.17.0.1:8022:22 -p 8082:8082 -p 8000:8000 --privileged=true -v /tmp:/tmp qics/debian
+docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 172.17.0.1:9022:22 -p 9023:5901 -p 9024:6901 --privileged=true -v /tmp:/tmp qics/debian:vnc
 
 # docker container init
 curl -fsSL "https://www.qics.top/shell/vps/container_init.sh" | /bin/bash
