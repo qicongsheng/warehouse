@@ -3,8 +3,8 @@
 mkdir /tmp/work 
 cd /tmp/work 
 curl -o /tmp/work/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/debian/Dockerfile_debian12
-docker build -t qics/debian .
-docker push qics/debian
+docker docker buildx build -t qics/debian --platform linux/amd64,linux/arm64 . --push
+
 
 
 
