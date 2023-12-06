@@ -1,3 +1,4 @@
+# docker buildx build -t qics/sc:redis --platform linux/amd64,linux/arm64/v8 . --push
 FROM redis:5.0.14
 MAINTAINER qicongsheng
 

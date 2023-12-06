@@ -1,3 +1,0 @@
-FROM arm64v8/redis:5.0.14
-MAINTAINER qicongsheng
-
