@@ -43,7 +43,7 @@ docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 172.17.0.1:80
 docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 172.17.0.1:9022:22 --privileged=true -v /tmp:/tmp qics/debian
 
 #屏蔽暴力破解
-echo "*/1 * * * * curl -fsSL 'http://www.qics.top/shell/blockip.sh' | /bin/bash" >> /var/spool/cron/crontabs/root
+echo "*/1 * * * * curl -fsSL 'http://www.qics.top/shell/ufw/ufw_tencent.sh' | /bin/bash" >> /var/spool/cron/crontabs/root
 
 #启动定时任务
 chmod 600 /var/spool/cron/crontabs/root
