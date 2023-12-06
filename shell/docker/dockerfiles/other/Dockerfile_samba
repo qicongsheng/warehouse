@@ -1,3 +1,6 @@
+# docker buildx build -t qics/samba --platform linux/amd64,linux/arm64/v8 . --push
 FROM dperson/samba
 MAINTAINER qicongsheng
+
+RUN mkdir /data && chmod -R 777 /data
 

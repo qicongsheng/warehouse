@@ -1,5 +1,0 @@
-FROM trnape/rpi-samba
-RUN mkdir /data
-RUN chmod -R 777 /data
-MAINTAINER qicongsheng
-
