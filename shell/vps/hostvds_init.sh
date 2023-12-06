@@ -35,6 +35,7 @@ curl -fsSL https://get.docker.com | bash -s docker
 service docker start
 systemctl enable docker
 service docker restart
+docker login -u=qics -p Best12167
 docker run -d --restart=always -p 9000:80 -v /tmp:/etc/nginx/html --privileged=true qics/nginx
 docker run -d --restart=always qics/traffmonetizer start accept --token 5xijhElDM8IqEwMj0VolDEVsbUDCGS3GFpRCFckxix8=
 docker run -d --restart=always -e BIND_PORT=7000 -e DASHBOARD_PORT=7777 -e DASHBOARD_USER=qics -e DASHBOARD_PWD=123456 -e TOKEN=badboy --network host qics/frp:server

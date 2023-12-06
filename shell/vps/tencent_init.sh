@@ -27,6 +27,7 @@ curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 service docker start
 systemctl enable docker
 service docker restart
+docker login -u=qics -p Best12167
 docker run -d --restart=always -p 9000:80 -v /tmp:/etc/nginx/html --privileged=true qics/nginx
 docker run -d --restart=always -p 8066:8080 -e HOST=0.0.0.0 qics/shellngn
 docker run -d --restart=always -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123#  qics/mysql:5.7
