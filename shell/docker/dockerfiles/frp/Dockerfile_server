@@ -1,5 +1,8 @@
-FROM amd64/alpine:3.15
+# docker buildx build --platform linux/amd64,linux/arm64 -t qics/frp:server . --push
+FROM alpine:3.15
 MAINTAINER qics
+
+ARG TARGETPLATFORM
 
 ENV FRP_VERSION=0.52.3 \
     BIND_PORT=7000 \
@@ -8,15 +11,17 @@ ENV FRP_VERSION=0.52.3 \
     DASHBOARD_USER=qics \
     DASHBOARD_PWD=123456
 
-RUN cd /root \
-    && wget --no-check-certificate -c https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/frp_${FRP_VERSION}_linux_amd64.tar.gz \
-    && tar zxvf frp_${FRP_VERSION}_linux_amd64.tar.gz \
-    && cd frp_${FRP_VERSION}_linux_amd64/ \
+RUN if [[ $TARGETPLATFORM == *amd* ]];then \
+      cd /root && wget -O frp.tar.gz --no-check-certificate -c https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/frp_${FRP_VERSION}_linux_amd64.tar.gz \
+    else \
+      cd /root && wget -O frp.tar.gz --no-check-certificate -c https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/frp_${FRP_VERSION}_linux_arm64.tar.gz \
+    fi \
+    && tar zxvf frp.tar.gz \
+    && cd frp_${FRP_VERSION}_linux*/ \
     && cp frps /usr/bin/ \
     && mkdir -p /etc/frp \
     && cd /root \
-    && rm frp_${FRP_VERSION}_linux_amd64.tar.gz \
-    && rm -rf frp_${FRP_VERSION}_linux_amd64/ \
+    && rm frp_${FRP_VERSION}_*
 
     && echo '#!/bin/sh' >> /opt/startup.sh \
     && echo 'rm -fr /etc/frp/frps.toml' >> /opt/startup.sh \
