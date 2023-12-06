@@ -41,9 +41,6 @@ docker run -d --restart=always qics/traffmonetizer start accept --token 5xijhElD
 docker run -d --restart=always -e BIND_PORT=7000 -e DASHBOARD_PORT=7777 -e DASHBOARD_USER=qics -e DASHBOARD_PWD=123456 -e TOKEN=badboy --network host qics/frp:server
 docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 172.17.0.1:9022:22 --privileged=true -v /tmp:/tmp qics/debian
 
-#屏蔽暴力破解
-echo "*/1 * * * * curl -fsSL 'http://www.qics.top/shell/blockip.sh' | /bin/bash" >> /var/spool/cron/crontabs/root
-
 #添加防火墙
 curl -fsSL 'http://www.qics.top/shell/ufw/ufw_hostvds.sh' | /bin/bash
 echo "0 */1 * * * curl -fsSL 'http://www.qics.top/shell/ufw/ufw_hostvds.sh' | /bin/bash >> /var/log/ufw_edit.log 2>&1" >> /var/spool/cron/crontabs/root
