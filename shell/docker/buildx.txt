@@ -7,7 +7,7 @@ docker buildx inspect --bootstrap
 
 
 #构建并直接推送到指定仓库
-docker buildx build -t qics/n2n:server --platform linux/amd64,linux/arm64 . --push
+docker buildx build -t qics/ddns --platform linux/amd64,linux/arm64 . --push
 
 #构建并导出到本地Docker images中
 docker buildx build -t qics/n2n:server --platform linux/arm64 . --load
