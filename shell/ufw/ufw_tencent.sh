@@ -10,6 +10,15 @@ echo "home public ip $home_ip. add to ufw allow." >> /var/log/ufw.log
 /usr/sbin/ufw allow from $home_ip
 
 /usr/sbin/ufw deny 22
+/usr/sbin/ufw deny 1022
+/usr/sbin/ufw deny 2022
+/usr/sbin/ufw deny 3022
+/usr/sbin/ufw deny 4022
+/usr/sbin/ufw deny 5022
+/usr/sbin/ufw deny 6022
+/usr/sbin/ufw deny 7022
+/usr/sbin/ufw deny 8022
+/usr/sbin/ufw deny 9022
 /usr/sbin/ufw deny 10088
 /usr/sbin/ufw deny 11022
 /usr/sbin/ufw deny 12022
