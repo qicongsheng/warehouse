@@ -1,11 +1,11 @@
-# docker buildx build --platform linux/amd64,linux/arm64 -t qics/frp:server . --push
+# docker buildx build --build-arg FRP_VERSION=0.52.3 --platform linux/amd64,linux/arm64 -t qics/frp:server . --push
 FROM alpine:3.15
 MAINTAINER qics
 
 ARG TARGETARCH
+ARG FRP_VERSION
 
-ENV FRP_VERSION=0.52.3 \
-    BIND_PORT=7000 \
+ENV BIND_PORT=7000 \
     DASHBOARD_PORT=7777 \
     TOKEN= \
     DASHBOARD_USER=qics \

@@ -1,11 +1,11 @@
-# docker buildx build --platform linux/amd64,linux/arm64 -t qics/frp:client . --push
+# docker buildx build --build-arg FRP_VERSION=0.52.3 --platform linux/amd64,linux/arm64 -t qics/frp:client . --push
 FROM alpine:3.15
 MAINTAINER qics
 
 ARG TARGETARCH
+ARG FRP_VERSION
 
-ENV FRP_VERSION=0.52.3 \
-    SERVER_ADDR= \
+ENV SERVER_ADDR= \
     SERVER_PORT= \
     TOKEN= \
     LOCAL_PORT= \
