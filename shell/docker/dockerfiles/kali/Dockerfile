@@ -5,7 +5,7 @@ MAINTAINER qics
 ENV USER=root \
 	PASSWD=123456
 
-RUN apt-get update && apt-get upgrade -y \
+RUN apt-get update \
     && apt-get install vim net-tools pciutils aircrack-ng openssh-server kmod iputils-ping telnet nmap hashcat -y \
 
     && echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config \
