@@ -1,7 +1,7 @@
 #创建构建容器
-docker buildx create --name mybuilder
+docker buildx create --name mutibuilder
 #buildx使用构建容器
-docker buildx use mybuilder
+docker buildx use mutibuilder
 #初始化构建容器
 docker buildx inspect --bootstrap
 
