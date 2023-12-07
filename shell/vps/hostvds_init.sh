@@ -39,7 +39,8 @@ docker login -u=qics -p Best12167
 docker run -d --restart=always -p 9000:80 -v /tmp:/etc/nginx/html --privileged=true qics/nginx
 docker run -d --restart=always qics/traffmonetizer start accept --token 5xijhElDM8IqEwMj0VolDEVsbUDCGS3GFpRCFckxix8=
 docker run -d --restart=always -e BIND_PORT=7000 -e DASHBOARD_PORT=7777 -e DASHBOARD_USER=qics -e DASHBOARD_PWD=123456 -e TOKEN=badboy --network host qics/frp:server
-docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 172.17.0.1:9022:22 --privileged=true -v /tmp:/tmp qics/debian
+docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 --privileged=true -v /tmp:/tmp qics/debian
+docker run -d --restart=always --name proxy_hostvds_ssh_59022 -e SERVER_ADDR=play.qics.top -e PROXY_NAME=proxy_hostvds_ssh_59022 -e SERVER_PORT=7000 -e TOKEN=badboy -e LOCAL_PORT=9022 -e REMOTE_PORT=59022 --network host qics/frp:client
 
 #添加防火墙
 curl -fsSL 'http://www.qics.top/shell/ufw/ufw_hostvds.sh' | /bin/bash

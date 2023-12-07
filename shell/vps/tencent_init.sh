@@ -29,7 +29,7 @@ systemctl enable docker
 service docker restart
 docker login -u=qics -p Best12167
 docker run -d --restart=always -p 9000:80 -v /tmp:/etc/nginx/html --privileged=true qics/nginx
-docker run -d --restart=always -p 8066:8080 -e HOST=0.0.0.0 qics/shellngn
+docker run -d --restart=always -e HOST=0.0.0.0 -e PORT=8066 --net host qics/shellngn
 docker run -d --restart=always -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123#  qics/mysql:5.7
 docker run -d --restart=always -e BIND_PORT=7000 -e DASHBOARD_PORT=7777 -e DASHBOARD_USER=qics -e DASHBOARD_PWD=123456 -e TOKEN=badboy --network host qics/frp:server
 docker run -d --restart=always --net host qics/cloudflared tunnel --no-autoupdate run --token eyJhIjoiZTAwMWM4MzlmMTNiNzU2ZDc0YWI1NjE0MzFlM2ZlZDciLCJ0IjoiMTNjYmI4OTYtNjdkZS00NmY1LTkxOGEtZGE0YjA3NDNjMGE3IiwicyI6IlpUUTJaVGhpWXpjdE9HTXhZeTAwTm1OaUxXSmtZbU10TVRnd1lUZzVOelk0WldKaiJ9
@@ -39,8 +39,8 @@ docker run -d --restart=always -e FORWARD_IP=127.0.0.1 -e FORWARD_PORT=1080 --ca
 docker run -d --restart=always -p 15672:15672 -p 5672:5672 qics/sc:rabbitmq
 docker run -d --restart=always -e REDIS_PASSWORD=Lhnekj#_83jf -p 6379:6379 qics/sc:redis /bin/sh -c 'redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}'
 docker run -d --restart=always -p 8081:8081 -p 8520:8520 qics/nexus:dev
-docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 172.17.0.1:8022:22 -p 8082:8082 -p 8000:8000 --privileged=true -v /tmp:/tmp qics/debian
-docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 172.17.0.1:9022:22 --privileged=true -v /tmp:/tmp qics/debian
+docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:8022:22 -p 8082:8082 -p 8000:8000 --privileged=true -v /tmp:/tmp qics/debian
+docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 --privileged=true -v /tmp:/tmp qics/debian
 
 #添加防火墙
 curl -fsSL 'http://www.qics.top/shell/ufw/ufw_tencent.sh' | /bin/bash
