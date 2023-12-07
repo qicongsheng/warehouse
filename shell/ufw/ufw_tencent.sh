@@ -6,8 +6,11 @@ echo y | /usr/sbin/ufw enable
 
 home_ip=$(nslookup -d home.qics.top pranab.ns.cloudflare.com | awk '/^Address:/{ip=$2} END{print ip}')
 echo "home public ip $home_ip. add to ufw allow." >> /var/log/ufw.log
+tencent_ip=$(nslookup -d play.qics.top pranab.ns.cloudflare.com | awk '/^Address:/{ip=$2} END{print ip}')
+echo "tencent ip $tencent_ip. add to ufw allow." >> /var/log/ufw.log
 
 /usr/sbin/ufw allow from $home_ip
+/usr/sbin/ufw allow from $tencent_ip
 
 /usr/sbin/ufw deny 22
 /usr/sbin/ufw deny 1022
