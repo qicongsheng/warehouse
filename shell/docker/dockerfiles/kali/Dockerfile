@@ -6,7 +6,7 @@ ENV USER=root \
     PASSWD=123456
 
 RUN apt-get update \
-    && apt-get install vim net-tools pciutils aircrack-ng openssh-server kmod iputils-ping telnet nmap hashcat -y \
+    && apt-get install vim net-tools openssh-server iputils-ping telnet nmap htop -y \
 
     && echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config \
     && echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config \
