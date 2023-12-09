@@ -1,2 +1,0 @@
-FROM ghcr.io/natfrp/frpc
-MAINTAINER qics
