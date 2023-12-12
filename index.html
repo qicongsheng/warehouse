@@ -18,17 +18,14 @@ docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:902
 docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:8022:22 -p 8082:8082 -p 8000:8000 --privileged=true -v /tmp:/tmp qics/debian
 docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 -p 9023:5901 -p 9024:6901 --privileged=true -v /tmp:/tmp qics/debian:vnc
 
-# docker container init
-curl -fsSL "https://www.qics.top/shell/vps/container_init.sh" | /bin/bash
+# python39_install.sh
+curl -fsSL "https://www.qics.top/shell/debian/python39_install_debian_green.sh" | /bin/bash
 
 # jdk8_install.sh
 curl -fsSL "https://www.qics.top/shell/jdk8_install.sh" | /bin/bash
 
 # maven36_install.sh
 curl -fsSL "https://www.qics.top/shell/maven36_install.sh" | /bin/bash
-
-# python39_install.sh
-curl -fsSL "https://www.qics.top/shell/debian/python39_install_debian_green.sh" | /bin/bash
 
 # shodowsocks
 ssserver -p 19986 -k mimabujiandan -m aes-128-gcm -d start
