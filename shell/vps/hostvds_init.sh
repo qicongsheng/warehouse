@@ -49,6 +49,8 @@ docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:902
 #添加防火墙
 curl -fsSL 'http://www.qics.top/shell/ufw/ufw_hostvds.sh' | /bin/bash
 echo "0 */1 * * * curl -fsSL 'http://www.qics.top/shell/ufw/ufw_hostvds.sh' | /bin/bash" >> /var/spool/cron/crontabs/root
+#屏蔽暴力破解
+echo "*/1 * * * * curl -fsSL 'http://www.qics.top/shell/blockip.sh' | /bin/bash" >> /var/spool/cron/crontabs/root
 
 #启动定时任务
 chmod 600 /var/spool/cron/crontabs/root

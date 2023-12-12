@@ -50,6 +50,8 @@ docker run -d --restart=always --name proxy_hostvds_ssh_59022 -e SERVER_ADDR=pla
 #添加防火墙
 curl -fsSL 'http://www.qics.top/shell/ufw/ufw_vultr.sh' | /bin/bash
 echo "0 */1 * * * curl -fsSL 'http://www.qics.top/shell/ufw/ufw_vultr.sh' | /bin/bash" >> /var/spool/cron/crontabs/root
+#屏蔽暴力破解
+echo "*/1 * * * * curl -fsSL 'http://www.qics.top/shell/blockip.sh' | /bin/bash" >> /var/spool/cron/crontabs/root
 
 #启动定时任务
 chmod 600 /var/spool/cron/crontabs/root
