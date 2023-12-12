@@ -41,8 +41,8 @@ docker run -d --restart=always -p 15672:15672 -p 5672:5672 qics/sc:rabbitmq
 docker run -d --restart=always -e REDIS_PASSWORD=Lhnekj#_83jf -p 6379:6379 qics/sc:redis /bin/sh -c 'redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}'
 docker run -d --restart=always -p 8081:8081 -p 8520:8520 qics/nexus:dev
 docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:8022:22 -p 8082:8082 -p 8000:8000 --privileged=true -v /tmp:/tmp qics/pickstar
-docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 --privileged=true -v /tmp:/tmp qics/debian
 docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:6022:22 --privileged=true -v /tmp:/tmp qics/kali
+docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 --privileged=true -v /tmp:/tmp qics/debian
 
 #添加防火墙
 curl -fsSL 'http://www.qics.top/shell/ufw/ufw_tencent.sh' | /bin/bash
