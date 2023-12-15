@@ -13,6 +13,10 @@ echo "tencent ip $tencent_ip. add to ufw allow." >> /var/log/ufw.log
 /usr/sbin/ufw allow from $tencent_ip
 
 /usr/sbin/ufw deny 19986
+/usr/sbin/ufw deny 29986
+/usr/sbin/ufw deny 39986
+/usr/sbin/ufw deny 49986
+/usr/sbin/ufw deny 59986
 
 /usr/sbin/ufw deny 22
 /usr/sbin/ufw deny 1022
