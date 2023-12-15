@@ -1,5 +1,6 @@
 #!/bin/bash
 echo `date '+%Y-%m-%d %H:%M:%S'` "ufw set start..." >> /var/log/ufw.log
+sed -i '/ufw-before-input.*icmp/s/ACCEPT/DROP/g' /etc/ufw/before.rules
 echo y | /usr/sbin/ufw reset
 echo y | /usr/sbin/ufw enable
 /usr/sbin/ufw default allow
