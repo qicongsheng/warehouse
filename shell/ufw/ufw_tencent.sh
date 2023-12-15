@@ -1,6 +1,5 @@
 #!/bin/bash
 echo `date '+%Y-%m-%d %H:%M:%S'` "ufw set start..." >> /var/log/ufw.log
-sed -i '/ufw-before-input.*icmp/s/ACCEPT/DROP/g' /etc/ufw/before.rules
 echo y | /usr/sbin/ufw reset
 echo y | /usr/sbin/ufw enable
 /usr/sbin/ufw default allow
@@ -80,5 +79,8 @@ echo "tencent ip $tencent_ip. add to ufw allow." >> /var/log/ufw.log
 /usr/sbin/ufw deny 57022
 /usr/sbin/ufw deny 58022
 /usr/sbin/ufw deny 59022
+
+sed -i '/ufw-before-input.*icmp/s/ACCEPT/DROP/g' /etc/ufw/before.rules
+/usr/sbin/ufw reload
 
 echo `date '+%Y-%m-%d %H:%M:%S'` "ufw set end" >> /var/log/ufw.log
