@@ -43,7 +43,7 @@ curl -fsSL "https://www.qics.top/shell/docker_set_proxy.sh" | /bin/bash
 curl -fsSL "https://www.qics.top/shell/docker_remove_proxy.sh" | /bin/bash
 
 # kill all running docker container
-docker rm $(docker ps -a -q)
+docker rm $(docker ps -a -q) -f
 docker stop $(docker ps -a -q)
 docker rmi $(docker images -q)
 
