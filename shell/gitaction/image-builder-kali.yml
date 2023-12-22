@@ -15,5 +15,5 @@ jobs:
         docker buildx create --name mutibuilder
         docker buildx use mutibuilder
         docker buildx inspect --bootstrap
-        curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/kili/docker_kali.sh" | /bin/sh
+        curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/kali/docker_kali.sh" | /bin/sh
     
