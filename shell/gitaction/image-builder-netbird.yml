@@ -1,4 +1,4 @@
-name: image-builder-frp
+name: image-builder-netbird
 on:
   workflow_dispatch:
 jobs:
