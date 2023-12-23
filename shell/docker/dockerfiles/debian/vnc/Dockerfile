@@ -15,6 +15,8 @@ RUN apt-get update \
     && mkdir /var/run/sshd/ && echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config \
     && echo "alias ls='ls \$LS_OPTIONS --color'" >> /root/.bashrc \
     && echo "alias ll='ls \$LS_OPTIONS -l --color'" >> /root/.bashrc \
+    && echo "alias ls='ls \$LS_OPTIONS --color'" >> /headless/.bashrc \
+    && echo "alias ll='ls \$LS_OPTIONS -l --color'" >> /headless/.bashrc \
     
     && mv /etc/apt/sources.list.d/debian.sources /etc/apt/sources.list.d/debian.sources.bak \
     && curl -o /etc/apt/sources.list.d/ustc-debian12.sources https://www.qics.top/shell/debian/sources/ustc-debian12.sources \
