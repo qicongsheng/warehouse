@@ -1,4 +1,4 @@
-name: image-builder-pickstar
+name: image-builder-vnc
 on:
   workflow_dispatch:
 jobs:
