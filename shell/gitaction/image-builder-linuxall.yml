@@ -1,4 +1,4 @@
-name: image-builder-linux
+name: image-builder-linuxall
 on:
   workflow_dispatch:
 jobs:
