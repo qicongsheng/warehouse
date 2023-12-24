@@ -17,8 +17,8 @@ jobs:
         docker buildx inspect --bootstrap
         curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/debian/Dockerfile_debian12.sh" | /bin/sh
         docker rmi qics/debian:latest
-        curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/pickstar/pickstar_builder.sh" | /bin/sh
         curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/debian/Dockerfile_vnc.sh" | /bin/sh
+        curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/pickstar/pickstar_builder.sh" | /bin/sh
         curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/kali/docker_kali.sh" | /bin/sh
 
 
