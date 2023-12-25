@@ -16,6 +16,7 @@ curl -fsSL "https://www.qics.top/shell/play_frp_ssr.sh" | /bin/sh
 # debian
 docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 --privileged=true -v /tmp:/tmp qics/debian
 docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:8022:22 -p 8082:8082 --privileged=true -v /tmp:/tmp qics/debian
+docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 -p 9023:5901 -p 9024:6901 --privileged=true qics/debian:vnc
 docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 -p 9023:5901 -p 9024:6901 --privileged=true -v /tmp:/tmp qics/debian:vnc
 
 # python39_install.sh
