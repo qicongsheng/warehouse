@@ -14,7 +14,7 @@ RUN apk update \
     && echo "alias ls='ls \$LS_OPTIONS --color'" >> /root/.bashrc \
     && echo "alias ll='ls \$LS_OPTIONS -l --color'" >> /root/.bashrc \
 
-    && echo '#!/bin/bash' >> /opt/startup.sh \
+    && echo '#!/bin/sh' >> /opt/startup.sh \
     && echo 'echo "user: $USER" ' >> /opt/startup.sh \
     && echo 'echo "passwd: $PASSWD" ' >> /opt/startup.sh \
     && echo 'adduser --shell /bin/sh --disabled-password --gecos "" $USER' >> /opt/startup.sh \
