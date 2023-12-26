@@ -21,9 +21,10 @@ RUN apk update \
     && echo 'echo "$USER:$PASSWD" | chpasswd' >> /opt/startup.sh \
     && echo '/usr/sbin/sshd -D &' >> /opt/startup.sh \
 
-    && sed '2i sh /opt/startup.sh ' /usr/local/bin/dockerd-entrypoint.sh \
-
     && chmod +x /opt/startup.sh \
     && rm -fr /tmp/*
 
 EXPOSE 22
+
+ENTRYPOINT ["/opt/startup.sh"]
+CMD []
