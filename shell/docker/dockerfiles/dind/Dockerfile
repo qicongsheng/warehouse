@@ -14,15 +14,12 @@ RUN apk update \
     && echo "alias ls='ls \$LS_OPTIONS --color'" >> /root/.bashrc \
     && echo "alias ll='ls \$LS_OPTIONS -l --color'" >> /root/.bashrc \
 
-    && echo 'echo "user: $USER" ' >> /usr/local/bin/docker-entrypoint.sh \
-    && echo 'echo "passwd: $PASSWD" ' >> /usr/local/bin/docker-entrypoint.sh \
-    && echo 'adduser --shell /bin/sh --disabled-password --gecos "" $USER' >> /usr/local/bin/docker-entrypoint.sh \
-    && echo 'echo "$USER:$PASSWD" | chpasswd' >> /usr/local/bin/docker-entrypoint.sh \
-    && echo '/usr/sbin/sshd -D &' >> /usr/local/bin/docker-entrypoint.sh \
-    && echo 'tail -f /dev/null' >> /usr/local/bin/docker-entrypoint.sh \
+    && sed '2i echo "user: $USER"' /usr/local/bin/docker-entrypoint.sh \
+    && sed '3i echo "passwd: $PASSWD"' /usr/local/bin/docker-entrypoint.sh \
+    && sed '4i adduser --shell /bin/sh --disabled-password --gecos "" $USER' /usr/local/bin/docker-entrypoint.sh \
+    && sed '5i echo "$USER:$PASSWD" | chpasswd' /usr/local/bin/docker-entrypoint.sh \
+    && sed '6i /usr/sbin/sshd -D &' /usr/local/bin/docker-entrypoint.sh \
 
     && rm -fr /tmp/*
 
 EXPOSE 22
-
-
