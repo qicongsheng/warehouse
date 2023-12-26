@@ -13,6 +13,8 @@ RUN apk update \
     && echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config \
     && echo "alias ls='ls \$LS_OPTIONS --color'" >> /root/.bashrc \
     && echo "alias ll='ls \$LS_OPTIONS -l --color'" >> /root/.bashrc \
+    && echo "alias ls='ls \$LS_OPTIONS --color'" >> /etc/profile \
+    && echo "alias ll='ls \$LS_OPTIONS -l --color'" >> /etc/profile \
 
     && echo '#!/bin/sh' >> /opt/startup.sh \
     && echo 'echo "user: $USER" ' >> /opt/startup.sh \
