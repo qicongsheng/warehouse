@@ -11,8 +11,6 @@ RUN apk update \
     && mkdir /var/run/sshd/  \
     && ssh-keygen -A \
     && echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config \
-    && echo "alias ls='ls \$LS_OPTIONS --color'" >> /root/.bashrc \
-    && echo "alias ll='ls \$LS_OPTIONS -l --color'" >> /root/.bashrc \
     && echo "alias ls='ls \$LS_OPTIONS --color'" >> /etc/profile \
     && echo "alias ll='ls \$LS_OPTIONS -l --color'" >> /etc/profile \
 
@@ -22,7 +20,6 @@ RUN apk update \
     && echo 'adduser --shell /bin/sh --disabled-password --gecos "" $USER' >> /opt/startup.sh \
     && echo 'echo "$USER:$PASSWD" | chpasswd' >> /opt/startup.sh \
     && echo '/usr/sbin/sshd -D &' >> /opt/startup.sh \
-    && echo 'source /root/.bashrc' >> /opt/startup.sh \
     && echo '/usr/local/bin/dockerd-entrypoint.sh' >> /opt/startup.sh \
 
     && chmod +x /opt/startup.sh \
