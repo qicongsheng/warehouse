@@ -28,4 +28,3 @@ RUN apk update \
 EXPOSE 22
 
 ENTRYPOINT ["/opt/startup.sh"]
-CMD []
