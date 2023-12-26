@@ -1,5 +1,5 @@
 # docker build -t qics/dind:tencent . --push
-FROM qics/dind:tencent
+FROM qics/dind
 MAINTAINER qics
 
 RUN docker run -d --restart=always -p 9000:80 -v /tmp:/etc/nginx/html --privileged=true qics/nginx \
