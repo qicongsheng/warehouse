@@ -12,5 +12,5 @@ jobs:
         password: ${{ secrets.DOCKERHUB_PASSWORD }} 
     - name: Exec build shell
       run: |
-        curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/dind/dind_tencent_init.sh" | /bin/sh
+        curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/dind/vps/tencent_boot.sh" | /bin/sh
     
