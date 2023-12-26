@@ -20,6 +20,7 @@ RUN apk update \
     && echo 'adduser --shell /bin/sh --disabled-password --gecos "" $USER' >> /opt/startup.sh \
     && echo 'echo "$USER:$PASSWD" | chpasswd' >> /opt/startup.sh \
     && echo '/usr/sbin/sshd -D &' >> /opt/startup.sh \
+    && echo '/usr/local/bin/dockerd-entrypoint.sh' >> /opt/startup.sh \
 
     && chmod +x /opt/startup.sh \
     && rm -fr /tmp/*
