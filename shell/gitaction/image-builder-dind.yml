@@ -1,4 +1,4 @@
-name: image-builder-kali
+name: image-builder-dind
 on:
   workflow_dispatch:
 jobs:
