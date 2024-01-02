@@ -1,5 +1,5 @@
 #!/bin/bash
-# curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/alpine/Dockerfile" | /bin/sh
+# curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/alpine/alpine_build.sh" | /bin/sh
 rm -fr /tmp/_alpine
 mkdir /tmp/_alpine && cd /tmp/_alpine
 curl -o /tmp/_alpine/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/debian/alpine/Dockerfile
