@@ -1,0 +1,1 @@
+create database pickstar default character set utf8mb4;
