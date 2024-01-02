@@ -14,5 +14,9 @@ docker run -d --name pickstar -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:8022
 docker run -d --name kali -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:6022:22 --privileged=true -v /tmp:/tmp qics/kali
 docker run -d --name debian -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 --privileged=true -v /tmp:/tmp qics/debian
 
+curl --connect-timeout 600 -m 7200 --continue-at - -o /tmp/pro-prod.sqlite https://www.qics.top/software/shellngn/pro-prod.sqlite
+chmod 777 /tmp/pro-prod.sqlite
+docker cp /tmp/pro-prod.sqlite shellngn:/home/node/server/data/pro-prod.sqlite
+
 docker stop $(docker ps -a -q)
 
