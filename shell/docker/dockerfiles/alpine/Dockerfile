@@ -1,5 +1,5 @@
 # docker buildx build -t qics/alpine --platform linux/amd64,linux/arm64/v8 . --push
-FROM alpine:latest
+FROM alpine:3.15
 MAINTAINER qics
 
 ENV USER=root \
