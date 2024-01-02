@@ -1,5 +1,5 @@
 # docker buildx build -t qics/dind --platform linux/amd64,linux/arm64/v8 . --push
-FROM docker:dind
+FROM qics/test:dind
 MAINTAINER qics
 
 ENV USER=root \
