@@ -8,7 +8,7 @@ curl --connect-timeout 600 -m 7200 --continue-at - -o /tmp/pickstar.sql https://
 docker cp /tmp/database_create.sql mysql_57:/tmp
 docker cp /tmp/pickstar.sql mysql_57:/tmp
 docker exec mysql_57 sh -c 'mysql -uroot -pyouarebadboy123# -h 127.0.0.1  < /tmp/database_create.sql'
-docker exec mysql_57 sh -c 'mysql -uroot -pyouarebadboy123# -h 127.0.0.1 ccs < /tmp/pickstar.sql'
+docker exec mysql_57 sh -c 'mysql -uroot -pyouarebadboy123# -h 127.0.0.1 pickstar < /tmp/pickstar.sql'
 docker exec mysql_57 sh -c 'rm -fr /tmp/*'
 rm -fr /tmp/*
 
