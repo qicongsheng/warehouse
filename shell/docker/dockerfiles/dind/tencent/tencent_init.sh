@@ -3,6 +3,7 @@
 docker login -u=qics -p Best12167
 docker run -d --name mysql_57 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123#  qics/mysql:5.7
 
+sleep 60
 curl --connect-timeout 600 -m 7200 --continue-at - -o /tmp/database_create.sql https://www.qics.top/software/mysql/database_create.sql
 curl --connect-timeout 600 -m 7200 --continue-at - -o /tmp/pickstar.sql https://www.qics.top/software/mysql/pickstar.sql
 docker cp /tmp/database_create.sql mysql_57:/tmp
