@@ -24,11 +24,7 @@ RUN apk update \
     && echo '/usr/sbin/sshd -D &' >> /opt/startup.sh \
     && echo '/usr/local/bin/dockerd-entrypoint.sh' >> /opt/startup.sh \
 
-
-
     && chmod +x /opt/startup.sh \
     && rm -fr /tmp/*
-
-EXPOSE 22
 
 ENTRYPOINT ["/opt/startup.sh"]
