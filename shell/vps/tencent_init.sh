@@ -53,3 +53,5 @@ docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:802
 docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:6022:22 --privileged=true -v /tmp:/tmp qics/kali
 docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 --privileged=true -v /tmp:/tmp qics/debian
 
+curl -fsSL "https://www.qics.top/shell/docker_remove_proxy.sh" | /bin/bash
+
