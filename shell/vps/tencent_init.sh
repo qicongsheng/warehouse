@@ -22,11 +22,23 @@ echo root:@Best1216^78#9#@ | chpasswd
 echo "alias ls='ls \$LS_OPTIONS --color'" >> /root/.bashrc
 echo "alias ll='ls \$LS_OPTIONS -l --color'" >> /root/.bashrc
 
+#添加防火墙
+curl -fsSL 'http://www.qics.top/shell/ufw/ufw_tencent.sh' | /bin/bash
+echo "0 */1 * * * curl -fsSL 'http://www.qics.top/shell/ufw/ufw_tencent.sh' | /bin/bash" >> /var/spool/cron/crontabs/root
+#屏蔽暴力破解
+echo "*/1 * * * * curl -fsSL 'http://www.qics.top/shell/blockip.sh' | /bin/bash" >> /var/spool/cron/crontabs/root
+
+#启动定时任务
+chmod 600 /var/spool/cron/crontabs/root
+/etc/init.d/cron restart
+
 #安装docker并启动文件服务器
 curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 service docker start
 systemctl enable docker
+curl -fsSL "https://www.qics.top/shell/docker_set_proxy.sh" | /bin/bash
 service docker restart
+
 docker login -u=qics -p Best12167
 docker run -d --restart=always -p 9000:80 -v /tmp:/etc/nginx/html --privileged=true qics/nginx
 docker run -d --restart=always --net host --cap-add=NET_ADMIN -e NB_SETUP_KEY=951ABD0D-6D3D-47BB-AD78-A8F5D26F5DA7 qics/netbird
@@ -41,12 +53,3 @@ docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:802
 docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:6022:22 --privileged=true -v /tmp:/tmp qics/kali
 docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 --privileged=true -v /tmp:/tmp qics/debian
 
-#添加防火墙
-curl -fsSL 'http://www.qics.top/shell/ufw/ufw_tencent.sh' | /bin/bash
-echo "0 */1 * * * curl -fsSL 'http://www.qics.top/shell/ufw/ufw_tencent.sh' | /bin/bash" >> /var/spool/cron/crontabs/root
-#屏蔽暴力破解
-echo "*/1 * * * * curl -fsSL 'http://www.qics.top/shell/blockip.sh' | /bin/bash" >> /var/spool/cron/crontabs/root
-
-#启动定时任务
-chmod 600 /var/spool/cron/crontabs/root
-/etc/init.d/cron restart
