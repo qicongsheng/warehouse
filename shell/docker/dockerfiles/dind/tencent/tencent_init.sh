@@ -9,7 +9,7 @@ docker run -d --name frp_server -e BIND_PORT=7000 -e DASHBOARD_PORT=7777 -e DASH
 docker run -d --name cloudflared --net host qics/cloudflared tunnel --no-autoupdate run --token eyJhIjoiZTAwMWM4MzlmMTNiNzU2ZDc0YWI1NjE0MzFlM2ZlZDciLCJ0IjoiMTNjYmI4OTYtNjdkZS00NmY1LTkxOGEtZGE0YjA3NDNjMGE3IiwicyI6IlpUUTJaVGhpWXpjdE9HTXhZeTAwTm1OaUxXSmtZbU10TVRnd1lUZzVOelk0WldKaiJ9
 docker run -d --name rabbitmq -p 15672:15672 -p 5672:5672 qics/sc:rabbitmq
 docker run -d --name redis -e REDIS_PASSWORD=Lhnekj#_83jf -p 6379:6379 qics/sc:redis /bin/sh -c 'redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}'
-docker run -d --name nexus -p 8081:8081 -p 8520:8520 qics/nexus
+docker run -d --name nexus -p 8081:8081 -p 8520:8520 qics/nexus:dev
 docker run -d --name pickstar -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:8022:22 -p 8082:8082 --privileged=true -v /tmp:/tmp qics/pickstar
 docker run -d --name kali -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:6022:22 --privileged=true -v /tmp:/tmp qics/kali
 docker run -d --name debian -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 --privileged=true -v /tmp:/tmp qics/debian

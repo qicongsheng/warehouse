@@ -2,8 +2,7 @@
 # curl -fsSL "https://www.qics.top/shell/vps/container_init.sh" | /bin/bash
 
 #setup
-apt-get update
-apt-get install curl wget telnet dnsutils cron nload htop nmap net-tools iputils-ping -y
+apt update && apt install curl wget telnet dnsutils cron nload htop nmap net-tools iputils-ping -y
 mkdir -p /var/spool/cron/crontabs
 
 #屏蔽暴力破解
