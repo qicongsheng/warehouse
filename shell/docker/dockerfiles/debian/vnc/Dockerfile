@@ -9,9 +9,8 @@ ENV USER=root \
 
 ENV VNC_PW=$PASSWD
 
-RUN apt-get update \
-    && apt-get upgrade -y \
-    && apt-get install -y sudo openssh-client openssh-server curl \
+RUN apt update && apt upgrade -y \
+    && apt install -y sudo openssh-client openssh-server curl \
     && mkdir /var/run/sshd/ && echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config \
     && echo "alias ls='ls \$LS_OPTIONS --color'" >> /root/.bashrc \
     && echo "alias ll='ls \$LS_OPTIONS -l --color'" >> /root/.bashrc \
