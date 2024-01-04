@@ -19,7 +19,6 @@ RUN apk update \
     && echo 'echo "passwd: $PASSWD" ' >> /opt/startup.sh \
     && echo 'adduser --shell /bin/sh --disabled-password --gecos "" $USER' >> /opt/startup.sh \
     && echo 'echo "$USER:$PASSWD" | chpasswd' >> /opt/startup.sh \
-    && echo 'source /etc/profile' >> /opt/startup.sh \
     && echo '/usr/sbin/sshd -D &' >> /opt/startup.sh \
     && echo 'tail -f /dev/null' >> /opt/startup.sh \
 
