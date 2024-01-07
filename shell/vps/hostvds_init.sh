@@ -30,8 +30,18 @@ systemctl stop shadowsocks-libev
 systemctl disable shadowsocks-libev
 nohup ss-server -s 0.0.0.0 -p 19986 -k mimabujiandan -m aes-128-gcm -t 300 -d 8.8.8.8,8.8.4.4 > /var/log/shadowsocks.log 2>&1 &
 
-#安装docker并启动文件服务器
-curl -fsSL https://get.docker.com | bash -s docker 
+#添加防火墙
+curl -fsSL 'http://www.qics.top/shell/ufw/ufw_hostvds.sh' | /bin/bash
+echo "0 */1 * * * curl -fsSL 'http://www.qics.top/shell/ufw/ufw_hostvds.sh' | /bin/bash" >> /var/spool/cron/crontabs/root
+#屏蔽暴力破解
+echo "*/1 * * * * curl -fsSL 'http://www.qics.top/shell/blockip.sh' | /bin/bash" >> /var/spool/cron/crontabs/root
+
+#启动定时任务
+chmod 600 /var/spool/cron/crontabs/root
+/etc/init.d/cron restart
+
+#安装docker并启动
+curl -fsSL https://get.docker.com | bash -s docker
 service docker start
 systemctl enable docker
 service docker restart
@@ -46,14 +56,4 @@ docker run -d --restart=always -e API_KEY=LAdoeJAuaq_uB2kCblxZDtF5wJFrDYHQfSHOFg
 docker run -d --restart=always qics/traffmonetizer start accept --token 5xijhElDM8IqEwMj0VolDEVsbUDCGS3GFpRCFckxix8=
 docker run -d --restart=always --name proxy_hostvds_ssh_59022 -e SERVER_ADDR=play.qics.top -e PROXY_NAME=proxy_hostvds_ssh_59022 -e SERVER_PORT=7000 -e TOKEN=badboy -e LOCAL_PORT=9022 -e REMOTE_PORT=59022 --network host qics/frp:client
 docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 --privileged=true -v /tmp:/tmp qics/debian
-
-#添加防火墙
-curl -fsSL 'http://www.qics.top/shell/ufw/ufw_hostvds.sh' | /bin/bash
-echo "0 */1 * * * curl -fsSL 'http://www.qics.top/shell/ufw/ufw_hostvds.sh' | /bin/bash" >> /var/spool/cron/crontabs/root
-#屏蔽暴力破解
-echo "*/1 * * * * curl -fsSL 'http://www.qics.top/shell/blockip.sh' | /bin/bash" >> /var/spool/cron/crontabs/root
-
-#启动定时任务
-chmod 600 /var/spool/cron/crontabs/root
-/etc/init.d/cron restart
 
