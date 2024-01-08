@@ -7,7 +7,6 @@ ENV USER=root \
 
 RUN apt update && apt upgrade -y \
     && apt install sudo vim net-tools openssh-server iputils-ping telnet nmap htop -y \
-
     && echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config \
     && echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config \
 
