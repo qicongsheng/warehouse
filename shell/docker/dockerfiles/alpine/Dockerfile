@@ -15,7 +15,7 @@ RUN apk update \
     && echo "alias ll='ls \$LS_OPTIONS -l --color'" >> /etc/profile \
     && sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
 
-    && echo '#!/bin/bash' >> /opt/startup.sh \
+    && echo '#!/bin/sh' >> /opt/startup.sh \
     && echo 'echo "user: $USER" ' >> /opt/startup.sh \
     && echo 'echo "passwd: $PASSWD" ' >> /opt/startup.sh \
     && echo 'adduser --shell /bin/sh --disabled-password --gecos "" $USER' >> /opt/startup.sh \
