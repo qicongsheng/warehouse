@@ -7,7 +7,7 @@ DATE=$(date +"%a %b %e")
 # %星期 %月 %天 其中，星期、月都是英文简写显示；用于匹配lastb
 # %e:单数字时显示7;而%d显示07
 echo `date '+%Y-%m-%d %H:%M:%S'` "blockip check start..." >> /var/log/blockip.log
-ABNORMAL_IP=$(lastb -a |grep "$DATE" | grep -v 'btmp begins'| awk '{print $NF}'  | awk '{a[$1]++}END{for(i in a)if(a[i]>5)print i}')
+ABNORMAL_IP=$(lastb -a |grep "$DATE" | grep -v 'btmp begins'| awk '{print $NF}'  | awk '{a[$1]++}END{for(i in a)if(a[i]>=5)print i}')
 # lastb：上次登录失败的记录
 # grep "$DATE"：匹配当前分钟内的ssh失败记录
 # {for(i in a)if(a[i]>10)print i}：小括号表示判断条件
