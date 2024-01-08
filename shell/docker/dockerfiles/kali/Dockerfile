@@ -19,6 +19,7 @@ RUN apt update && apt upgrade -y \
     && echo 'tail -f /dev/null' >> /opt/startup.sh \
 
     && chmod +x /opt/startup.sh \
+    && apt autoclean \
     && rm -fr /tmp/*
 
 EXPOSE 22
