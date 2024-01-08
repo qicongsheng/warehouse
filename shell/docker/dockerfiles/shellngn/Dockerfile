@@ -2,5 +2,5 @@
 FROM shellngn/pro:latest
 MAINTAINER qicongsheng
 
-ADD https://www.qics.top/shell/docker/dockerfiles/shellngn/bundle.js /home/node/server
+ADD bundle.js /home/node/server
 
