@@ -2,4 +2,4 @@
 FROM nginx:stable-alpine-slim
 MAINTAINER qics
 
-ADD https://www.qics.top/shell/docker/dockerfiles/nginx/nginx.conf /etc/nginx
+ADD nginx.conf /etc/nginx
