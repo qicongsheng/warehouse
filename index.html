@@ -47,7 +47,7 @@ curl -fsSL "https://www.qics.top/shell/docker_remove_proxy.sh" | /bin/bash
 docker rm $(docker ps -a -q) -f
 docker stop $(docker ps -a -q)
 docker rmi $(docker images -q)
-
+docker rmi $(docker images --filter "dangling=true" -q)
 
 </pre>
 <hr>
