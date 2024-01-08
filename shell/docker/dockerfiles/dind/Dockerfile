@@ -8,7 +8,7 @@ ENV USER=root \
     TZ=Asia/Shanghai
 
 RUN apk update \
-    && apk add sudo openssh-client openssh-server curl \
+    && apk add --no-cache sudo openssh-client openssh-server curl \
     && mkdir /var/run/sshd/  \
     && ssh-keygen -A \
     && echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config \
