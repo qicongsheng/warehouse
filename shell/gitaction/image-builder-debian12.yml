@@ -15,5 +15,5 @@ jobs:
         docker buildx create --name mutibuilder
         docker buildx use mutibuilder
         docker buildx inspect --bootstrap
-        curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/debian/Dockerfile_debian12.sh" | /bin/sh
-        curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/debian/Dockerfile_vnc.sh" | /bin/sh
+        curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/debian/debian12_builder.sh" | /bin/sh
+        curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/debian/vnc_builder.sh" | /bin/sh

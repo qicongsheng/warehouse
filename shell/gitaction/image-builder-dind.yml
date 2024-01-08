@@ -1,4 +1,4 @@
-name: image-builder-tencent
+name: image-builder-dind
 on:
   workflow_dispatch:
 jobs:
@@ -15,4 +15,4 @@ jobs:
         docker buildx create --name mutibuilder
         docker buildx use mutibuilder
         docker buildx inspect --bootstrap
-        curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/dind/tencent/dind_tencent_build.sh" | /bin/sh
+        curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/dind/dind_builder.sh" | /bin/sh

@@ -15,4 +15,4 @@ jobs:
         docker buildx create --name mutibuilder
         docker buildx use mutibuilder
         docker buildx inspect --bootstrap
-        curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/frp/docker_frp.sh" | /bin/sh
+        curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/frp/frp_builder.sh" | /bin/sh

@@ -1,5 +1,5 @@
 #!/bin/bash
-# curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/kali/docker_kali.sh" | /bin/sh
+# curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/kali/kali_builder.sh" | /bin/sh
 rm -fr /tmp/_kali
 mkdir /tmp/_kali && cd /tmp/_kali
 curl -o /tmp/_kali/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/kali/Dockerfile

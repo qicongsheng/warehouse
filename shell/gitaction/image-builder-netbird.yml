@@ -15,4 +15,4 @@ jobs:
         docker buildx create --name mutibuilder
         docker buildx use mutibuilder
         docker buildx inspect --bootstrap
-        curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/netbird/docker_netbird.sh" | /bin/sh
+        curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/netbird/netbird_builder.sh" | /bin/sh

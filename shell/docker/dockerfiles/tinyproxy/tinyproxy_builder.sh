@@ -1,5 +1,5 @@
 #!/bin/bash
-# curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/tinyproxy/Dockerfile_tinyproxy.sh" | /bin/sh
+# curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/tinyproxy/tinyproxy_builder.sh" | /bin/sh
 cd /tmp && rm -fr /tmp/_tinyproxy
 mkdir /tmp/_tinyproxy && cd /tmp/_tinyproxy
 curl -o /tmp/_tinyproxy/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/tinyproxy/Dockerfile
