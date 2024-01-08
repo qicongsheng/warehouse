@@ -8,11 +8,11 @@ chmod +x /tmp/_dind_official/dockerd-entrypoint.sh
 docker buildx build -t qics/test:dind --platform linux/amd64,linux/arm64/v8 . --push
 cd /tmp && rm -fr /tmp/_dind_official
 
-cd /tmp && rm -fr /tmp/*
+cd /tmp && rm -fr /tmp/_dind
 mkdir /tmp/_dind && cd /tmp/_dind
 curl -o /tmp/_dind/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/dind/Dockerfile
 docker buildx build -t qics/dind --platform linux/amd64,linux/arm64/v8 . --push
-cd /tmp && rm -fr /tmp/*
+cd /tmp && rm -fr /tmp/_dind
 
 
 
