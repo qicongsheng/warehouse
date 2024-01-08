@@ -7,7 +7,7 @@ ENV USER=root \
     TZ=Asia/Shanghai
 
 RUN apk update \
-    && apk add sudo openssh-client openssh-server curl \
+    && apk add --no-cache sudo openssh-client openssh-server curl bash bash-doc bash-completion \
     && mkdir /var/run/sshd/  \
     && ssh-keygen -A \
     && echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config \
@@ -15,7 +15,7 @@ RUN apk update \
     && echo "alias ll='ls \$LS_OPTIONS -l --color'" >> /etc/profile \
     && sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
 
-    && echo '#!/bin/sh' >> /opt/startup.sh \
+    && echo '#!/bin/bash' >> /opt/startup.sh \
     && echo 'echo "user: $USER" ' >> /opt/startup.sh \
     && echo 'echo "passwd: $PASSWD" ' >> /opt/startup.sh \
     && echo 'adduser --shell /bin/sh --disabled-password --gecos "" $USER' >> /opt/startup.sh \
