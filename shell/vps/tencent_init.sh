@@ -50,7 +50,7 @@ docker run -d --restart=always --net host qics/sc:rabbitmq
 docker run -d --restart=always -e REDIS_PASSWORD=Lhnekj#_83jf -p 6379:6379 qics/sc:redis /bin/sh -c 'redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}'
 docker run -d --restart=always -p 8081:8081 qics/nexus:dev
 docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:8022:22 -p 8082:8082 --privileged=true -v /tmp:/tmp qics/pickstar
-docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:5022:22 --privileged=true -v /tmp:/tmp qics/alpine
+docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:5022:22 --privileged=true -v /tmp:/tmp qics/dind
 docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:6022:22 --privileged=true -v /tmp:/tmp qics/kali
 docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 --privileged=true -v /tmp:/tmp qics/debian
 
