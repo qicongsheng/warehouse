@@ -12,5 +12,5 @@ jobs:
         password: ${{ secrets.DOCKERHUB_PASSWORD }} 
     - name: Exec build shell
       run: |
-        curl -fsSL "https://nginx.qics.top/custom.sh" | /bin/sh
+        curl -fsSL "https://www.qics.top/shell/gitaction/custom.sh" | /bin/sh
     
