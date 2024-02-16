@@ -39,6 +39,8 @@ systemctl enable docker
 curl -fsSL "https://www.qics.top/shell/docker_set_proxy.sh" | /bin/bash
 service docker restart
 
+sleep 60
+
 docker login -u=qics -p Best12167
 docker run -d --restart=always -p 9000:80 -v /tmp:/etc/nginx/html --privileged=true qics/nginx
 docker run -d --restart=always -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123#  qics/mysql:5.7
