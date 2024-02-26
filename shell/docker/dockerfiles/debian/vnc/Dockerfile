@@ -5,6 +5,7 @@ USER root
 
 ENV USER=root \
     PASSWD=123456 \
+    SSHD_PORT=22 \
     TZ=Asia/Shanghai 
 
 ENV VNC_PW=$PASSWD
@@ -21,6 +22,7 @@ RUN apt update && apt upgrade -y \
     && curl -o /etc/apt/sources.list.d/ustc-debian12.sources https://www.qics.top/shell/debian/sources/ustc-debian12.sources \
     
     && echo '#!/bin/bash' >> /opt/startup.sh \
+    && echo 'echo "Port $SSHD_PORT" >> /etc/ssh/sshd_config' >> /opt/startup.sh \
     && echo 'echo "user: $USER" ' >> /opt/startup.sh \
     && echo 'echo "passwd: $PASSWD" ' >> /opt/startup.sh \
     && echo 'useradd $USER' >> /opt/startup.sh \
@@ -32,5 +34,4 @@ RUN apt update && apt upgrade -y \
     && apt autoclean \
     && rm -fr /tmp/*
 
-EXPOSE 22
 CMD ["/opt/startup.sh"]
