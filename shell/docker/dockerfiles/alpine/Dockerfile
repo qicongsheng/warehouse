@@ -4,6 +4,7 @@ MAINTAINER qics
 
 ENV USER=root \
     PASSWD=123456 \
+    SSHD_PORT=22 \
     TZ=Asia/Shanghai
 
 RUN apk update \
@@ -16,8 +17,7 @@ RUN apk update \
     && sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
 
     && echo '#!/bin/sh' >> /opt/startup.sh \
-    && echo 'echo "user: $USER" ' >> /opt/startup.sh \
-    && echo 'echo "passwd: $PASSWD" ' >> /opt/startup.sh \
+    && echo 'echo "Port $SSHD_PORT" >> /etc/ssh/sshd_config' >> /opt/startup.sh \
     && echo 'adduser --shell /bin/sh --disabled-password --gecos "" $USER' >> /opt/startup.sh \
     && echo 'echo "$USER:$PASSWD" | chpasswd' >> /opt/startup.sh \
     && echo '/usr/sbin/sshd -D &' >> /opt/startup.sh \
