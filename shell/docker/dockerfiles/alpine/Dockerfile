@@ -26,7 +26,6 @@ RUN apk update \
     && chmod +x /opt/startup.sh \
     && rm -fr /tmp/*
 
-EXPOSE 22
 CMD ["/opt/startup.sh"]
 
 
