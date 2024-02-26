@@ -1,6 +1,6 @@
 #!/bin/bash
 echo root:Star8ks.# | chpasswd
-docker run -d --restart=always --name netbird --net host --cap-add=NET_ADMIN -e NB_SETUP_KEY=951ABD0D-6D3D-47BB-AD78-A8F5D26F5DA7 qics/netbird
+docker run -d --restart=always --name netbird -e NB_SETUP_KEY=951ABD0D-6D3D-47BB-AD78-A8F5D26F5DA7 --net host --cap-add=NET_ADMIN qics/netbird
 docker run -d --restart=always --name ssr_server -e PASSWORD=mimabujiandan -e METHOD=aes-128-gcm -p 8388:8388 -p 8388:8388/udp --net host --cap-add=NET_ADMIN qics/shadowsocks:server
 docker run -d --restart=always --name ssr_frp_tencent -e SERVER_ADDR=play.qics.top -e PROXY_NAME=proxy_play_ssr -e SERVER_PORT=7000 -e TOKEN=badboy -e LOCAL_PORT=8388 -e REMOTE_PORT=49986 --network host qics/frp:client
 docker run -d --restart=always --name ssr_ssh_40088 -e SERVER_ADDR=play.qics.top -e PROXY_NAME=proxy_play_ssh -e SERVER_PORT=7000 -e TOKEN=badboy -e LOCAL_PORT=22 -e REMOTE_PORT=40088 --network host qics/frp:client
