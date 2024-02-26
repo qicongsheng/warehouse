@@ -23,8 +23,6 @@ RUN apt update && apt upgrade -y \
     
     && echo '#!/bin/bash' >> /opt/startup.sh \
     && echo 'echo "Port $SSHD_PORT" >> /etc/ssh/sshd_config' >> /opt/startup.sh \
-    && echo 'echo "user: $USER" ' >> /opt/startup.sh \
-    && echo 'echo "passwd: $PASSWD" ' >> /opt/startup.sh \
     && echo 'useradd $USER' >> /opt/startup.sh \
     && echo 'echo $USER:$PASSWD | chpasswd' >> /opt/startup.sh \
     && echo '/usr/sbin/sshd -D &' >> /opt/startup.sh \
