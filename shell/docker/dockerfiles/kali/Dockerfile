@@ -3,7 +3,9 @@ FROM kalilinux/kali-rolling:latest
 MAINTAINER qics
 
 ENV USER=root \
-    PASSWD=123456
+    PASSWD=123456 \
+    SSHD_PORT=22 \
+    TZ=Asia/Shanghai
 
 RUN apt update && apt upgrade -y \
     && apt install sudo vim net-tools openssh-server iputils-ping telnet nmap htop -y \
@@ -11,8 +13,7 @@ RUN apt update && apt upgrade -y \
     && echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config \
 
     && echo '#!/bin/bash' >> /opt/startup.sh \
-    && echo 'echo "user: $USER" ' >> /opt/startup.sh \
-    && echo 'echo "passwd: $PASSWD" ' >> /opt/startup.sh \
+    && echo 'echo "Port $SSHD_PORT" >> /etc/ssh/sshd_config' >> /opt/startup.sh \
     && echo 'useradd $USER' >> /opt/startup.sh \
     && echo 'echo $USER:$PASSWD | chpasswd' >> /opt/startup.sh \
     && echo '/etc/init.d/ssh restart' >> /opt/startup.sh \
@@ -22,5 +23,4 @@ RUN apt update && apt upgrade -y \
     && apt autoclean \
     && rm -fr /tmp/*
 
-EXPOSE 22
 CMD ["/opt/startup.sh"]
