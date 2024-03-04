@@ -1,8 +1,8 @@
 name: image-builder-playdocker
 on:
   workflow_dispatch:
-  schedule: # 定时任务 第一个填分钟 第二个填小时
-    - cron: 0 0/4/8/12/16/20 * * *   # 想要运行的小时-8即为填入值例如：bj11点运行 填11-8=3
+  schedule:
+    - cron: '30 0,4,8,12,16,20 * * *'      
 jobs:
   build:
     runs-on: ubuntu-latest
