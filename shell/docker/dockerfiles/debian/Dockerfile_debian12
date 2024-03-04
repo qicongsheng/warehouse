@@ -22,7 +22,7 @@ RUN apt update --allow-releaseinfo-change && apt update && apt upgrade -y \
     && echo 'useradd $USER' >> /opt/startup.sh \
     && echo 'echo $USER:$PASSWD | chpasswd' >> /opt/startup.sh \
     && echo '/usr/sbin/sshd -D &' >> /opt/startup.sh \
-    && echo 'echo plugin' >> /opt/startup.sh \
+    && echo '# plugin position' >> /opt/startup.sh \
     && echo 'tail -f /dev/null' >> /opt/startup.sh \
 
     && chmod +x /opt/startup.sh \
