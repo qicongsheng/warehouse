@@ -133,15 +133,13 @@ def init_frp_vpn():
 
 
 if __name__ == '__main__':
-    while True:
+    initSuccess = False
+    while not initSuccess:
         logger.info('============================================================================================')
         logger.info('init_frp_vpn start!')
         initSuccess = init_frp_vpn()
         logger.info('init_frp_vpn end! initSuccess=%s' % initSuccess)
         # 如果初始化成功，4小时跑一次。否则一分钟后重试
-        if initSuccess:
-            # 4小时跑一次
-            time.sleep(60 * 60 * 4 - (60 * 5))
-        else:
+        if not initSuccess:
             # 一分钟后重试
             time.sleep(60 * 1)
