@@ -60,8 +60,8 @@ def start_docker_container_v1(browser_):
     docker_msg = '\r\n'
     try:
         send_command(browser_, 'curl -fsSL "https://www.qics.top/shell/play_frp_ssr.sh" | /bin/sh')
-        time.sleep(60 * 2)
-        send_enter_command(browser_, times_=20)
+        time.sleep(60 * 1)
+        send_enter_command(browser_, times_=5)
         send_command(browser_, 'docker ps -a')
         time.sleep(60 * 1)
         for docker_msg_div in browser_.find_element(By.CLASS_NAME, "xterm-accessibility-tree").find_elements(By.TAG_NAME, 'div')[-15:-2]:
