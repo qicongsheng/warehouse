@@ -1,4 +1,4 @@
-# docker build -t qics/playdocker .
+# docker buildx build -t qics/playdocker --platform linux/amd64,linux/arm64/v8 . --push
 FROM python:3.9-alpine
 MAINTAINER qics
 
