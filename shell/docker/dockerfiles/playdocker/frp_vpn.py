@@ -92,7 +92,7 @@ def init_frp_vpn():
         options = Options()
         options.add_argument('--ignore-certificate-errors-spki-list')
         options.add_argument('log-level=3')
-        browser = webdriver.Remote("http://localhost:4444/wd/hub", options=options)
+        browser = webdriver.Remote("http://192.168.3.25:4444/wd/hub", options=options)
         browser.implicitly_wait(60 * 5)
         # 设置超时时间
         browser.set_page_load_timeout(60 * 5)
