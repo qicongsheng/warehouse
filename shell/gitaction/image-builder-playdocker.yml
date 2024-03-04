@@ -12,7 +12,7 @@ jobs:
         password: ${{ secrets.DOCKERHUB_PASSWORD }} 
     - name: Exec build shell
       run: |
-        docker run -d -p 4444:4444 -p 7900:7900 qics/chrome
+        docker run -d -p 4444:4444 -p 7900:7900 --net host qics/chrome
         docker run -d qics/playdocker
   
   
