@@ -12,7 +12,6 @@ RUN if [ "$TARGETARCH" = "arm64" ]; then \
     && pip install paramiko loguru selenium \
     && echo '#!/bin/sh' >> /opt/startup.sh \
     && echo 'curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/playdocker/playdocker.sh" | /bin/sh' >> /opt/startup.sh \
-    && echo 'tail -f /dev/null' >> /opt/startup.sh \
 
     && chmod +x /opt/startup.sh \
     && rm -fr /tmp/*
