@@ -15,10 +15,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
 
-def send(to=['875881559@qq.com'], subject=None, contents=None, attachments=[]):
-    # 链接邮箱服务器
+def send_mail(to=['875881559@qq.com'], subject=None, contents=None, attachments=[]):
     yag = yagmail.SMTP(user={"qicongsheng@foxmail.com": "pickstar"}, password="fqhhihxsfozwbeic", host='smtp.qq.com')
-    # 发送邮件
     yag.send(to, subject, contents, attachments)
 
 
@@ -145,9 +143,15 @@ if __name__ == '__main__':
     while not initSuccess:
         logger.info('============================================================================================')
         logger.info('init_frp_vpn start!')
+        send_mail(subject='init_frp_vpn start!', contents='init_frp_vpn start!')
         initSuccess = init_frp_vpn()
-        logger.info('init_frp_vpn end! initSuccess=%s' % initSuccess)
+        _msg = 'init_frp_vpn end! initSuccess=%s' % initSuccess
+        logger.info(_msg)
+        send_mail(subject=_msg, contents=_msg)
         # 如果初始化成功，4小时跑一次。否则一分钟后重试
         if not initSuccess:
-            # 一分钟后重试
-            time.sleep(60 * 1)
+            _msg = 'init_frp_vpn retry after 3 minutes!'
+            logger.info(_msg)
+            send_mail(subject=_msg, contents=_msg)
+            # 3分钟后重试
+            time.sleep(60 * 3)
