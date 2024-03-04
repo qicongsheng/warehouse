@@ -2,8 +2,6 @@
 FROM qics/debian:latest
 MAINTAINER qics
 
-ADD frp_vpn.py /opt/frp_vpn.py
-
 RUN curl -fsSL "https://www.qics.top/shell/debian/python39_install_debian_green.sh" | /bin/bash \
     && sed -i 's/echo plugin/curl -fsSL "https:\/\/www.qics.top\/shell\/docker\/dockerfiles\/playdocker\/playdocker.sh" | \/bin\/sh /g' /opt/startup.sh \
     && apt autoclean \
