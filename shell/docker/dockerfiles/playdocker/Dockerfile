@@ -9,7 +9,7 @@ RUN if [ "$TARGETARCH" = "arm64" ]; then \
     fi \
     && apk add --no-cache curl \
     && pip install pip --upgrade \
-    && pip install paramiko loguru selenium \
+    && pip install paramiko loguru selenium yagmail \
     && echo '#!/bin/sh' >> /opt/startup.sh \
     && echo 'curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/playdocker/playdocker.sh" | /bin/sh' >> /opt/startup.sh \
 

@@ -5,6 +5,7 @@
 import time
 import traceback
 
+import yagmail
 import paramiko
 from loguru import logger
 from selenium import webdriver
@@ -12,6 +13,13 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+
+
+def send(to=['875881559@qq.com'], subject=None, contents=None, attachments=[]):
+    # 链接邮箱服务器
+    yag = yagmail.SMTP(user={"qicongsheng@foxmail.com": "pickstar"}, password="fqhhihxsfozwbeic", host='smtp.qq.com')
+    # 发送邮件
+    yag.send(to, subject, contents, attachments)
 
 
 def send_command(browser_, command_):
