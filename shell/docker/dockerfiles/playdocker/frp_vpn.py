@@ -16,7 +16,7 @@ from selenium.webdriver.common.keys import Keys
 
 
 def send_mail(to=['875881559@qq.com'], subject=None, contents=None, attachments=[]):
-    yag = yagmail.SMTP(user={"qicongsheng@foxmail.com": "pickstar"}, password="fqhhihxsfozwbeic", host='smtp.qq.com')
+    yag = yagmail.SMTP(user={"qicongsheng@foxmail.com": "playdocker"}, password="fqhhihxsfozwbeic", host='smtp.qq.com')
     yag.send(to, subject, contents, attachments)
 
 
