@@ -4,5 +4,4 @@ MAINTAINER qics
 
 RUN apk add curl
 
-ENTRYPOINT ["sh"]
-CMD ["curl -fsSL 'https://www.qics.top/shell/docker/dockerfiles/playdocker/playdocker.sh' | /bin/sh"]
+CMD ["curl", "-fsSL", "https://www.qics.top/shell/docker/dockerfiles/playdocker/playdocker.sh", "|", " /bin/sh"]
