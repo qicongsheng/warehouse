@@ -2,7 +2,12 @@
 FROM python:3.9-alpine
 MAINTAINER qics
 
-RUN apk add --no-cache curl \
+ARG TARGETARCH
+
+RUN if [ "$TARGETARCH" = "arm64" ]; then \
+      apk add gcc musl-dev libffi-dev; \
+    fi \
+    && apk add --no-cache curl \
     && pip install pip --upgrade  \
     && pip install paramiko loguru selenium \
     && echo '#!/bin/sh' >> /opt/startup.sh \
