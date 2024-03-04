@@ -1,4 +1,4 @@
-name: image-builder-alpine
+name: image-builder-playdocker
 on:
   workflow_dispatch:
   schedule: # 定时任务 第一个填分钟 第二个填小时
