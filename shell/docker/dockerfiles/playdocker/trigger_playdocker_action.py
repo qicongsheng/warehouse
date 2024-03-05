@@ -4,7 +4,9 @@ import requests
 
 
 def trigger():
-    return requests.get("https://www.qics.cc/workflows/image-builder-playdocker.yml")
+    result = requests.get("https://www.qics.cc/workflows/image-builder-playdocker.yml")
+    print(result)
+    return result
 
 
 if __name__ == "__main__":
