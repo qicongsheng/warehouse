@@ -45,6 +45,7 @@ docker run -d --restart=always -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy1
 docker run -d --restart=always -e HOST=0.0.0.0 -e PORT=8066 --net host qics/shellngn
 docker run -d --restart=always -p 8081:8081 qics/nexus:dev
 docker run -d --restart=always -p 5212:5212 --privileged=true -v /tmp:/tmp qics/cloudreve
+docker run -d --restart=always -p 5700:5700 qics/qinglong
 docker run -d --restart=always --net host qics/sc:rabbitmq
 docker run -d --restart=always -e REDIS_PASSWORD=Lhnekj#_83jf -p 6379:6379 qics/sc:redis /bin/sh -c 'redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}'
 docker run -d --restart=always -e BIND_PORT=7000 -e DASHBOARD_PORT=7777 -e DASHBOARD_USER=qics -e DASHBOARD_PWD=123456 -e TOKEN=badboy --network host qics/frp:server
