@@ -5,7 +5,7 @@ import requests
 
 def trigger():
     result = requests.get("https://www.qics.cc/workflows/image-builder-playdocker.yml")
-    print(result)
+    print(result.text)
     return result
 
 
