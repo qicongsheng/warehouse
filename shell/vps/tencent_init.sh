@@ -40,7 +40,7 @@ systemctl enable docker
 # service docker restart
 
 docker login -u=qics -p Best12167
-docker run -d --restart=always -p 9000:80 -v /tmp:/etc/nginx/html --privileged=true qics/nginx
+docker run -d --restart=always -p 9000:80 --privileged=true -v /tmp:/etc/nginx/html qics/nginx
 docker run -d --restart=always -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# qics/mysql:5.7
 docker run -d --restart=always -e HOST=0.0.0.0 -e PORT=8066 --net=host qics/shellngn
 docker run -d --restart=always -p 8081:8081 qics/nexus:dev
