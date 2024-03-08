@@ -18,6 +18,7 @@ RUN apt update --allow-releaseinfo-change && apt update && apt upgrade -y \
     && curl -o /etc/apt/sources.list.d/ustc-debian12.sources https://www.qics.top/shell/debian/sources/ustc-debian12.sources \
 
     && echo '#!/bin/bash' >> /opt/startup.sh \
+    && echo 'echo [`date "+%Y-%m-%d %H:%M:%S"`] start up!' >> /opt/startup.sh \
     && echo 'echo "Port $SSHD_PORT" >> /etc/ssh/sshd_config' >> /opt/startup.sh \
     && echo 'useradd $USER' >> /opt/startup.sh \
     && echo 'echo $USER:$PASSWD | chpasswd' >> /opt/startup.sh \
