@@ -17,6 +17,7 @@ RUN apk update \
     && sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
 
     && echo '#!/bin/sh' >> /opt/startup.sh \
+    && echo 'echo [`date "+%Y-%m-%d %H:%M:%S"`] start up!' >> /opt/startup.sh \
     && echo 'echo "Port $SSHD_PORT" >> /etc/ssh/sshd_config' >> /opt/startup.sh \
     && echo 'adduser --shell /bin/sh --disabled-password --gecos "" $USER' >> /opt/startup.sh \
     && echo 'echo "$USER:$PASSWD" | chpasswd' >> /opt/startup.sh \
