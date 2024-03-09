@@ -4,11 +4,13 @@ MAINTAINER qics
 
 ENV USER=root \
     PASSWD=123456 \
-    SSHD_PORT=22 \
-    TZ=Asia/Shanghai
+    SSHD_PORT=22
 
 RUN apk update \
-    && apk add --no-cache sudo openssh-client openssh-server curl \
+    && apk add --no-cache sudo openssh-client openssh-server curl tzdata \
+    && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && echo "Asia/Shanghai" > /etc/timezone  \
+    && apk del tzdata \
     && mkdir /var/run/sshd/  \
     && ssh-keygen -A \
     && echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config \
