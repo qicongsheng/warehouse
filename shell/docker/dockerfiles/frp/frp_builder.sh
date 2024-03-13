@@ -15,4 +15,3 @@ docker buildx build --build-arg FRP_VERSION=0.55.1 --platform linux/amd64,linux/
 docker buildx build --build-arg FRP_VERSION=0.55.1 --platform linux/amd64,linux/arm64 -t qics/frp:client . --push
 cd /tmp && rm -fr /tmp/_frpclient
 
-
