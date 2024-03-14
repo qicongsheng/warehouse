@@ -28,4 +28,3 @@ pip3 install --upgrade -i https://pypi.tuna.tsinghua.edu.cn/simple ta-lib
 rm -fr /tmp/ta-lib*
 
 
-
