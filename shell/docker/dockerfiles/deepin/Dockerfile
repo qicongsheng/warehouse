@@ -12,7 +12,7 @@ ADD env /env
 ADD xstartup /opt/xstartup
 
 RUN apt update && apt install -y software-properties-common && add-apt-repository -y ppa:ubuntudde-dev/stable \
-    && DEBIAN_FRONTEND=noninteractive apt install -y xrdp locales sudo tigervnc-standalone-server ubuntudde-dde-extras ubuntudde-dde sudo openssh-client openssh-server curl telnet vim htop \
+    && DEBIAN_FRONTEND=noninteractive apt install -y xrdp locales sudo tigervnc-standalone-server ubuntudde-dde-extras ubuntudde-dde sudo openssh-client openssh-server curl telnet vim htop net-tools iputils-ping cron nmap nload \
     && adduser xrdp ssl-cert && locale-gen en_US.UTF-8 && update-locale LANG=en_US.UTF-8 \
     && mkdir -p /var/run/sshd/ \
     && echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config \
