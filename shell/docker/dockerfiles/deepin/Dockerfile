@@ -12,15 +12,14 @@ ADD xstartup /opt/xstartup
 RUN apt update && apt install -y software-properties-common && add-apt-repository -y ppa:ubuntudde-dev/stable \
     && DEBIAN_FRONTEND=noninteractive apt install -y xrdp locales sudo tigervnc-standalone-server ubuntudde-dde-extras ubuntudde-dde \
     && adduser xrdp ssl-cert && locale-gen en_US.UTF-8 && update-locale LANG=en_US.UTF-8 \
-    && chmod 555 /env \
-    && sed -i '3 a cp /env ~/.xsessionrc' /etc/xrdp/startwm.sh
 
-RUN echo '#!/bin/bash' >> /opt/startup.sh \
+    && echo '#!/bin/bash' >> /opt/startup.sh \
     && echo 'echo [`date "+%Y-%m-%d %H:%M:%S"`] start up!' >> /opt/startup.sh \
     && echo 'useradd -m $USER -p $(openssl passwd $PASSWD)' >> /opt/startup.sh \
     && echo 'usermod -aG sudo $USER' >> /opt/startup.sh \
     && echo 'chsh -s /bin/bash $USER' >> /opt/startup.sh \
 
+    && echo 'chmod 555 /env && sed -i "3 a cp /env ~/.xsessionrc" /etc/xrdp/startwm.sh ' >> /opt/startup.sh \
     && echo 'mkdir /home/$USER/.vnc' >> /opt/startup.sh \
     && echo 'echo $PASSWD | vncpasswd -f > /home/$USER/.vnc/passwd' >> /opt/startup.sh \
     && echo 'chmod 0600 /home/$USER/.vnc/passwd' >> /opt/startup.sh \
