@@ -23,7 +23,7 @@ RUN apt update && apt install -y software-properties-common && add-apt-repositor
     && echo 'usermod -aG sudo $USER' >> /opt/startup.sh \
     && echo 'chsh -s /bin/bash $USER' >> /opt/startup.sh \
 
-    && echo 'sed -i "s/port=3389/port=$XRDP_PORT/g' >> /opt/startup.sh \
+    && echo 'sed -i "s/port=3389/port=$XRDP_PORT/g" /etc/xrdp/xrdp.ini ' >> /opt/startup.sh \
     && echo 'chmod 555 /env && sed -i "3 a cp /env ~/.xsessionrc" /etc/xrdp/startwm.sh ' >> /opt/startup.sh \
 
     && echo 'mkdir -p /home/$USER/.vnc' >> /opt/startup.sh \
