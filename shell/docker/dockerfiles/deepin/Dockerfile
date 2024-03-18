@@ -26,7 +26,7 @@ RUN apt update && apt install -y software-properties-common && add-apt-repositor
     && echo 'sed -i "s/port=3389/port=$XRDP_PORT/g' >> /opt/startup.sh \
     && echo 'chmod 555 /env && sed -i "3 a cp /env ~/.xsessionrc" /etc/xrdp/startwm.sh ' >> /opt/startup.sh \
 
-    && echo 'mkdir /home/$USER/.vnc' >> /opt/startup.sh \
+    && echo 'mkdir -p /home/$USER/.vnc' >> /opt/startup.sh \
     && echo 'echo $PASSWD | vncpasswd -f > /home/$USER/.vnc/passwd' >> /opt/startup.sh \
     && echo 'chmod 0600 /home/$USER/.vnc/passwd' >> /opt/startup.sh \
     && echo 'chown -R $USER:$USER /home/$USER/.vnc' >> /opt/startup.sh \
