@@ -36,7 +36,18 @@ exec /etc/X11/xinit/xinitrc" > /home/$USER/.vnc/xstartup && chmod +x /home/$USER
 RUN echo "#!/bin/sh\n\
 sudo -u $USER -g $USER -- vncserver -rfbport 5902 -geometry 1920x1080 -depth 24 -verbose -localhost no -autokill no" > /startvnc && chmod +x /startvnc
 
+RUN echo '#!/bin/bash' >> /opt/startup.sh \
+    && echo 'echo [`date "+%Y-%m-%d %H:%M:%S"`] start up!' >> /opt/startup.sh \
+    && echo 'service dbus start' >> /opt/startup.sh \
+    && echo '/usr/lib/systemd/systemd-logind & service xrdp start' >> /opt/startup.sh \
+    && echo '/startvnc' >> /opt/startup.sh \
+    && echo 'tail -f /dev/null' >> /opt/startup.sh \
+
+    && chmod +x /opt/startup.sh \
+    && apt autoclean \
+    && rm -fr /tmp/*
+
 EXPOSE 3389
 EXPOSE 5902
 
-CMD service dbus start; /usr/lib/systemd/systemd-logind & service xrdp start; /startvnc; bash
+CMD ["/opt/startup.sh"]
