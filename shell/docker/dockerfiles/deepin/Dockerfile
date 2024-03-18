@@ -30,7 +30,7 @@ RUN apt update && apt install -y software-properties-common && add-apt-repositor
     && echo 'echo $PASSWD | vncpasswd -f > /home/$USER/.vnc/passwd' >> /opt/startup.sh \
     && echo 'chmod 0600 /home/$USER/.vnc/passwd' >> /opt/startup.sh \
     && echo 'chown -R $USER:$USER /home/$USER/.vnc' >> /opt/startup.sh \
-    && echo 'mv /opt/xstartup /home/$USER/.vnc/xstartup' >> /opt/startup.sh \
+    && echo 'cp -f /opt/xstartup /home/$USER/.vnc/xstartup' >> /opt/startup.sh \
     && echo 'chmod +x /home/$USER/.vnc/xstartup' >> /opt/startup.sh \
 
     && echo 'service dbus start' >> /opt/startup.sh \
