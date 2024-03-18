@@ -9,10 +9,12 @@ ENV USER=root \
 ADD env /env
 ADD xstartup /opt/xstartup
 
-RUN apt update && apt install -y software-properties-common xrdp locales sudo tigervnc-standalone-server ubuntudde-dde-extras \
-    && add-apt-repository -y ppa:ubuntudde-dev/stable && DEBIAN_FRONTEND=noninteractive apt install -y ubuntudde-dde \
+RUN apt update && apt install -y software-properties-common && add-apt-repository -y ppa:ubuntudde-dev/stable \
+    && apt install -y xrdp locales sudo tigervnc-standalone-server ubuntudde-dde-extras \
+    && DEBIAN_FRONTEND=noninteractive apt install -y ubuntudde-dde \
     && adduser xrdp ssl-cert && locale-gen en_US.UTF-8 && update-locale LANG=en_US.UTF-8 \
-    && sed -i '3 a cp /env ~/.xsessionrc' /etc/xrdp/startwm.sh \
+    && chmod 555 /env \
+    && sed -i '3 a cp /env ~/.xsessionrc' /etc/xrdp/startwm.sh
 
 RUN echo '#!/bin/bash' >> /opt/startup.sh \
     && echo 'echo [`date "+%Y-%m-%d %H:%M:%S"`] start up!' >> /opt/startup.sh \
