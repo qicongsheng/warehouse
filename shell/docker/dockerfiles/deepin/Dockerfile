@@ -31,7 +31,7 @@ RUN echo '#!/bin/bash' >> /opt/startup.sh \
 
     && echo 'service dbus start' >> /opt/startup.sh \
     && echo '/usr/lib/systemd/systemd-logind & service xrdp start' >> /opt/startup.sh \
-    && echo 'sudo -u $USER -g $USER -- vncserver -rfbport 5902 -geometry 1920x1080 -depth 24 -verbose -localhost no -autokill no' >> /opt/startup.sh \
+    && echo 'sudo -u $USER -g $USER -- vncserver -rfbport $VNC_PORT -geometry 1920x1080 -depth 24 -verbose -localhost no -autokill no' >> /opt/startup.sh \
     && echo 'tail -f /dev/null' >> /opt/startup.sh \
 
     && chmod +x /opt/startup.sh \
