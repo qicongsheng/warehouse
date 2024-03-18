@@ -10,8 +10,7 @@ ADD env /env
 ADD xstartup /opt/xstartup
 
 RUN apt update && apt install -y software-properties-common && add-apt-repository -y ppa:ubuntudde-dev/stable \
-    && apt install -y xrdp locales sudo tigervnc-standalone-server ubuntudde-dde-extras \
-    && DEBIAN_FRONTEND=noninteractive apt install -y ubuntudde-dde \
+    && DEBIAN_FRONTEND=noninteractive apt install -y xrdp locales sudo tigervnc-standalone-server ubuntudde-dde-extras ubuntudde-dde \
     && adduser xrdp ssl-cert && locale-gen en_US.UTF-8 && update-locale LANG=en_US.UTF-8 \
     && chmod 555 /env \
     && sed -i '3 a cp /env ~/.xsessionrc' /etc/xrdp/startwm.sh
