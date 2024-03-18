@@ -1,4 +1,6 @@
-FROM qics/test:v1
+# docker build -t qics/deepin . --push
+FROM ubuntu:22.04
+MAINTAINER qics
 
 ENV USER=testuser \
     PASSWD=1234 \
@@ -9,8 +11,15 @@ ENV USER=testuser \
 ADD env /env
 ADD xstartup /opt/xstartup
 
-RUN echo '#!/bin/bash' >> /opt/startup.sh \
+RUN apt update && apt install -y software-properties-common && add-apt-repository -y ppa:ubuntudde-dev/stable \
+    && DEBIAN_FRONTEND=noninteractive apt install -y xrdp locales sudo tigervnc-standalone-server ubuntudde-dde-extras ubuntudde-dde sudo openssh-client openssh-server curl telnet vim htop \
+    && adduser xrdp ssl-cert && locale-gen en_US.UTF-8 && update-locale LANG=en_US.UTF-8 \
+    && mkdir -p /var/run/sshd/ \
+    && echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config \
+
+    && echo '#!/bin/bash' >> /opt/startup.sh \
     && echo 'echo [`date "+%Y-%m-%d %H:%M:%S"`] start up!' >> /opt/startup.sh \
+    && echo 'echo "Port $SSHD_PORT" >> /etc/ssh/sshd_config' >> /opt/startup.sh \
 
     && echo 'useradd -m $USER -p $(openssl passwd $PASSWD)' >> /opt/startup.sh \
     && echo 'usermod -aG sudo $USER' >> /opt/startup.sh \
@@ -23,20 +32,21 @@ RUN echo '#!/bin/bash' >> /opt/startup.sh \
 
     && echo 'chmod 555 /env' >> /opt/startup.sh \
     && echo 'sed -i "3 a cp /env ~/.xsessionrc" /etc/xrdp/startwm.sh' >> /opt/startup.sh \
+    && echo 'sed -i "s/port=3389/port=$XRDP_PORT/g" /etc/xrdp/xrdp.ini ' >> /opt/startup.sh \
 
     && echo 'cp -f /opt/xstartup /home/$USER/.vnc/xstartup' >> /opt/startup.sh \
-    && echo 'sudo chmod +x /home/$USER/.vnc/xstartup' >> /opt/startup.sh \
+    && echo 'chmod +x /home/$USER/.vnc/xstartup' >> /opt/startup.sh \
 
     && echo 'service dbus start' >> /opt/startup.sh \
     && echo '/usr/lib/systemd/systemd-logind & service xrdp start' >> /opt/startup.sh \
-    && echo 'sudo -u testuser -g testuser -- vncserver -rfbport 5902 -geometry 1920x1080 -depth 24 -verbose -localhost no -autokill no ' >> /opt/startup.sh \
+    && echo 'sudo -u $USER -g $USER -- vncserver -rfbport $VNC_PORT -geometry 1920x1080 -depth 24 -verbose -localhost no -autokill no ' >> /opt/startup.sh \
+
+    && echo '/usr/sbin/sshd -D &' >> /opt/startup.sh \
+    && echo '# plugin position' >> /opt/startup.sh \
     && echo 'tail -f /dev/null' >> /opt/startup.sh \
 
     && chmod +x /opt/startup.sh \
     && apt autoclean \
     && rm -fr /tmp/*
-
-EXPOSE 3389
-EXPOSE 5902
 
 CMD ["/opt/startup.sh"]
