@@ -11,7 +11,7 @@ RUN apk update \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone  \
     && apk del tzdata \
-    && mkdir /var/run/sshd/  \
+    && mkdir -p /var/run/sshd/  \
     && ssh-keygen -A \
     && echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config \
     && echo "alias ls='ls \$LS_OPTIONS --color'" >> /etc/profile \

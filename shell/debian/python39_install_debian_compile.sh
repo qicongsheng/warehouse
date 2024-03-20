@@ -8,7 +8,7 @@ echo "sleep 5s start"
 sleep 5
 echo "sleep 5s end"
 cd /tmp && tar -xvJf Python-3.9.12.tar.xz
-mkdir /usr/local/python3
+mkdir -p /usr/local/python3
 cd /tmp/Python-3.9.12
 ./configure --prefix=/usr/local/python3 --with-ssl --enable-optimizations
 make altinstall
