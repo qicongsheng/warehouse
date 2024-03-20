@@ -8,7 +8,7 @@ ENV USER=root \
     TZ=Asia/Shanghai 
 
 RUN apt update --allow-releaseinfo-change && apt update && apt upgrade -y \
-    && apt install -y sudo openssh-client openssh-server curl \
+    && apt install -y sudo openssh-client openssh-server curl vim \
     && mkdir /var/run/sshd/ \
     && echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config \
     && echo "alias ls='ls \$LS_OPTIONS --color'" >> /root/.bashrc \
