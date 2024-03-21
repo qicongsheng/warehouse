@@ -21,8 +21,10 @@ RUN apt update --allow-releaseinfo-change && apt update && apt upgrade -y \
     && echo 'echo "Port $SSHD_PORT" >> /etc/ssh/sshd_config' >> /opt/startup.sh \
     && echo 'useradd $USER' >> /opt/startup.sh \
     && echo 'echo $USER:$PASSWD | chpasswd' >> /opt/startup.sh \
-    && echo 'mkdir -p ~' >> /opt/startup.sh \
     && echo 'echo "$USER ALL=(ALL:ALL) ALL" > /etc/sudoers.d/$USER' >> /opt/startup.sh \
+    && echo 'mkdir -p /home/$USER' >> /opt/startup.sh \
+    && echo 'cp -R /root/.* /home/$USER' >> /opt/startup.sh \
+    && echo 'rm -fr /home/root' >> /opt/startup.sh \
     && echo '/usr/sbin/sshd -D &' >> /opt/startup.sh \
     && echo '# plugin position' >> /opt/startup.sh \
     && echo 'tail -f /dev/null' >> /opt/startup.sh \
