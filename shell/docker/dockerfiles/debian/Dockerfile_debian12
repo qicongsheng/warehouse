@@ -23,7 +23,6 @@ RUN apt update --allow-releaseinfo-change && apt update && apt upgrade -y \
     && echo 'echo $USER:$PASSWD | chpasswd' >> /opt/startup.sh \
     && echo 'echo "$USER ALL=(ALL:ALL) ALL" > /etc/sudoers.d/$USER' >> /opt/startup.sh \
     && echo 'mkdir -p /home/$USER && rm -fr /home/root' >> /opt/startup.sh \
-    && echo 'cp -R /root/.* /home/$USER' >> /opt/startup.sh \
     && echo 'chsh -s /bin/bash $USER' >> /opt/startup.sh \
     && echo '/usr/sbin/sshd -D &' >> /opt/startup.sh \
     && echo '# plugin position' >> /opt/startup.sh \
