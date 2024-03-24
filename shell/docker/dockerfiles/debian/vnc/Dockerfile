@@ -20,7 +20,8 @@ RUN apt update && apt upgrade -y \
     && sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/debian.sources \
 
     && echo '#!/bin/bash' >> /opt/startup.sh \
-    && echo 'echo "Port $SSHD_PORT" >> /etc/ssh/sshd_config' >> /opt/startup.sh \
+    && echo 'echo [`date "+%Y-%m-%d %H:%M:%S"`] start up!' >> /opt/startup.sh \
+    && echo 'sed -i "s/#Port 22/Port $SSHD_PORT/g" /etc/ssh/sshd_config' >> /opt/startup.sh \
     && echo 'useradd $USER' >> /opt/startup.sh \
     && echo 'echo $USER:$PASSWD | chpasswd' >> /opt/startup.sh \
     && echo 'echo "$USER ALL=(ALL:ALL) ALL" > /etc/sudoers.d/$USER' >> /opt/startup.sh \
