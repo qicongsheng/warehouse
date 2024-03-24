@@ -17,17 +17,18 @@ RUN apt update && apt upgrade -y \
     && echo "alias ll='ls \$LS_OPTIONS -l --color'" >> /root/.bashrc \
     && echo "alias ls='ls \$LS_OPTIONS --color'" >> /headless/.bashrc \
     && echo "alias ll='ls \$LS_OPTIONS -l --color'" >> /headless/.bashrc \
-    
-    && mv /etc/apt/sources.list.d/debian.sources /etc/apt/sources.list.d/debian.sources.bak \
-    && curl -o /etc/apt/sources.list.d/ustc-debian12.sources https://www.qics.top/shell/debian/sources/ustc-debian12.sources \
-    
+    && sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/debian.sources \
+
     && echo '#!/bin/bash' >> /opt/startup.sh \
     && echo 'echo "Port $SSHD_PORT" >> /etc/ssh/sshd_config' >> /opt/startup.sh \
     && echo 'useradd $USER' >> /opt/startup.sh \
     && echo 'echo $USER:$PASSWD | chpasswd' >> /opt/startup.sh \
+    && echo 'echo "$USER ALL=(ALL:ALL) ALL" > /etc/sudoers.d/$USER' >> /opt/startup.sh \
+    && echo 'mkdir -p /home/$USER && rm -fr /home/root' >> /opt/startup.sh \
+    && echo 'chsh -s /bin/bash $USER' >> /opt/startup.sh \
     && echo '/usr/sbin/sshd -D &' >> /opt/startup.sh \
     && echo 'tail -f /dev/null' >> /opt/startup.sh \
-    
+
     && chmod +x /opt/startup.sh \
     && apt autoclean \
     && rm -fr /tmp/*
