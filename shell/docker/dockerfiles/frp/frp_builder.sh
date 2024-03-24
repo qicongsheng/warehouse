@@ -1,6 +1,6 @@
 #!/bin/bash
 # curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/frp/frp_builder.sh" | /bin/sh
-FRP_NEW_VERSION="0.55.1"
+FRP_NEW_VERSION="0.56.0"
 rm -fr /tmp/_frpserver
 mkdir /tmp/_frpserver && cd /tmp/_frpserver
 curl -o /tmp/_frpserver/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/frp/Dockerfile_server
