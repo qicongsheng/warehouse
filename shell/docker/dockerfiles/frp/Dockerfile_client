@@ -33,7 +33,7 @@ RUN cd /root \
     && echo 'echo "localIP = \"127.0.0.1\" " >> /etc/frp/frpc.toml' >> /opt/startup.sh \
     && echo 'echo "localPort = $LOCAL_PORT " >> /etc/frp/frpc.toml' >> /opt/startup.sh \
     && echo 'echo "remotePort = $REMOTE_PORT " >> /etc/frp/frpc.toml' >> /opt/startup.sh \
-    
+
     && echo "while true" >> /opt/startup.sh \
     && echo "do" >> /opt/startup.sh \
     && echo "	COUNT=\$(ps -ef |grep frpc |grep -v 'grep' |wc -l)" >> /opt/startup.sh \
