@@ -42,8 +42,6 @@ RUN cd /root \
     && echo "		/usr/bin/frpc -c /etc/frp/frpc.toml" >> /opt/startup.sh \
     && echo "	fi" >> /opt/startup.sh \
     && echo "done" >> /opt/startup.sh \
-
-    && echo '/usr/sbin/sshd -D &' >> /opt/startup.sh \
     && echo 'tail -f /dev/null' >> /opt/startup.sh \
 
     && chmod +x /opt/startup.sh \
