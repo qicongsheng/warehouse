@@ -8,7 +8,7 @@ curl -o /tmp/_frpserver/Dockerfile -L https://www.qics.top/shell/docker/dockerfi
 docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/amd64,linux/arm64 -t qics/frp:server_$FRP_NEW_VERSION . --push
 docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/amd64,linux/arm64 -t qics/frp:server . --push
 cd /tmp && rm -fr /tmp/_frpserver
-curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"subject": "gitaction tip","content": "qics/frp:server docker image pushed."}'
+curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"nick_name":"gitaction", "subject": "qics/frp:server docker image pushed.", "content": "qics/frp:server docker image pushed."}'
 
 
 rm -fr /tmp/_frpclient
@@ -17,5 +17,5 @@ curl -o /tmp/_frpclient/Dockerfile -L https://www.qics.top/shell/docker/dockerfi
 docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/amd64,linux/arm64 -t qics/frp:client_$FRP_NEW_VERSION . --push
 docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/amd64,linux/arm64 -t qics/frp:client . --push
 cd /tmp && rm -fr /tmp/_frpclient
-curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"subject": "gitaction tip","content": "qics/frp:client docker image pushed."}'
+curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"nick_name":"gitaction", "subject": "qics/frp:client docker image pushed.", "content": "qics/frp:client docker image pushed."}'
 

@@ -5,4 +5,4 @@ mkdir /tmp/_netbird && cd /tmp/_netbird
 curl -o /tmp/_netbird/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/netbird/Dockerfile
 docker buildx build -t qics/netbird --platform linux/amd64,linux/arm64/v8 . --push
 cd /tmp && rm -fr /tmp/_netbird
-curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"subject": "gitaction tip","content": "qics/netbird docker image pushed."}'
+curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"nick_name":"gitaction", "subject": "qics/netbird docker image pushed.", "content": "qics/netbird docker image pushed."}'

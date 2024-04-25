@@ -11,7 +11,7 @@ mkdir /tmp/_vnc && cd /tmp/_vnc
 curl -o /tmp/_vnc/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/debian/vnc/Dockerfile
 docker build -t qics/debian:vnc . --push
 cd /tmp && rm -fr /tmp/_vnc
-curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"subject": "gitaction tip","content": "qics/debian:vnc docker image pushed."}'
+curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"nick_name":"gitaction", "subject": "qics/debian:vnc docker image pushed.", "content": "qics/debian:vnc docker image pushed."}'
 
 
 

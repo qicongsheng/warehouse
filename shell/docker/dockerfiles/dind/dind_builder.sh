@@ -13,7 +13,7 @@ mkdir /tmp/_dind && cd /tmp/_dind
 curl -o /tmp/_dind/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/dind/Dockerfile
 docker buildx build -t qics/dind --platform linux/amd64,linux/arm64/v8 . --push
 cd /tmp && rm -fr /tmp/_dind
-curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"subject": "gitaction tip","content": "qics/dind docker image pushed."}'
+curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"nick_name":"gitaction", "subject": "qics/dind docker image pushed.", "content": "qics/dind docker image pushed."}'
 
 
 
