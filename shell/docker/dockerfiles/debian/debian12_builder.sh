@@ -6,6 +6,6 @@ mkdir /tmp/_debian12 && cd /tmp/_debian12
 curl -o /tmp/_debian12/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/debian/Dockerfile_debian12
 docker buildx build -t qics/debian --platform linux/amd64,linux/arm64 . --push
 cd /tmp && rm -fr /tmp/_debian12
-
+curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"subject": "gitaction tip","content": "qics/debian docker image pushed."}'
 
 
