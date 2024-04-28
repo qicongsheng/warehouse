@@ -1,4 +1,5 @@
 #!/bin/bash
+# curl -fsSL "https://www.qics.top/shell/rclone/rclone-alpine-amd64.sh" | /bin/sh
 apk update && apk add --no-cache curl fuse -y
 mkdir -p /opt/rclone/onedriver && mkdir -p /onedriver
 curl --connect-timeout 600 -m 7200 --continue-at - -o /opt/rclone/rclone.conf https://www.qics.top/shell/docker/dockerfiles/rclone/rclone.conf
