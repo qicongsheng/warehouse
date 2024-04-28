@@ -4,14 +4,12 @@ MAINTAINER qics
 
 RUN apk update \
     && apk add --no-cache curl fuse \
-
-    && curl --connect-timeout 600 -m 7200 --continue-at - -o /tmp/rclone-v1.66.0-linux-amd64.tar.gz https://cna48w.sn.files.1drv.com/y4mfHK0CTRkysc9kYVdtTmd-w66ONo7Yh53KA3Y23NkaLcAULR0FRDaZG-L72bVfaF1uXoi9q4_inka8AhVBXL7DQ5mZ5bVoPWq6AUs4pDtJJs9plQTEi_uxIQ9YaWD3YwtChVul0r0F2reiZWu5cFN__gT7O8SY2JGdn5cNV3OKiY-CiATf11YcJZxvsCctw3SMIUaDynQPUQsJshKRI_rrw \
-    && tar -zxvf /tmp/rclone-v1.66.0-linux-amd64.tar.gz -C /opt \
-    && mv /opt/rclone-v1.66.0-linux-amd64 /opt/rclone \
+    && mkdir -p /opt/rclone/onedriver \
+    && curl --connect-timeout 600 -m 7200 --continue-at - -o /opt/rclone/rclone.conf https://www.qics.top/shell/docker/dockerfiles/rclone/rclone.conf \
+    && curl --connect-timeout 600 -m 7200 --continue-at - -o /opt/rclone/rclone https://dpsdag.sn.files.1drv.com/y4mAfHVvWgMMCqDMAlc6tVKbVa0KSwyq1PCHwOZMLs_mn2BWpi6HQVdSbhfnbcAXGTXSE6X2X2PsSJK-LiW9L0sSlSMCMi09afc58gm1o_C_VFi6mNcEc5i-bC9-CttXYak9XFmbNaZJjNWOtRxVZe0C-vBJ2GFQT2r05cLqmUVr6Zhb9xXCFe5OdtIuZy9he8tq9vRlXgDcwCweVeOHjiuHw \
+    && chmod +x /opt/rclone/rclone \
     && ln -sf /opt/rclone/rclone /usr/local/bin/rclone \
     && ln -s /bin/fusermount /bin/fusermount3 \
-    && curl --connect-timeout 600 -m 7200 --continue-at - -o /opt/rclone/rclone.conf https://www.qics.top/shell/docker/dockerfiles/rclone/rclone.conf \
-    && mkdir -p /opt/rclone/onedriver \
 
     && echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config \
     && echo "alias ls='ls \$LS_OPTIONS --color'" >> /etc/profile \
