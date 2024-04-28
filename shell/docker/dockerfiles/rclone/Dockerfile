@@ -11,10 +11,8 @@ RUN apk update \
     && ln -sf /opt/rclone/rclone /usr/local/bin/rclone \
     && ln -s /bin/fusermount /bin/fusermount3 \
 
-    && echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config \
     && echo "alias ls='ls \$LS_OPTIONS --color'" >> /etc/profile \
     && echo "alias ll='ls \$LS_OPTIONS -l --color'" >> /etc/profile \
-    && sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
 
     && echo '#!/bin/sh' >> /opt/startup.sh \
     && echo 'echo [`date "+%Y-%m-%d %H:%M:%S"`] start up!' >> /opt/startup.sh \
