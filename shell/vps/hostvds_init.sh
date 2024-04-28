@@ -30,6 +30,9 @@ systemctl stop shadowsocks-libev
 systemctl disable shadowsocks-libev
 nohup ss-server -s 0.0.0.0 -p 19986 -k mimabujiandan -m aes-128-gcm -t 300 -d 8.8.8.8,8.8.4.4 > /var/log/shadowsocks.log 2>&1 &
 
+#添加onedriver
+curl -fsSL "https://www.qics.top/shell/rclone/rclone-debian-arm64.sh" | /bin/sh
+
 #添加防火墙
 curl -fsSL 'http://www.qics.top/shell/ufw/ufw_hostvds.sh' | /bin/bash
 echo "0 */1 * * * curl -fsSL 'http://www.qics.top/shell/ufw/ufw_hostvds.sh' | /bin/bash" >> /var/spool/cron/crontabs/root
