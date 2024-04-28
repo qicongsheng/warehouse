@@ -6,7 +6,7 @@ RUN apk update \
     && apk add --no-cache curl fuse \
     && mkdir -p /opt/rclone/onedriver && mkdir -p /onedriver \
     && curl --connect-timeout 600 -m 7200 --continue-at - -o /opt/rclone/rclone.conf https://www.qics.top/shell/docker/dockerfiles/rclone/rclone.conf \
-    && curl --connect-timeout 600 -m 7200 --continue-at - -o /opt/rclone/rclone https://dpsdag.sn.files.1drv.com/y4mAfHVvWgMMCqDMAlc6tVKbVa0KSwyq1PCHwOZMLs_mn2BWpi6HQVdSbhfnbcAXGTXSE6X2X2PsSJK-LiW9L0sSlSMCMi09afc58gm1o_C_VFi6mNcEc5i-bC9-CttXYak9XFmbNaZJjNWOtRxVZe0C-vBJ2GFQT2r05cLqmUVr6Zhb9xXCFe5OdtIuZy9he8tq9vRlXgDcwCweVeOHjiuHw \
+    && curl --connect-timeout 600 -m 7200 --continue-at - -o /opt/rclone/rclone https://dpsdag.sn.files.1drv.com/y4mtuZvCRqO9wjOYxaDdQkVNZiQs8k4kZCi1w-Lo0SGbtNafj7mPCXl83K1ZTPd7ER-hwEcFh69CkXzviDPlBvkAw7IjbDV59b-_H0mmvFPHlKx8oECrh8IasuLYw40d34ZrcrUkYmMJdkXY8PtW5JU1oH_YiMTRctTiqWodbYc_i70E3qVNHSVJtUQerTCb_YozXnUucF7ohibXZhjYEwJYw \
     && chmod +x /opt/rclone/rclone \
     && ln -sf /opt/rclone/rclone /usr/local/bin/rclone \
     && ln -s /bin/fusermount /bin/fusermount3 \
