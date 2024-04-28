@@ -11,7 +11,7 @@ RUN apk update \
     && ln -sf /opt/rclone/rclone /usr/local/bin/rclone \
     && ln -s /bin/fusermount /bin/fusermount3 \
     && curl --connect-timeout 600 -m 7200 --continue-at - -o /opt/rclone/rclone.conf https://www.qics.top/shell/docker/dockerfiles/rclone/rclone.conf \
-    && mkdir -p /opt/rclone/onedriver
+    && mkdir -p /opt/rclone/onedriver \
 
     && echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config \
     && echo "alias ls='ls \$LS_OPTIONS --color'" >> /etc/profile \
