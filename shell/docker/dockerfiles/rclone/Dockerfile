@@ -16,7 +16,7 @@ RUN apk update \
 
     && echo '#!/bin/sh' >> /opt/startup.sh \
     && echo 'echo [`date "+%Y-%m-%d %H:%M:%S"`] start up!' >> /opt/startup.sh \
-    && echo 'nohup rclone --config /opt/rclone/rclone.conf mount onedriver:/ /onedriver --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 > /var/log/rclone.log 2>&1 &' >> /opt/startup.sh \
+    && echo 'nohup rclone --config /opt/rclone/rclone.conf mount onedriver:/rclone/data /onedriver --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 > /var/log/rclone.log 2>&1 &' >> /opt/startup.sh \
     && echo 'tail -f /dev/null' >> /opt/startup.sh \
 
     && chmod +x /opt/startup.sh \

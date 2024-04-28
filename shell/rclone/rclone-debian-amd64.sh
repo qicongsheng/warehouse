@@ -7,4 +7,4 @@ curl --connect-timeout 600 -m 7200 --continue-at - -o /opt/rclone/rclone https:/
 chmod +x /opt/rclone/rclone
 ln -sf /opt/rclone/rclone /usr/local/bin/rclone
 ln -s /bin/fusermount /bin/fusermount3
-nohup rclone --config /opt/rclone/rclone.conf mount onedriver:/ /onedriver --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 > /var/log/rclone.log 2>&1 &
+nohup rclone --config /opt/rclone/rclone.conf mount onedriver:/rclone/data /onedriver --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 > /var/log/rclone.log 2>&1 &
