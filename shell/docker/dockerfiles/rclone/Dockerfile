@@ -6,7 +6,7 @@ RUN apk update \
     && apk add --no-cache curl fuse \
 
     && curl --connect-timeout 600 -m 7200 --continue-at - -o /tmp/rclone-v1.66.0-linux-amd64.tar.gz https://cna48w.sn.files.1drv.com/y4mfHK0CTRkysc9kYVdtTmd-w66ONo7Yh53KA3Y23NkaLcAULR0FRDaZG-L72bVfaF1uXoi9q4_inka8AhVBXL7DQ5mZ5bVoPWq6AUs4pDtJJs9plQTEi_uxIQ9YaWD3YwtChVul0r0F2reiZWu5cFN__gT7O8SY2JGdn5cNV3OKiY-CiATf11YcJZxvsCctw3SMIUaDynQPUQsJshKRI_rrw \
-    && tar -zxvf /tmp/_rclone/rclone-v1.66.0-linux-amd64.tar.gz -C /opt \
+    && tar -zxvf /tmp/rclone-v1.66.0-linux-amd64.tar.gz -C /opt \
     && mv /opt/rclone-v1.66.0-linux-amd64 /opt/rclone \
     && ln -sf /opt/rclone/rclone /usr/local/bin/rclone \
     && ln -s /bin/fusermount /bin/fusermount3 \
