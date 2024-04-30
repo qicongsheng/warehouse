@@ -1,6 +1,6 @@
 #!/bin/bash
 # curl -fsSL https://www.qics.top/shell/docker/dockerfiles/vaultwarden/vaultwarden_builder.sh | /bin/sh
-IMG_NAME="vaultwarden1"
+IMG_NAME="vaultwarden"
 curl -fsSL https://www.qics.top/shell/docker/common/docker_login.sh | /bin/sh
 curl -fsSL https://www.qics.top/shell/docker/common/buildx_init.sh | /bin/sh
 curl -fsSL https://www.qics.top/shell/docker/common/tmpdir_init.sh | /bin/sh -s $IMG_NAME
