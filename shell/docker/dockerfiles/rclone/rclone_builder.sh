@@ -1,5 +1,7 @@
 #!/bin/bash
 # curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/rclone/rclone_builder.sh" | /bin/sh
+curl -fsSL "https://www.qics.top/shell/docker/common/docker_login.sh" | /bin/sh
+curl -fsSL "https://www.qics.top/shell/docker/common/buildx_init.sh" | /bin/sh
 cd /tmp && rm -fr /tmp/_rclone
 mkdir /tmp/_rclone && cd /tmp/_rclone
 curl -o /tmp/_rclone/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/rclone/Dockerfile
