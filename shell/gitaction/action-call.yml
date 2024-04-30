@@ -14,5 +14,5 @@ jobs:
     steps:
       - name: Exec Action Shell
         run: |
-          curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/alpine/alpine_builder.sh" | /bin/sh
-          
+          curl -fsSL "https://www.qics.top/shell/gitaction/action.sh" | /bin/sh
+    
