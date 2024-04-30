@@ -58,7 +58,7 @@ def start_docker_container_v2(browser_):
     except Exception:
         logger.error('start_docker_container_v2 error!')
         traceback.print_exc()
-    return docker_msg.__contains__('ghcr.io/qicongsheng/shadowsocks')
+    return docker_msg.__contains__('shadowsocks')
 
 
 def start_docker_container_v1(browser_):
@@ -110,7 +110,7 @@ def init_frp_vpn():
         new_window = browser.window_handles[-1]
         browser.switch_to.window(new_window)
         logger.info('init_frp_vpn set username...')
-        browser.find_element(By.ID, 'username').send_keys("qics")
+        browser.find_element(By.ID, 'username').send_keys("qicongsheng")
         browser.find_element(By.XPATH, '/html/body/div[2]/main/section/div/div/div/div/div/form/div[2]/button').click()
         logger.info('init_frp_vpn set password...')
         browser.find_element(By.ID, 'password').send_keys("Best12167")
