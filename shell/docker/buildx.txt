@@ -13,8 +13,6 @@ docker buildx build -t ghcr.io/qicongsheng/ddns --platform linux/amd64,linux/arm
 docker buildx build -t ghcr.io/qicongsheng/ddns --platform linux/arm64 . --load
 
 
-curl --location --request GET 'https://www.qics.cc/workflow_command' \
+curl --request GET 'https://www.qics.cc/workflow_command' \
 --header 'Content-Type: application/json' \
---data '{
-    "cmd": "curl -fsSL https://www.qics.top/shell/docker/dockerfiles/qinglong/qinglong_builder.sh | /bin/sh"
-}'
+--data '{"cmd": "curl -fsSL https://www.qics.top/shell/docker/dockerfiles/qinglong/qinglong_builder.sh | /bin/sh"}'
