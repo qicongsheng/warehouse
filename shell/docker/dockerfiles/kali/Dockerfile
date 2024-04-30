@@ -1,4 +1,4 @@
-# docker buildx build -t qics/kali --platform linux/amd64,linux/arm64/v8 . --push
+# docker buildx build -t ghcr.io/qicongsheng/kali --platform linux/amd64,linux/arm64/v8 . --push
 FROM kalilinux/kali-rolling:latest
 MAINTAINER qics
 

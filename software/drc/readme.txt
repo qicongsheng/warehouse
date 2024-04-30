@@ -6,15 +6,15 @@ tar -zxvf /tmp/drc-cli-linux.tar.gz -C /usr/local/bin
 chmod +x /usr/local/bin/drc
 rm -fr /tmp/drc-cli-linux.tar.gz
 
-drc login registry.cn-hangzhou.aliyuncs.com/qics/warehouse
+drc login registry.cn-hangzhou.aliyuncs.com/ghcr.io/qicongsheng/warehouse
 username: 875881559@qq.com
 password: Best12167
 
-drc login ccr.ccs.tencentyun.com/qics/warehouse
+drc login ccr.ccs.tencentyun.com/ghcr.io/qicongsheng/warehouse
 username: 100004665025
 password: Best12167
 
-drc login qics/warehouse
+drc login ghcr.io/qicongsheng/warehouse
 username: qics
 password: Best12167
 

@@ -1,4 +1,4 @@
-# docker buildx build -t qics/webssh --platform linux/amd64,linux/arm64 . --push
+# docker buildx build -t ghcr.io/qicongsheng/webssh --platform linux/amd64,linux/arm64 . --push
 FROM python:3.9.17-alpine3.17
 MAINTAINER qics
 

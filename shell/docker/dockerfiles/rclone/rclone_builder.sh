@@ -3,6 +3,6 @@
 cd /tmp && rm -fr /tmp/_rclone
 mkdir /tmp/_rclone && cd /tmp/_rclone
 curl -o /tmp/_rclone/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/rclone/Dockerfile
-docker build -t qics/rclone . --push
+docker build -t ghcr.io/qicongsheng/rclone . --push
 cd /tmp && rm -fr /tmp/_rclone
-curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"nick_name":"gitaction", "subject": "qics/rclone docker image pushed.", "content": "qics/rclone docker image pushed."}'
+curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"nick_name":"gitaction", "subject": "ghcr.io/qicongsheng/rclone docker image pushed.", "content": "ghcr.io/qicongsheng/rclone docker image pushed."}'

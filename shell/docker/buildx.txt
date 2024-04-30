@@ -10,4 +10,4 @@ docker buildx inspect --bootstrap
 docker buildx build -t ghcr.io/qicongsheng/ddns --platform linux/amd64,linux/arm64 . --push
 
 #构建并导出到本地Docker images中
-docker buildx build -t qics/ddns --platform linux/arm64 . --load
+docker buildx build -t ghcr.io/qicongsheng/ddns --platform linux/arm64 . --load

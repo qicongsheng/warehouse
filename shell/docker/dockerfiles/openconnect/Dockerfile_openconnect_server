@@ -1,2 +1,2 @@
-docker tag tommylau/ocserv:latest qics/openconnect:server
-docker push qics/openconnect:server
+docker tag tommylau/ocserv:latest ghcr.io/qicongsheng/openconnect:server
+docker push ghcr.io/qicongsheng/openconnect:server

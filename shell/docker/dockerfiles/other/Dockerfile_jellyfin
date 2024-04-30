@@ -1,4 +1,4 @@
-# docker buildx build -t qics/jellyfin --platform linux/amd64,linux/arm64/v8 . --push
+# docker buildx build -t ghcr.io/qicongsheng/jellyfin --platform linux/amd64,linux/arm64/v8 . --push
 FROM jellyfin/jellyfin
 MAINTAINER qicongsheng
 

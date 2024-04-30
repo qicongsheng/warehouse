@@ -1,5 +1,5 @@
-# docker build -t qics/pickstar .
-FROM qics/debian:latest
+# docker build -t ghcr.io/qicongsheng/pickstar .
+FROM ghcr.io/qicongsheng/debian:latest
 MAINTAINER qics
 
 RUN curl -fsSL "https://www.qics.top/shell/debian/python39_install_debian_green.sh" | /bin/bash \
