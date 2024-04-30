@@ -4,8 +4,8 @@
 rm -fr /tmp/_debian12
 mkdir /tmp/_debian12 && cd /tmp/_debian12
 curl -o /tmp/_debian12/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/debian/Dockerfile_debian12
-docker buildx build -t qics/debian --platform linux/amd64,linux/arm64 . --push
+docker buildx build -t ghcr.io/qicongshengdebian --platform linux/amd64,linux/arm64 . --push
 cd /tmp && rm -fr /tmp/_debian12
-curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"nick_name":"gitaction", "subject": "qics/debian docker image pushed.", "content": "qics/debian docker image pushed."}'
+curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"nick_name":"gitaction", "subject": "ghcr.io/qicongshengdebian docker image pushed.", "content": "ghcr.io/qicongshengdebian docker image pushed."}'
 
 

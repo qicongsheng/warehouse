@@ -1,9 +1,9 @@
 #!/bin/bash
 # curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/dind/dind_tencent_init.sh" | /bin/sh
 docker login -u=qics -p Best12167
-docker run -d --name nginx -p 9000:80 -v /tmp:/etc/nginx/html --privileged=true qics/nginx
-docker run -d --name netbird --net=host --cap-add=NET_ADMIN -e NB_SETUP_KEY=951ABD0D-6D3D-47BB-AD78-A8F5D26F5DA7 qics/netbird
-docker run -d --name shellngn -e HOST=0.0.0.0 -e PORT=8066 --net=host qics/shellngn
+docker run -d --name nginx -p 9000:80 -v /tmp:/etc/nginx/html --privileged=true ghcr.io/qicongshengnginx
+docker run -d --name netbird --net=host --cap-add=NET_ADMIN -e NB_SETUP_KEY=951ABD0D-6D3D-47BB-AD78-A8F5D26F5DA7 ghcr.io/qicongshengnetbird
+docker run -d --name shellngn -e HOST=0.0.0.0 -e PORT=8066 --net=host ghcr.io/qicongshengshellngn
 docker run -d --name mysql_57 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123#  qics/mysql:5.7
 docker run -d --name frp_server -e BIND_PORT=7000 -e DASHBOARD_PORT=7777 -e DASHBOARD_USER=qics -e DASHBOARD_PWD=123456 -e TOKEN=badboy --net=host qics/frp:server
 docker run -d --name cloudflared --net=host qics/cloudflared tunnel --no-autoupdate run --token eyJhIjoiZTAwMWM4MzlmMTNiNzU2ZDc0YWI1NjE0MzFlM2ZlZDciLCJ0IjoiMTNjYmI4OTYtNjdkZS00NmY1LTkxOGEtZGE0YjA3NDNjMGE3IiwicyI6IlpUUTJaVGhpWXpjdE9HTXhZeTAwTm1OaUxXSmtZbU10TVRnd1lUZzVOelk0WldKaiJ9

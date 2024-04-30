@@ -58,7 +58,7 @@ def start_docker_container_v2(browser_):
     except Exception:
         logger.error('start_docker_container_v2 error!')
         traceback.print_exc()
-    return docker_msg.__contains__('qics/shadowsocks')
+    return docker_msg.__contains__('ghcr.io/qicongshengshadowsocks')
 
 
 def start_docker_container_v1(browser_):
@@ -88,7 +88,7 @@ def start_docker_container_v1(browser_):
     except Exception:
         logger.error('start_docker_container_v1 error!')
         traceback.print_exc()
-    return docker_msg.__contains__('qics/shadowsocks')
+    return docker_msg.__contains__('ghcr.io/qicongshengshadowsocks')
 
 
 def init_frp_vpn():

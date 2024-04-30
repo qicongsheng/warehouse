@@ -1,4 +1,4 @@
-# docker build -t qics/shellngn:v1 .
+# docker build -t ghcr.io/qicongshengshellngn:v1 .
 FROM shellngn/pro:latest
 MAINTAINER qicongsheng
 
