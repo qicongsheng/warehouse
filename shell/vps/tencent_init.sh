@@ -43,7 +43,7 @@ docker login -u=qics -p Best12167
 docker run -d --restart=always -p 9000:80 --privileged=true -v /tmp:/etc/nginx/html ghcr.io/qicongsheng/nginx
 docker run -d --restart=always -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# ghcr.io/qicongsheng/mysql:5.7
 docker run -d --restart=always -e HOST=0.0.0.0 -e PORT=8066 --net=host ghcr.io/qicongsheng/shellngn
-docker run -d --restart=always -p 8081:8081 ghcr.io/qicongsheng/nexus:dev
+docker run -d --restart=always -p 8081:8081 ghcr.io/qicongsheng/nexus
 docker run -d --restart=always -p 5212:5212 --privileged=true -v /tmp:/tmp ghcr.io/qicongsheng/cloudreve
 docker run -d --restart=always -p 5700:5700 ghcr.io/qicongsheng/qinglong
 docker run -d --restart=always --net=host ghcr.io/qicongsheng/sc:rabbitmq
