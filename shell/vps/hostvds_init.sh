@@ -48,10 +48,8 @@ curl -fsSL https://get.docker.com | bash -s docker
 service docker start
 systemctl enable docker
 service docker restart
-docker login -u=qics -p Best12167
-docker buildx create --name mutibuilder
-docker buildx use mutibuilder
-docker buildx inspect --bootstrap
+curl -fsSL "https://www.qics.top/shell/docker/common/docker_login.sh" | /bin/sh
+curl -fsSL "https://www.qics.top/shell/docker/common/buildx_init.sh" | /bin/sh
 
 docker run -d --restart=always -p 9000:80 --privileged=true -v /tmp:/etc/nginx/html ghcr.io/qicongsheng/nginx
 docker run -d --restart=always -e NB_SETUP_KEY=951ABD0D-6D3D-47BB-AD78-A8F5D26F5DA7 --net=host --privileged=true ghcr.io/qicongsheng/netbird
