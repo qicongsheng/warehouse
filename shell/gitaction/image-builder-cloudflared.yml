@@ -7,8 +7,5 @@ jobs:
     steps:
     - name: Exec build shell
       run: |
-        docker buildx create --name mutibuilder
-        docker buildx use mutibuilder
-        docker buildx inspect --bootstrap
         curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/cloudflared/cloudflared_builder.sh" | /bin/sh
     
