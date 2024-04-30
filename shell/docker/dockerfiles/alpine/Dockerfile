@@ -1,6 +1,6 @@
 # docker buildx build -t ghcr.io/qicongsheng/alpine --platform linux/amd64,linux/arm64/v8 . --push
 FROM alpine:3.15
-MAINTAINER qics
+MAINTAINER qicongsheng
 
 ENV USER=root \
     PASSWD=123456 \

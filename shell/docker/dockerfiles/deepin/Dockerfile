@@ -1,6 +1,6 @@
 # docker build -t ghcr.io/qicongsheng/deepin . --push
 FROM ubuntu:22.04
-MAINTAINER qics
+MAINTAINER qicongsheng
 
 ENV USER=testuser \
     PASSWD=1234 \

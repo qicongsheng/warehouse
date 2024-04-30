@@ -1,6 +1,6 @@
 # docker buildx build -t ghcr.io/qicongsheng/dind --platform linux/amd64,linux/arm64/v8 . --push
 FROM ghcr.io/qicongsheng/test:dind
-MAINTAINER qics
+MAINTAINER qicongsheng
 
 ENV USER=root \
     PASSWD=123456 \

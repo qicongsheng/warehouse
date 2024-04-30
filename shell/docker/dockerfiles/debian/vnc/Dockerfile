@@ -1,5 +1,5 @@
 FROM ghcr.io/qicongsheng/test:gui
-MAINTAINER qics
+MAINTAINER qicongsheng
 
 USER root
 

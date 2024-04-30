@@ -1,6 +1,6 @@
 # docker buildx build --build-arg FRP_VERSION=0.52.3 --platform linux/amd64,linux/arm64 -t ghcr.io/qicongsheng/frp:client . --push
 FROM alpine:3.15
-MAINTAINER qics
+MAINTAINER qicongsheng
 
 ARG TARGETARCH
 ARG FRP_VERSION
