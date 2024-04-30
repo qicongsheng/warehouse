@@ -1,6 +1,6 @@
-# docker build -t ghcr.io/qicongshengchrome .
+# docker build -t ghcr.io/qicongsheng/chrome .
 # Start a Standalone Chrome
-# docker run -d -p 4444:4444 -p 7900:7900 ghcr.io/qicongshengchrome
+# docker run -d -p 4444:4444 -p 7900:7900 ghcr.io/qicongsheng/chrome
 # Point your WebDriver tests
 # http://localhost:4444
 # To see what is happening inside the container

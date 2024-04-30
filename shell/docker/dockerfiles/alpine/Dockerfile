@@ -1,4 +1,4 @@
-# docker buildx build -t ghcr.io/qicongshengalpine --platform linux/amd64,linux/arm64/v8 . --push
+# docker buildx build -t ghcr.io/qicongsheng/alpine --platform linux/amd64,linux/arm64/v8 . --push
 FROM alpine:3.15
 MAINTAINER qics
 

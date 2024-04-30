@@ -1,4 +1,4 @@
-# docker build -t ghcr.io/qicongshengdeepin . --push
+# docker build -t ghcr.io/qicongsheng/deepin . --push
 FROM ubuntu:22.04
 MAINTAINER qics
 

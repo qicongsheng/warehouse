@@ -1,4 +1,4 @@
-FROM ghcr.io/qicongshengtest:gui
+FROM ghcr.io/qicongsheng/test:gui
 MAINTAINER qics
 
 USER root

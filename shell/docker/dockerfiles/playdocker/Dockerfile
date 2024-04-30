@@ -1,4 +1,4 @@
-# docker buildx build -t ghcr.io/qicongshengplaydocker --platform linux/amd64,linux/arm64/v8 . --push
+# docker buildx build -t ghcr.io/qicongsheng/playdocker --platform linux/amd64,linux/arm64/v8 . --push
 FROM python:3.9-alpine
 MAINTAINER qics
 

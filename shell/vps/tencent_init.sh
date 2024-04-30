@@ -40,14 +40,14 @@ systemctl enable docker
 # service docker restart
 
 docker login -u=qics -p Best12167
-docker run -d --restart=always -p 9000:80 --privileged=true -v /tmp:/etc/nginx/html ghcr.io/qicongshengnginx
-docker run -d --restart=always -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# ghcr.io/qicongshengmysql:5.7
-docker run -d --restart=always -e HOST=0.0.0.0 -e PORT=8066 --net=host ghcr.io/qicongshengshellngn
-docker run -d --restart=always -p 8081:8081 ghcr.io/qicongshengnexus:dev
-docker run -d --restart=always -p 5212:5212 --privileged=true -v /tmp:/tmp ghcr.io/qicongshengcloudreve
-docker run -d --restart=always -p 5700:5700 ghcr.io/qicongshengqinglong
-docker run -d --restart=always --net=host ghcr.io/qicongshengsc:rabbitmq
-docker run -d --restart=always -e REDIS_PASSWORD=Lhnekj#_83jf -p 6379:6379 ghcr.io/qicongshengsc:redis /bin/sh -c 'redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}'
+docker run -d --restart=always -p 9000:80 --privileged=true -v /tmp:/etc/nginx/html ghcr.io/qicongsheng/nginx
+docker run -d --restart=always -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# ghcr.io/qicongsheng/mysql:5.7
+docker run -d --restart=always -e HOST=0.0.0.0 -e PORT=8066 --net=host ghcr.io/qicongsheng/shellngn
+docker run -d --restart=always -p 8081:8081 ghcr.io/qicongsheng/nexus:dev
+docker run -d --restart=always -p 5212:5212 --privileged=true -v /tmp:/tmp ghcr.io/qicongsheng/cloudreve
+docker run -d --restart=always -p 5700:5700 ghcr.io/qicongsheng/qinglong
+docker run -d --restart=always --net=host ghcr.io/qicongsheng/sc:rabbitmq
+docker run -d --restart=always -e REDIS_PASSWORD=Lhnekj#_83jf -p 6379:6379 ghcr.io/qicongsheng/sc:redis /bin/sh -c 'redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}'
 docker run -d --restart=always -e BIND_PORT=7000 -e DASHBOARD_PORT=7777 -e DASHBOARD_USER=qics -e DASHBOARD_PWD=123456 -e TOKEN=badboy --net=host qics/frp:server
 docker run -d --restart=always --net=host qics/cloudflared tunnel --no-autoupdate run --token eyJhIjoiZTAwMWM4MzlmMTNiNzU2ZDc0YWI1NjE0MzFlM2ZlZDciLCJ0IjoiMTNjYmI4OTYtNjdkZS00NmY1LTkxOGEtZGE0YjA3NDNjMGE3IiwicyI6IlpUUTJaVGhpWXpjdE9HTXhZeTAwTm1OaUxXSmtZbU10TVRnd1lUZzVOelk0WldKaiJ9
 docker run -d --restart=always -e NB_SETUP_KEY=951ABD0D-6D3D-47BB-AD78-A8F5D26F5DA7 --net=host --privileged=true qics/netbird

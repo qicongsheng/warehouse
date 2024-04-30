@@ -1,5 +1,5 @@
-# docker buildx build -t ghcr.io/qicongshengdind --platform linux/amd64,linux/arm64/v8 . --push
-FROM ghcr.io/qicongshengtest:dind
+# docker buildx build -t ghcr.io/qicongsheng/dind --platform linux/amd64,linux/arm64/v8 . --push
+FROM ghcr.io/qicongsheng/test:dind
 MAINTAINER qics
 
 ENV USER=root \
