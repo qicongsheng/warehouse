@@ -1,0 +1,4 @@
+# docker buildx build -t ghcr.io/qicongsheng/nexus --platform linux/amd64,linux/arm64/v8 . --push
+FROM sonatype/nexus3
+MAINTAINER qics
+
