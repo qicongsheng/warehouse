@@ -1,12 +1,12 @@
 #!/bin/bash
-# curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/other/other_builder.sh" | /bin/sh
+# curl -fsSL https://www.qics.top/shell/docker/dockerfiles/other/other_builder.sh | /bin/sh
 curl -fsSL "https://www.qics.top/shell/docker/common/docker_login.sh" | /bin/sh
 curl -fsSL "https://www.qics.top/shell/docker/common/buildx_init.sh" | /bin/sh
 
 cd /tmp && rm -fr /tmp/_cloudreve
 mkdir /tmp/_cloudreve && cd /tmp/_cloudreve
 curl -o /tmp/_cloudreve/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/other/Dockerfile_cloudreve
-docker buildx build -t ghcr.io/qicongsheng/cloudreve --platform linux/amd64,linux/arm64/v8 . --push
+docker build -t ghcr.io/qicongsheng/cloudreve . --push
 cd /tmp && rm -fr /tmp/_cloudreve
 curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"nick_name":"gitaction", "subject": "qicongsheng/cloudreve docker image pushed.", "content": "qicongsheng/cloudreve docker image pushed."}'
 

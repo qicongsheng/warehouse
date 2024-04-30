@@ -1,3 +1,4 @@
+# docker build -t ghcr.io/qicongsheng/cloudreve . --push
 FROM xavierniu/cloudreve:3.2.1
 MAINTAINER qics
 
