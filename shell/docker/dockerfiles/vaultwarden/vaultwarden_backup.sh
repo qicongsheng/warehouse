@@ -7,7 +7,7 @@ BACKUP_NAME="vaultwarden_$DATE.tar.gz"
 rm -fr $BACKUP_NAME
 rm -fr /onedriver/data/vaultwarden/$BACKUP_NAME
 tar -zcvf $BACKUP_NAME vaultwarden
-mkdir - p /onedriver/data/vaultwarden
+mkdir -p /onedriver/data/vaultwarden
 cp $BACKUP_NAME /onedriver/data/vaultwarden/
 rm -fr $BACKUP_NAME
 
