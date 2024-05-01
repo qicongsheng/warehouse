@@ -28,7 +28,7 @@ echo "0 */1 * * * curl -fsSL http://www.qics.top/shell/ufw/ufw_tencent.sh | /bin
 #屏蔽暴力破解
 echo "*/1 * * * * curl -fsSL http://www.qics.top/shell/blockip.sh | /bin/bash" >> /var/spool/cron/crontabs/root
 #备份bitwarden
-echo "30 1 * * * curl -fsSL https://www.qics.top/shell/docker/dockerfiles/vaultwarden/vaultwarden_backup.sh | /bin/bash" >> /var/spool/cron/crontabs/root
+echo "30 0 * * * curl -fsSL https://www.qics.top/shell/docker/dockerfiles/vaultwarden/vaultwarden_backup.sh | /bin/bash" >> /var/spool/cron/crontabs/root
 
 #启动定时任务
 chmod 600 /var/spool/cron/crontabs/root
