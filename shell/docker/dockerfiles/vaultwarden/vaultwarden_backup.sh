@@ -5,10 +5,10 @@ DATE=$(date '+%Y%m%d%H%M%S')
 cd /data
 BACKUP_NAME="vaultwarden_$DATE.tar.gz"
 rm -fr $BACKUP_NAME
-rm -fr /onedriver/data/vaultwarden/$BACKUP_NAME
+rm -fr /onedriver/backup/vaultwarden/$BACKUP_NAME
 tar -zcvf $BACKUP_NAME vaultwarden
-mkdir -p /onedriver/data/vaultwarden
-cp $BACKUP_NAME /onedriver/data/vaultwarden/
+mkdir -p /onedriver/backup/vaultwarden
+cp $BACKUP_NAME /onedriver/backup/vaultwarden/
 rm -fr $BACKUP_NAME
 curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data "{\"nick_name\":\"bitwarden\", \"subject\": \"bitwarden backup finish. [$BACKUP_NAME]\", \"content\": \"bitwarden backup finish. [$BACKUP_NAME]\"}"
 
