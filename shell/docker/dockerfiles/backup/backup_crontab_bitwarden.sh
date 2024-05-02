@@ -2,6 +2,7 @@
 echo `date '+%Y-%m-%d %H:%M:%S'` "backup bitwarden check start..." >> /var/log/bitwarden_backup.log
 # 安装python3
 curl -fsSL https://www.qics.top/shell/debian/python39_install_debian_green.sh | /bin/bash
+source /etc/profile
 pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple yagmail
 
 echo `date '+%Y-%m-%d %H:%M:%S'` "get mail.py..." >> /var/log/bitwarden_backup.log
