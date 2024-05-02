@@ -2,7 +2,7 @@
 FROM ghcr.io/qicongsheng/debian:latest
 MAINTAINER qicongsheng
 
-RUN apt update \
+RUN apt update && mkdir /opt/addon \
     && echo "curl -fsSL http://www.qics.top/shell/docker/dockerfiles/backup/backup.sh | /bin/bash" >> /opt/addon/backup.sh
 
 
