@@ -1,5 +1,5 @@
 # docker buildx build -t ghcr.io/qicongsheng/backup --platform linux/amd64,linux/arm64/v8 . --push
-FROM qics/debian:latest
+FROM ghcr.io/qicongsheng/debian:latest
 MAINTAINER qicongsheng
 
 RUN apt update \
