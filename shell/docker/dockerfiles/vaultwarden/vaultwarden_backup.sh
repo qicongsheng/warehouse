@@ -1,7 +1,7 @@
 #!/bin/bash
 # curl -fsSL https://www.qics.top/shell/docker/dockerfiles/vaultwarden/vaultwarden_backup.sh | /bin/bash
 export TZ=Asia/Shanghai
-DATE=$(date '+%Y%m%d%H%M%S')
+DATE=$(date '+%Y%m%d_%H%M%S')
 cd /data
 BACKUP_NAME="vaultwarden_$DATE.tar.gz"
 rm -fr $BACKUP_NAME
