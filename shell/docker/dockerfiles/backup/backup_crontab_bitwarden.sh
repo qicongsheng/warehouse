@@ -17,7 +17,7 @@ rm -fr $BACKUP_NAME
 echo `date '+%Y-%m-%d %H:%M:%S'` "tar $BACKUP_NAME package..." >> /var/log/bitwarden_backup.log
 tar -zcvf $BACKUP_NAME vaultwarden
 echo `date '+%Y-%m-%d %H:%M:%S'` "send mail $BACKUP_NAME package..." >> /var/log/bitwarden_backup.log
-python3 /opt/mail.py $BACKUP_NAME "/data/$BACKUP_NAME"
+python3 /opt/mail.py "bitwarden" "bitwarden backup[$BACKUP_NAME]" "/data/$BACKUP_NAME"
 rm -fr $BACKUP_NAME
 rm -fr /opt/mail.py
 echo `date '+%Y-%m-%d %H:%M:%S'` "end..." >> /var/log/bitwarden_backup.log
