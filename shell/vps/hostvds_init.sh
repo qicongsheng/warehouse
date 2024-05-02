@@ -52,6 +52,7 @@ curl -fsSL "https://www.qics.top/shell/docker/common/docker_login.sh" | /bin/sh
 curl -fsSL "https://www.qics.top/shell/docker/common/buildx_init.sh" | /bin/sh
 
 docker run -d --restart=always -p 9000:80 --privileged=true -v /tmp:/etc/nginx/html ghcr.io/qicongsheng/nginx
+docker run -d --restart=always --name=tinyproxy -p 6666:8888 ghcr.io/qicongsheng/tinyproxy:latest play.qics.top
 docker run -d --restart=always -e NB_SETUP_KEY=951ABD0D-6D3D-47BB-AD78-A8F5D26F5DA7 --net=host --privileged=true ghcr.io/qicongsheng/netbird
 docker run -d --restart=always -e API_KEY=LAdoeJAuaq_uB2kCblxZDtF5wJFrDYHQfSHOFge0 -e ZONE=qics.top -e SUBDOMAIN=hostvds ghcr.io/qicongsheng/ddns
 docker run -d --restart=always ghcr.io/qicongsheng/traffmonetizer start accept --token 5xijhElDM8IqEwMj0VolDEVsbUDCGS3GFpRCFckxix8=
