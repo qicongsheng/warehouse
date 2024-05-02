@@ -24,12 +24,13 @@ RUN apt update --allow-releaseinfo-change && apt update && apt upgrade -y \
     && echo 'mkdir -p /home/$USER /opt/addon && rm -fr /home/root' >> /opt/startup.sh \
     && echo 'chsh -s /bin/bash $USER' >> /opt/startup.sh \
     && echo '/usr/sbin/sshd -D &' >> /opt/startup.sh \
-    && echo 'tail -f /dev/null' >> /opt/startup.sh \
     && echo 'addon_files=$(ls "/opt/addon")' >> /opt/startup.sh \
     && echo 'for addon_file in \$addon_files' >> /opt/startup.sh \
     && echo 'do' >> /opt/startup.sh \
     && echo '  sh /opt/addon/$addon_file' >> /opt/startup.sh \
     && echo 'done' >> /opt/startup.sh \
+    && echo 'tail -f /dev/null' >> /opt/startup.sh \
+
     && chmod +x /opt/startup.sh \
     && apt autoclean \
     && rm -fr /tmp/*
