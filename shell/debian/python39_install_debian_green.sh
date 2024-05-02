@@ -5,7 +5,7 @@ apt-get install bzip2 build-essential libreadline-dev libncursesw5-dev libssl-de
 while true; do
   rm -fr /tmp/python-3.9.12-debian.tar.gz
   echo 'start download python-3.9.12-debian.tar.gz ...'
-  curl --connect-timeout 600 -m 7200 --continue-at - -o /tmp/python-3.9.12-debian.tar.gz https://fha48w.sn.files.1drv.com/y4mg0hBe1_yJ6aylVK-wL9ldhXrZ4RHWQAkqakwGSDa3ScsBTIZRGfGwppZ5MDtYgANa9cve8PhdstnwYUaDOJuCcFEbcl5n3vgabGZf6StO_-80pW42kuXhmDzW30GJAmS3XIhZ-cTTq29HALsiRopwq4Ka_WqJxjYgQytGEciBWEhRV9xg7mnKIi7oRJ70pr2BEpJE0YAim-xZiTnXIqsug
+  curl --connect-timeout 600 -m 7200 --continue-at - -o /tmp/python-3.9.12-debian.tar.gz https://34zvga.sn.files.1drv.com/y4m4IkEelDSnrFHC3X5o1FxKy2ZJw5q61d1mzJlFHUWus4YRnqCQYzxRoN3Mcfs99aIo58Q93WqukEQwxoqHxboqha_quPgxQQYpEzZSicy0OAL8cxj9Wxakg6F5876rTksqXgYbSo-1ZiOKIjdjqoNJEoVUnqToymvWy3bbnB3L6zShmhy6lI7LE9aHmk9onfVB2HFDdspQzLrlJUD-YTK-Q
   echo 'download python-3.9.12-debian.tar.gz end ...'
   tar -zxvf /tmp/python-3.9.12-debian.tar.gz -C /usr/local
   if [ $? -eq 0 ]; then
