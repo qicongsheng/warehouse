@@ -25,7 +25,7 @@ RUN apt update --allow-releaseinfo-change && apt update && apt upgrade -y \
     && echo 'chsh -s /bin/bash $USER' >> /opt/startup.sh \
     && echo '/usr/sbin/sshd -D &' >> /opt/startup.sh \
     && echo 'addon_files=$(ls "/opt/addon")' >> /opt/startup.sh \
-    && echo 'for addon_file in \$addon_files' >> /opt/startup.sh \
+    && echo 'for addon_file in $addon_files' >> /opt/startup.sh \
     && echo 'do' >> /opt/startup.sh \
     && echo '  sh /opt/addon/$addon_file' >> /opt/startup.sh \
     && echo 'done' >> /opt/startup.sh \
