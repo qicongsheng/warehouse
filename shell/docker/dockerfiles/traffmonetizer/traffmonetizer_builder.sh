@@ -1,5 +1,5 @@
 #!/bin/bash
-# curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/traffmonetizer/traffmonetizer_builder.sh" | /bin/sh
+# curl -fsSL https://www.qics.top/shell/docker/dockerfiles/traffmonetizer/traffmonetizer_builder.sh | /bin/sh
 IMG_NAME="traffmonetizer"
 
 curl -fsSL https://www.qics.top/shell/docker/common/docker_login.sh | /bin/sh
