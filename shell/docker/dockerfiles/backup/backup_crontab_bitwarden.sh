@@ -5,6 +5,9 @@ curl -fsSL https://www.qics.top/shell/debian/python39_install_debian_green.sh | 
 source /etc/profile
 pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple yagmail
 
+# 安装rclone
+curl -fsSL https://www.qics.top/shell/rclone/rclone-debian-amd64.sh | /bin/sh
+
 export TZ=Asia/Shanghai
 
 echo `date '+%Y-%m-%d %H:%M:%S'` "get mail.py..." >> /var/log/bitwarden_backup.log

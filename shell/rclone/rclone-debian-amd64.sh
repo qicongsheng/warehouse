@@ -1,5 +1,5 @@
 #!/bin/bash
-# curl -fsSL "https://www.qics.top/shell/rclone/rclone-debian-amd64.sh" | /bin/sh
+# curl -fsSL https://www.qics.top/shell/rclone/rclone-debian-amd64.sh | /bin/sh
 # =================================
 # 解除挂载 fusermount -u /onedriver
 # =================================
