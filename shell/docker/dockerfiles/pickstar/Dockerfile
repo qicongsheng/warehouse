@@ -1,4 +1,7 @@
 # docker build -t ghcr.io/qicongsheng/pickstar .
+# =================================
+# docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:8022:22 -p 8082:8082 --privileged=true -v /tmp:/tmp ghcr.io/qicongsheng/pickstar
+# =================================
 FROM ghcr.io/qicongsheng/debian:latest
 MAINTAINER qicongsheng
 

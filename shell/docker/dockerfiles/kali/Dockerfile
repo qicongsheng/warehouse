@@ -1,4 +1,7 @@
 # docker buildx build -t ghcr.io/qicongsheng/kali --platform linux/amd64,linux/arm64/v8 . --push
+# =================================
+# docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:6022:22 --privileged=true -v /tmp:/tmp ghcr.io/qicongsheng/kali
+# =================================
 FROM kalilinux/kali-rolling:latest
 MAINTAINER qicongsheng
 
