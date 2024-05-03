@@ -5,11 +5,12 @@ curl -fsSL https://www.qics.top/shell/debian/python39_install_debian_green.sh | 
 source /etc/profile
 pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple yagmail
 
+export TZ=Asia/Shanghai
+
 echo `date '+%Y-%m-%d %H:%M:%S'` "get mail.py..." >> /var/log/bitwarden_backup.log
 rm -fr /opt/mail.py
 curl -o /opt/mail.py -L https://www.qics.top/shell/docker/common/mail.py
 
-export TZ=Asia/Shanghai
 DATE=$(date '+%Y%m%d_%H%M%S')
 cd /data
 BACKUP_NAME="vaultwarden_$DATE.tar.gz"
