@@ -40,6 +40,11 @@ curl -fsSL "https://www.qics.top/shell/docker/common/docker_login.sh" | /bin/sh
 # curl -fsSL "https://www.qics.top/shell/docker_set_proxy.sh" | /bin/bash
 # service docker restart
 
+curl -o /tmp/shellngn.tar -L https://3ozvga.sn.files.1drv.com/y4mqZw6aYr7q93cmkDmeT5goVmBevwF1k7TtgfJtutW8HGfCpfWlpPGdaDAExmjY8hTvOjgUYd3XP9X39EuBOUZxtbUI7cjJO2b-lO5VblNUBxGAf_BQOrlvO-JA1EhIvb8fg0TYyYBs7zueQi8jrlFSwlUX41R-7GEDwWaeVs8EbiTWhusLWT-_4D4abdaVepotPsOtN9u_zqQvm0wl3Zc7g
+docker load < /tmp/shellngn.tar
+rm -fr /tmp/shellngn.tar
+docker tag ghcr.io/qicongsheng/shellngn ghcr.nju.edu.cn/qicongsheng/shellngn
+
 docker run -d --restart=always -p 9000:80 --privileged=true -v /tmp:/etc/nginx/html ghcr.nju.edu.cn/qicongsheng/nginx
 docker run -d --restart=always -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# ghcr.nju.edu.cn/qicongsheng/mysql:5.7
 docker run -d --restart=always -e HOST=0.0.0.0 -e PORT=8066 --net=host ghcr.nju.edu.cn/qicongsheng/shellngn
