@@ -1,5 +1,5 @@
 #!/bin/bash
-# curl -fsSL "https://www.qics.top/shell/vps/hostvds_init.sh" | /bin/bash
+# curl -fsSL https://www.qics.top/shell/vps/hostvds_init.sh | /bin/bash
 
 #设置dns服务器
 echo "nameserver 8.8.8.8" > /etc/resolv.conf
