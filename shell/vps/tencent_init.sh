@@ -44,6 +44,7 @@ curl -o /tmp/shellngn.tar -L https://3ozvga.sn.files.1drv.com/y4mqZw6aYr7q93cmkD
 docker load < /tmp/shellngn.tar
 rm -fr /tmp/shellngn.tar
 docker tag ghcr.io/qicongsheng/shellngn ghcr.nju.edu.cn/qicongsheng/shellngn
+docker rmi ghcr.io/qicongsheng/shellngn
 
 docker run -d --restart=always -p 9000:80 --privileged=true -v /tmp:/etc/nginx/html ghcr.nju.edu.cn/qicongsheng/nginx
 docker run -d --restart=always -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# ghcr.nju.edu.cn/qicongsheng/mysql:5.7
