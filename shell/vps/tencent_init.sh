@@ -42,21 +42,21 @@ systemctl enable docker
 # service docker restart
 
 docker login -u=qics -p Best12167
-docker run -d --restart=always -p 9000:80 --privileged=true -v /tmp:/etc/nginx/html ghcr.io/qicongsheng/nginx
-docker run -d --restart=always -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# ghcr.io/qicongsheng/mysql:5.7
-docker run -d --restart=always -e HOST=0.0.0.0 -e PORT=8066 --net=host ghcr.io/qicongsheng/shellngn
-docker run -d --restart=always -p 8081:8081 ghcr.io/qicongsheng/nexus
-docker run -d --restart=always -p 5212:5212 --privileged=true -v /tmp:/tmp ghcr.io/qicongsheng/cloudreve
-docker run -d --restart=always -p 5700:5700 ghcr.io/qicongsheng/qinglong
-docker run -d --restart=always --net=host ghcr.io/qicongsheng/sc:rabbitmq
-docker run -d --restart=always -e REDIS_PASSWORD=Lhnekj#_83jf -p 6379:6379 ghcr.io/qicongsheng/sc:redis /bin/sh -c 'redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}'
-docker run -d --restart=always -e BIND_PORT=7000 -e DASHBOARD_PORT=7777 -e DASHBOARD_USER=qics -e DASHBOARD_PWD=123456 -e TOKEN=badboy --net=host ghcr.io/qicongsheng/frp:server
-docker run -d --restart=always --net=host ghcr.io/qicongsheng/cloudflared tunnel --no-autoupdate run --token eyJhIjoiZTAwMWM4MzlmMTNiNzU2ZDc0YWI1NjE0MzFlM2ZlZDciLCJ0IjoiMTNjYmI4OTYtNjdkZS00NmY1LTkxOGEtZGE0YjA3NDNjMGE3IiwicyI6IlpUUTJaVGhpWXpjdE9HTXhZeTAwTm1OaUxXSmtZbU10TVRnd1lUZzVOelk0WldKaiJ9
-docker run -d --restart=always -e NB_SETUP_KEY=951ABD0D-6D3D-47BB-AD78-A8F5D26F5DA7 --net=host --privileged=true ghcr.io/qicongsheng/netbird
-docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:8022:22 -p 8082:8082 --privileged=true -v /tmp:/tmp ghcr.io/qicongsheng/pickstar
-docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -e SSHD_PORT=5022 --net=host --cap-add=NET_ADMIN --privileged=true -v /tmp:/tmp ghcr.io/qicongsheng/dind
-docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:6022:22 --privileged=true -v /tmp:/tmp ghcr.io/qicongsheng/kali
-docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 --privileged=true -v /tmp:/tmp ghcr.io/qicongsheng/debian
+docker run -d --restart=always -p 9000:80 --privileged=true -v /tmp:/etc/nginx/html ghcr.nju.edu.cn/qicongsheng/nginx
+docker run -d --restart=always -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# ghcr.nju.edu.cn/qicongsheng/mysql:5.7
+docker run -d --restart=always -e HOST=0.0.0.0 -e PORT=8066 --net=host ghcr.nju.edu.cn/qicongsheng/shellngn
+docker run -d --restart=always -p 8081:8081 ghcr.nju.edu.cn/qicongsheng/nexus
+docker run -d --restart=always -p 5212:5212 --privileged=true -v /tmp:/tmp ghcr.nju.edu.cn/qicongsheng/cloudreve
+docker run -d --restart=always -p 5700:5700 ghcr.nju.edu.cn/qicongsheng/qinglong
+docker run -d --restart=always --net=host ghcr.nju.edu.cn/qicongsheng/sc:rabbitmq
+docker run -d --restart=always -e REDIS_PASSWORD=Lhnekj#_83jf -p 6379:6379 ghcr.nju.edu.cn/qicongsheng/sc:redis /bin/sh -c 'redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}'
+docker run -d --restart=always -e BIND_PORT=7000 -e DASHBOARD_PORT=7777 -e DASHBOARD_USER=qics -e DASHBOARD_PWD=123456 -e TOKEN=badboy --net=host ghcr.nju.edu.cn/qicongsheng/frp:server
+docker run -d --restart=always --net=host ghcr.nju.edu.cn/qicongsheng/cloudflared tunnel --no-autoupdate run --token eyJhIjoiZTAwMWM4MzlmMTNiNzU2ZDc0YWI1NjE0MzFlM2ZlZDciLCJ0IjoiMTNjYmI4OTYtNjdkZS00NmY1LTkxOGEtZGE0YjA3NDNjMGE3IiwicyI6IlpUUTJaVGhpWXpjdE9HTXhZeTAwTm1OaUxXSmtZbU10TVRnd1lUZzVOelk0WldKaiJ9
+docker run -d --restart=always -e NB_SETUP_KEY=951ABD0D-6D3D-47BB-AD78-A8F5D26F5DA7 --net=host --privileged=true ghcr.nju.edu.cn/qicongsheng/netbird
+docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:8022:22 -p 8082:8082 --privileged=true -v /tmp:/tmp ghcr.nju.edu.cn/qicongsheng/pickstar
+docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -e SSHD_PORT=5022 --net=host --cap-add=NET_ADMIN --privileged=true -v /tmp:/tmp ghcr.nju.edu.cn/qicongsheng/dind
+docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:6022:22 --privileged=true -v /tmp:/tmp ghcr.nju.edu.cn/qicongsheng/kali
+docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 --privileged=true -v /tmp:/tmp ghcr.nju.edu.cn/qicongsheng/debian
 
 # curl -fsSL "https://www.qics.top/shell/docker_remove_proxy.sh" | /bin/bash
 
