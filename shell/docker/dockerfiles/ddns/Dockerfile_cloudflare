@@ -1,3 +1,6 @@
 # docker buildx build -t ghcr.io/qicongsheng/ddns --platform linux/amd64,linux/arm64 . --push
+# =================================
+# docker run -d --restart=always -e API_KEY=LAdoeJAuaq_uB2kCblxZDtF5wJFrDYHQfSHOFge0 -e ZONE=qics.top -e SUBDOMAIN=home ghcr.io/qicongsheng/ddns
+# =================================
 FROM oznu/cloudflare-ddns
 MAINTAINER qicongsheng
