@@ -1,5 +1,8 @@
 #!/bin/bash
 # curl -fsSL "https://www.qics.top/shell/rclone/rclone-debian-arm64.sh" | /bin/sh
+# =================================
+# 解除挂载 fusermount -u /onedriver
+# =================================
 apt update && apt install curl fuse -y
 mkdir -p /opt/rclone/onedriver && mkdir -p /onedriver
 curl --connect-timeout 600 -m 7200 --continue-at - -o /opt/rclone/rclone.conf https://www.qics.top/shell/docker/dockerfiles/rclone/rclone.conf
