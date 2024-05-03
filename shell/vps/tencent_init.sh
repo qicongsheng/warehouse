@@ -48,7 +48,8 @@ docker rmi ghcr.io/qicongsheng/shellngn
 
 docker run -d --restart=always -p 9000:80 --privileged=true -v /tmp:/etc/nginx/html ghcr.nju.edu.cn/qicongsheng/nginx
 docker run -d --restart=always -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# ghcr.nju.edu.cn/qicongsheng/mysql:5.7
-docker run -d --restart=always -e HOST=0.0.0.0 -e PORT=8066 --net=host ghcr.nju.edu.cn/qicongsheng/shellngn
+docker run -d --restart=always -p 6068:80 -v /data/vaultwarden:/data ghcr.io/qicongsheng/vaultwarden
+docker run -d --restart=always -e HOST=0.0.0.0 -e PORT=8066 -v /data/shellngn:/home/node/server/data --net=host ghcr.nju.edu.cn/qicongsheng/shellngn
 docker run -d --restart=always -p 8081:8081 ghcr.nju.edu.cn/qicongsheng/nexus:dev
 docker run -d --restart=always -p 5212:5212 --privileged=true -v /tmp:/tmp ghcr.nju.edu.cn/qicongsheng/cloudreve
 docker run -d --restart=always -p 5700:5700 ghcr.nju.edu.cn/qicongsheng/qinglong
