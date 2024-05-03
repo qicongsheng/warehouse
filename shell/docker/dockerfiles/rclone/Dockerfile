@@ -1,6 +1,7 @@
-
 # docker buildx build -t ghcr.io/qicongsheng/rclone --platform linux/amd64,linux/arm64/v8 . --push
+# =================================
 # docker run -d --restart=always --privileged=true -v /tmp:/tmp ghcr.io/qicongsheng/rclone
+# =================================
 FROM alpine:3.15
 MAINTAINER qicongsheng
 
