@@ -4,7 +4,6 @@ echo `date '+%Y-%m-%d %H:%M:%S'` "backup bitwarden start..." >> /var/log/bitward
 curl -fsSL https://www.qics.top/shell/debian/python39_install_debian_green.sh | /bin/bash
 source /etc/profile
 pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple yagmail
-
 # 安装rclone
 curl -fsSL https://www.qics.top/shell/rclone/rclone-debian-amd64.sh | /bin/sh
 
