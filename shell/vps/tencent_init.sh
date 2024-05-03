@@ -36,10 +36,10 @@ chmod 600 /var/spool/cron/crontabs/root
 curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 service docker start
 systemctl enable docker
+curl -fsSL "https://www.qics.top/shell/docker/common/docker_login.sh" | /bin/sh
 # curl -fsSL "https://www.qics.top/shell/docker_set_proxy.sh" | /bin/bash
 # service docker restart
 
-docker login -u=qics -p Best12167
 docker run -d --restart=always -p 9000:80 --privileged=true -v /tmp:/etc/nginx/html ghcr.nju.edu.cn/qicongsheng/nginx
 docker run -d --restart=always -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# ghcr.nju.edu.cn/qicongsheng/mysql:5.7
 docker run -d --restart=always -e HOST=0.0.0.0 -e PORT=8066 --net=host ghcr.nju.edu.cn/qicongsheng/shellngn
