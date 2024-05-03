@@ -1,4 +1,7 @@
 # docker buildx build --build-arg FRP_VERSION=0.52.3 --platform linux/amd64,linux/arm64 -t ghcr.io/qicongsheng/frp:server . --push
+# =================================
+# docker run -d --restart=always -e BIND_PORT=7000 -e DASHBOARD_PORT=7777 -e DASHBOARD_USER=qics -e DASHBOARD_PWD=123456 -e TOKEN=badboy --net=host ghcr.io/qicongsheng/frp:server
+# =================================
 FROM alpine:3.15
 MAINTAINER qicongsheng
 

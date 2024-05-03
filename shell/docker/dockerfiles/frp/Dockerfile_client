@@ -1,4 +1,7 @@
 # docker buildx build --build-arg FRP_VERSION=0.52.3 --platform linux/amd64,linux/arm64 -t ghcr.io/qicongsheng/frp:client . --push
+# =================================
+# docker run -d --restart=always --name pi_ssh_30088 -e SERVER_ADDR=play.qics.top -e PROXY_NAME=pi_ssh_30088 -e SERVER_PORT=7000 -e TOKEN=badboy -e LOCAL_PORT=22 -e REMOTE_PORT=30088 --net=host ghcr.io/qicongsheng/frp:client
+# =================================
 FROM alpine:3.15
 MAINTAINER qicongsheng
 
