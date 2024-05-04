@@ -1,0 +1,10 @@
+docker run -d --restart=always -p 3308:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# -v /data/mysql:/var/lib/mysql ghcr.nju.edu.cn/qicongsheng/mysql:5.7x
+
+mysql -u root -p
+use mysql;
+"GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'youarebadboy123#' WITH GRANT OPTION;"
+flush privileges;
+
+CREATE USER 'root'@'%' IDENTIFIED BY 'youarebadboy123#';
+
+docker run -d --restart=always -p 3308:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# -v /data/mysql:/var/lib/mysql ghcr.io/qicongsheng/mysql:5.7x
