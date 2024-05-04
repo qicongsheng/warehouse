@@ -26,7 +26,7 @@ RUN rpmkeys --import https://repo.mysql.com/RPM-GPG-KEY-mysql \
 
 # VOLUME /var/lib/mysql  We don't want a volume for our static database
 
-# COPY custom_init.sql /docker-entrypoint-initdb.d/custom_init.sql #自定义初始化sql
+COPY allow_remote_login.sql /docker-entrypoint-initdb.d/allow_remote_login.sql
 COPY docker-entrypoint.sh /entrypoint.sh
 COPY healthcheck.sh /healthcheck.sh
 ENTRYPOINT ["/entrypoint.sh"]
