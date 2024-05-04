@@ -26,8 +26,8 @@ python3 /opt/mail.py "bitwarden" "bitwarden backup[$BACKUP_NAME]" "/data/$BACKUP
 
 # 备份到onedriver
 echo `date '+%Y-%m-%d %H:%M:%S'` "upload onedriver $BACKUP_NAME package..." >> /var/log/bitwarden_backup.log
-rm -fr /onedriver/backup/vaultwarden/vaultwarden.tar.gz
 cp $BACKUP_NAME /onedriver/backup/vaultwarden
+rm -fr /onedriver/backup/vaultwarden/vaultwarden.tar.gz
 mv /onedriver/backup/vaultwarden/$BACKUP_NAME /onedriver/backup/vaultwarden/vaultwarden.tar.gz
 
 rm -fr $BACKUP_NAME
