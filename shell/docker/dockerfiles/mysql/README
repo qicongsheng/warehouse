@@ -1,4 +1,4 @@
-docker run -d --restart=always -p 3308:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# -v /data/mysql:/var/lib/mysql ghcr.nju.edu.cn/qicongsheng/mysql:5.7x
+docker run -d --restart=always -p 3308:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# -v /data/mysql:/var/lib/mysql ghcr.nju.edu.cn/qicongsheng/mysql:5.7
 
 mysql -u root -p
 use mysql;

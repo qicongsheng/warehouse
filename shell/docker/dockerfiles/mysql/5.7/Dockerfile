@@ -21,7 +21,7 @@ ARG PACKAGE_URL_SHELL=https://repo.mysql.com/yum/mysql-tools-community/el/7/x86_
 # Install server
 RUN rpmkeys --import https://repo.mysql.com/RPM-GPG-KEY-mysql \
   && yum install -y $PACKAGE_URL $PACKAGE_URL_SHELL libpwquality \
-  && yum clean all && rm -fr /var/tmp/* && rm -fr /tmp/* \
+  && yum clean all && rm -fr /var/tmp/* \
   && mkdir /docker-entrypoint-initdb.d
 
 # VOLUME /var/lib/mysql  We don't want a volume for our static database
