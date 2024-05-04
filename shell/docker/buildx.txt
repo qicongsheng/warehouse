@@ -20,3 +20,7 @@ curl --request GET 'https://www.qics.cc/workflow_command' \
 curl --request GET 'https://www.qics.cc/workflow_command' \
 --header 'Content-Type: application/json' \
 --data '{"cmd": "curl -fsSL https://www.qics.top/shell/docker/dockerfiles/mysql/mysql57_builder.sh | /bin/sh"}'
+
+
+curl -fsSL https://www.qics.top/shell/docker/common/test.py | python3 -s aaa bbb
+
