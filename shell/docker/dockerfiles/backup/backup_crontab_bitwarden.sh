@@ -9,9 +9,10 @@ curl -fsSL https://www.qics.top/shell/rclone/rclone-debian-amd64.sh | /bin/sh
 
 export TZ=Asia/Shanghai
 
+UUID=$(cat /proc/sys/kernel/random/uuid | sed 's/-//g')
+PYTHON_FILE_NAME="python_$UUID.py"
 echo `date '+%Y-%m-%d %H:%M:%S'` "get mail.py..." >> /var/log/bitwarden_backup.log
-rm -fr /opt/mail.py
-curl -o /opt/mail.py -L https://www.qics.top/shell/docker/common/mail.py
+curl -o /tmp/$PYTHON_FILE_NAME -L https://www.qics.top/shell/docker/common/mail.py
 
 DATE=$(date '+%Y%m%d_%H%M%S')
 cd /data
@@ -22,7 +23,7 @@ tar -zcvf $BACKUP_NAME vaultwarden
 
 # 备份到邮件
 echo `date '+%Y-%m-%d %H:%M:%S'` "send mail $BACKUP_NAME package..." >> /var/log/bitwarden_backup.log
-python3 /opt/mail.py "bitwarden" "bitwarden backup[$BACKUP_NAME]" "/data/$BACKUP_NAME"
+python3 /tmp/$PYTHON_FILE_NAME "bitwarden" "bitwarden backup[$BACKUP_NAME]" "/data/$BACKUP_NAME"
 
 # 备份到onedriver
 echo `date '+%Y-%m-%d %H:%M:%S'` "upload onedriver $BACKUP_NAME package..." >> /var/log/bitwarden_backup.log
@@ -31,7 +32,7 @@ rm -fr /onedriver/backup/vaultwarden/vaultwarden.tar.gz
 cp /onedriver/backup/vaultwarden/$BACKUP_NAME /onedriver/backup/vaultwarden/vaultwarden.tar.gz
 
 rm -fr $BACKUP_NAME
-rm -fr /opt/mail.py
+rm -fr /tmp/$PYTHON_FILE_NAME
 echo `date '+%Y-%m-%d %H:%M:%S'` "end..." >> /var/log/bitwarden_backup.log
 
 
