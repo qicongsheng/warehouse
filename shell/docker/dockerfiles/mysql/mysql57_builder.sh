@@ -11,6 +11,9 @@ curl -o /tmp/_$IMG_NAME/docker-entrypoint.sh -L https://www.qics.top/shell/docke
 curl -o /tmp/_$IMG_NAME/healthcheck.sh -L https://www.qics.top/shell/docker/dockerfiles/mysql/5.7/healthcheck.sh
 curl -o /tmp/_$IMG_NAME/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/mysql/5.7/Dockerfile
 
+chmod +x /tmp/_$IMG_NAME/docker-entrypoint.sh
+chmod +x /tmp/_$IMG_NAME/healthcheck.sh
+
 docker build -t ghcr.io/qicongsheng/mysql:5.7 . --push
 
 curl -fsSL https://www.qics.top/shell/docker/common/cleanup.sh | /bin/sh -s $IMG_NAME
