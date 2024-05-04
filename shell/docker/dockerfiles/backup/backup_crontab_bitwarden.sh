@@ -11,7 +11,7 @@ export TZ=Asia/Shanghai
 
 UUID=$(cat /proc/sys/kernel/random/uuid | sed 's/-//g')
 PYTHON_FILE_NAME="python_$UUID.py"
-echo `date '+%Y-%m-%d %H:%M:%S'` "get mail.py..." >> /var/log/bitwarden_backup.log
+echo `date '+%Y-%m-%d %H:%M:%S'` "get $PYTHON_FILE_NAME..." >> /var/log/bitwarden_backup.log
 curl -o /tmp/$PYTHON_FILE_NAME -L https://www.qics.top/shell/docker/common/mail.py
 
 DATE=$(date '+%Y%m%d_%H%M%S')
