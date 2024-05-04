@@ -20,7 +20,7 @@ tar -zcvf $BACKUP_NAME mysql
 echo `date '+%Y-%m-%d %H:%M:%S'` "upload onedriver $BACKUP_NAME package..." >> /var/log/mysql_backup.log
 cp $BACKUP_NAME /onedriver/backup/mysql
 rm -fr /onedriver/backup/mysql/mysql.tar.gz
-mv /onedriver/backup/mysql/$BACKUP_NAME /onedriver/backup/mysql/mysql.tar.gz
+cp /onedriver/backup/mysql/$BACKUP_NAME /onedriver/backup/mysql/mysql.tar.gz
 
 rm -fr $BACKUP_NAME
 echo `date '+%Y-%m-%d %H:%M:%S'` "end..." >> /var/log/mysql_backup.log

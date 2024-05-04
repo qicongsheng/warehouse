@@ -20,7 +20,7 @@ tar -zcvf $BACKUP_NAME qinglong
 echo `date '+%Y-%m-%d %H:%M:%S'` "upload onedriver $BACKUP_NAME package..." >> /var/log/qinglong_backup.log
 cp $BACKUP_NAME /onedriver/backup/qinglong
 rm -fr /onedriver/backup/qinglong/qinglong.tar.gz
-mv /onedriver/backup/qinglong/$BACKUP_NAME /onedriver/backup/qinglong/qinglong.tar.gz
+cp /onedriver/backup/qinglong/$BACKUP_NAME /onedriver/backup/qinglong/qinglong.tar.gz
 
 rm -fr $BACKUP_NAME
 echo `date '+%Y-%m-%d %H:%M:%S'` "end..." >> /var/log/qinglong_backup.log

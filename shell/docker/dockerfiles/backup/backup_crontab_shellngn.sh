@@ -28,7 +28,7 @@ python3 /opt/mail.py "shellngn" "shellngn backup[$BACKUP_NAME]" "/data/$BACKUP_N
 echo `date '+%Y-%m-%d %H:%M:%S'` "upload onedriver $BACKUP_NAME package..." >> /var/log/shellngn_backup.log
 cp $BACKUP_NAME /onedriver/backup/shellngn
 rm -fr /onedriver/backup/shellngn/shellngn.tar.gz
-mv /onedriver/backup/shellngn/$BACKUP_NAME /onedriver/backup/shellngn/shellngn.tar.gz
+cp /onedriver/backup/shellngn/$BACKUP_NAME /onedriver/backup/shellngn/shellngn.tar.gz
 
 rm -fr $BACKUP_NAME
 rm -fr /opt/mail.py
