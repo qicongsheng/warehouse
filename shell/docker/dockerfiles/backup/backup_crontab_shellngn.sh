@@ -33,6 +33,6 @@ cp /onedriver/backup/shellngn/$BACKUP_NAME /onedriver/backup/shellngn/shellngn.t
 
 rm -fr $BACKUP_NAME
 rm -fr /tmp/$PYTHON_FILE_NAME
-echo `date '+%Y-%m-%d %H:%M:%S'` "end..." >> /var/log/backup.log
+echo `date '+%Y-%m-%d %H:%M:%S'` "backup shellngn end..." >> /var/log/backup.log
 
 

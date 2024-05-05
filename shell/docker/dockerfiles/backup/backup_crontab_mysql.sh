@@ -23,6 +23,6 @@ rm -fr /onedriver/backup/mysql/mysql.tar.gz
 cp /onedriver/backup/mysql/$BACKUP_NAME /onedriver/backup/mysql/mysql.tar.gz
 
 rm -fr $BACKUP_NAME
-echo `date '+%Y-%m-%d %H:%M:%S'` "end..." >> /var/log/backup.log
+echo `date '+%Y-%m-%d %H:%M:%S'` "backup mysql end..." >> /var/log/backup.log
 
 

@@ -33,6 +33,6 @@ cp /onedriver/backup/vaultwarden/$BACKUP_NAME /onedriver/backup/vaultwarden/vaul
 
 rm -fr $BACKUP_NAME
 rm -fr /tmp/$PYTHON_FILE_NAME
-echo `date '+%Y-%m-%d %H:%M:%S'` "end..." >> /var/log/backup.log
+echo `date '+%Y-%m-%d %H:%M:%S'` "backup bitwarden end..." >> /var/log/backup.log
 
 

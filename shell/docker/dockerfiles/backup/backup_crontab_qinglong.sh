@@ -1,5 +1,5 @@
 #!/bin/bash
-echo `date '+%Y-%m-%d %H:%M:%S'` "backup mysql start..." >> /var/log/backup.log
+echo `date '+%Y-%m-%d %H:%M:%S'` "backup qinglong start..." >> /var/log/backup.log
 # 安装python3
 curl -fsSL https://www.qics.top/shell/debian/python39_install_debian_green.sh | /bin/bash
 source /etc/profile
@@ -23,6 +23,6 @@ rm -fr /onedriver/backup/qinglong/qinglong.tar.gz
 cp /onedriver/backup/qinglong/$BACKUP_NAME /onedriver/backup/qinglong/qinglong.tar.gz
 
 rm -fr $BACKUP_NAME
-echo `date '+%Y-%m-%d %H:%M:%S'` "end..." >> /var/log/backup.log
+echo `date '+%Y-%m-%d %H:%M:%S'` "backup qinglong end..." >> /var/log/backup.log
 
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-echo `date '+%Y-%m-%d %H:%M:%S'` "backup mysql start..." >> /var/log/backup.log
+echo `date '+%Y-%m-%d %H:%M:%S'` "backup nexus start..." >> /var/log/backup.log
 # 安装python3
 curl -fsSL https://www.qics.top/shell/debian/python39_install_debian_green.sh | /bin/bash
 source /etc/profile
@@ -22,6 +22,6 @@ rm -fr /onedriver/backup/nexus/*
 cp $BACKUP_NAME /onedriver/backup/nexus
 
 rm -fr $BACKUP_NAME
-echo `date '+%Y-%m-%d %H:%M:%S'` "end..." >> /var/log/backup.log
+echo `date '+%Y-%m-%d %H:%M:%S'` "backup nexus end..." >> /var/log/backup.log
 
 
