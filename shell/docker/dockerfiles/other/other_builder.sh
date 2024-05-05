@@ -1,7 +1,7 @@
 #!/bin/bash
 # curl -fsSL https://www.qics.top/shell/docker/dockerfiles/other/other_builder.sh | /bin/sh
-curl -fsSL "https://www.qics.top/shell/docker/common/docker_login.sh" | /bin/sh
-curl -fsSL "https://www.qics.top/shell/docker/common/buildx_init.sh" | /bin/sh
+curl -fsSL https://www.qics.top/shell/docker/common/docker_login.sh | /bin/sh
+curl -fsSL https://www.qics.top/shell/docker/common/buildx_init.sh | /bin/sh
 
 cd /tmp && rm -fr /tmp/_nexus
 mkdir /tmp/_nexus && cd /tmp/_nexus
