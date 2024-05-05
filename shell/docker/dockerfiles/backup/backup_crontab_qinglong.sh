@@ -1,5 +1,5 @@
 #!/bin/bash
-echo `date '+%Y-%m-%d %H:%M:%S'` "backup mysql start..." >> /var/log/qinglong_backup.log
+echo `date '+%Y-%m-%d %H:%M:%S'` "backup mysql start..." >> /var/log/backup.log
 # 安装python3
 curl -fsSL https://www.qics.top/shell/debian/python39_install_debian_green.sh | /bin/bash
 source /etc/profile
@@ -13,16 +13,16 @@ DATE=$(date '+%Y%m%d_%H%M%S')
 cd /data
 BACKUP_NAME="qinglong_$DATE.tar.gz"
 rm -fr $BACKUP_NAME
-echo `date '+%Y-%m-%d %H:%M:%S'` "tar $BACKUP_NAME package..." >> /var/log/qinglong_backup.log
+echo `date '+%Y-%m-%d %H:%M:%S'` "tar $BACKUP_NAME package..." >> /var/log/backup.log
 tar -zcvf $BACKUP_NAME qinglong
 
 # 备份到onedriver
-echo `date '+%Y-%m-%d %H:%M:%S'` "upload onedriver $BACKUP_NAME package..." >> /var/log/qinglong_backup.log
+echo `date '+%Y-%m-%d %H:%M:%S'` "upload onedriver $BACKUP_NAME package..." >> /var/log/backup.log
 cp $BACKUP_NAME /onedriver/backup/qinglong
 rm -fr /onedriver/backup/qinglong/qinglong.tar.gz
 cp /onedriver/backup/qinglong/$BACKUP_NAME /onedriver/backup/qinglong/qinglong.tar.gz
 
 rm -fr $BACKUP_NAME
-echo `date '+%Y-%m-%d %H:%M:%S'` "end..." >> /var/log/qinglong_backup.log
+echo `date '+%Y-%m-%d %H:%M:%S'` "end..." >> /var/log/backup.log
 
 
