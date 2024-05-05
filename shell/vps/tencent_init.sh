@@ -50,7 +50,7 @@ docker run -d --restart=always -p 9000:80 --privileged=true -v /tmp:/etc/nginx/h
 docker run -d --restart=always -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# -v /data/mysql:/var/lib/mysql ghcr.nju.edu.cn/qicongsheng/mysql:5.7
 docker run -d --restart=always -p 6068:80 -v /data/vaultwarden:/data ghcr.nju.edu.cn/qicongsheng/vaultwarden
 docker run -d --restart=always -e HOST=0.0.0.0 -e PORT=8066 -v /data/shellngn:/home/node/server/data --net=host ghcr.nju.edu.cn/qicongsheng/shellngn
-docker run -d --restart=always -p 8081:8081 ghcr.nju.edu.cn/qicongsheng/nexus:dev
+docker run -d --restart=always -p 8081:8081 -v /data/nexus:/nexus-data ghcr.nju.edu.cn/qicongsheng/nexus
 docker run -d --restart=always -p 5212:5212 --privileged=true -v /tmp:/tmp ghcr.nju.edu.cn/qicongsheng/cloudreve
 docker run -d --restart=always -p 5700:5700 -v /data/qinglong:/ql/data ghcr.nju.edu.cn/qicongsheng/qinglong
 docker run -d --restart=always --net=host ghcr.nju.edu.cn/qicongsheng/sc:rabbitmq
