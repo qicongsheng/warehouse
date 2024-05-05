@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ ! "$(command -v python3)" ]; then
-  echo "python3 没有安装" >&2
+  echo "python3 没有安装.开始安装python-3.9.12..." >&2
   apt-get update
   apt-get install bzip2 build-essential libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev -y
 
@@ -24,6 +24,7 @@ if [ ! "$(command -v python3)" ]; then
   ln -sf /usr/local/python3/bin/python3.9 /bin/python3
   ln -sf /usr/local/python3/bin/pip3.9 /usr/local/bin/pip3
   rm -fr /tmp/python-3.9.12-debian.tar.gz
+  echo "python-3.9.12安装完成." >&2
 fi
 
 

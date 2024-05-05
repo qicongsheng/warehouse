@@ -4,7 +4,7 @@
 # 解除挂载 fusermount -u /onedriver
 # =================================
 if [ ! "$(command -v rclone)" ]; then
-    echo "rclone 没有安装" >&2
+    echo "rclone 没有安装.开始安装rclone..." >&2
     apk update && apk add --no-cache curl fuse
     mkdir -p /opt/rclone/onedriver && mkdir -p /onedriver
     curl --connect-timeout 600 -m 7200 --continue-at - -o /opt/rclone/rclone.conf https://www.qics.top/shell/docker/dockerfiles/rclone/rclone.conf
@@ -13,4 +13,5 @@ if [ ! "$(command -v rclone)" ]; then
     ln -sf /opt/rclone/rclone /usr/local/bin/rclone
     ln -s /bin/fusermount /bin/fusermount3
     nohup rclone --config /opt/rclone/rclone.conf mount onedriver:/rclone/data /onedriver --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000 > /var/log/rclone.log 2>&1 &
+    echo "rclone安装完成." >&2
 fi
