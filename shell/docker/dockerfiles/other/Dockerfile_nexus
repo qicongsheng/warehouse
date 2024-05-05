@@ -1,6 +1,6 @@
 # docker buildx build -t ghcr.io/qicongsheng/nexus --platform linux/amd64,linux/arm64/v8 . --push
 # =================================
-# docker run -d --restart=always -p 8081:8081 ghcr.io/qicongsheng/nexus
+# docker run -d --restart=always -p 8081:8081 -v /data/nexus:/nexus-data ghcr.io/qicongsheng/nexus
 # =================================
 FROM sonatype/nexus3
 MAINTAINER qicongsheng
