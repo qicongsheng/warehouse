@@ -5,3 +5,4 @@
 FROM sonatype/nexus3
 MAINTAINER qicongsheng
 
+USER root
