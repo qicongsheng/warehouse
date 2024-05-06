@@ -40,7 +40,7 @@ curl -fsSL "https://www.qics.top/shell/docker/common/docker_login.sh" | /bin/sh
 # curl -fsSL "https://www.qics.top/shell/docker_set_proxy.sh" | /bin/bash
 # service docker restart
 
-curl -o /tmp/shellngn.tar -L https://3ozvga.sn.files.1drv.com/y4mqZw6aYr7q93cmkDmeT5goVmBevwF1k7TtgfJtutW8HGfCpfWlpPGdaDAExmjY8hTvOjgUYd3XP9X39EuBOUZxtbUI7cjJO2b-lO5VblNUBxGAf_BQOrlvO-JA1EhIvb8fg0TYyYBs7zueQi8jrlFSwlUX41R-7GEDwWaeVs8EbiTWhusLWT-_4D4abdaVepotPsOtN9u_zqQvm0wl3Zc7g
+curl -o /tmp/shellngn.tar -L https://snkg2q.sn.files.1drv.com/y4m3awfChqDOXKhEhBUZpsxVlfSCJKW2Z44qUR0miHL_rEBGE1Hbz0dRf8zWl0PLtbbeb_JKl1kpRq9khSNuo3meRQCmBMFPpI_bPhM3w6dn87C3TqQWQFTxE9h1vHEE8vXK54-swQSTLE5DO8QTBBhRk9U04KjYTBrSGPPGh12Y4Ddsko_VJ_g-13GZpS1EvQlsSzaAGqkgu4Y1ZAxcznwEA
 docker load < /tmp/shellngn.tar
 rm -fr /tmp/shellngn.tar
 docker tag ghcr.io/qicongsheng/shellngn ghcr.nju.edu.cn/qicongsheng/shellngn
