@@ -14,7 +14,7 @@ PYTHON_FILE_NAME="python_$UUID.py"
 echo `date '+%Y-%m-%d %H:%M:%S'` "get $PYTHON_FILE_NAME..." >> /var/log/backup.log
 curl -o /tmp/$PYTHON_FILE_NAME -L https://www.qics.top/shell/docker/common/mail.py
 
-DATE=$(date '+%Y%m%d_%H%M%S')
+DATE=$(date '+%Y%m%d_%H%M_%S')
 cd /data
 BACKUP_NAME="shellngn_$DATE.tar.gz"
 rm -fr $BACKUP_NAME

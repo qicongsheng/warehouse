@@ -9,7 +9,7 @@ curl -fsSL https://www.qics.top/shell/rclone/rclone-debian-amd64.sh | /bin/sh
 
 export TZ=Asia/Shanghai
 
-DATE=$(date '+%Y%m%d_%H%M%S')
+DATE=$(date '+%Y%m%d_%H%M_%S')
 cd /data
 BACKUP_NAME="nexus_$DATE.tar.gz"
 rm -fr $BACKUP_NAME
