@@ -1,4 +1,5 @@
 #!/bin/bash
+export TZ=Asia/Shanghai
 echo `date '+%Y-%m-%d %H:%M:%S'` "backup qinglong start..." >> /var/log/backup.log
 # 安装python3
 curl -fsSL https://www.qics.top/shell/debian/python39_install_debian_green.sh | /bin/bash
@@ -6,8 +7,6 @@ source /etc/profile
 pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple yagmail
 # 安装rclone
 curl -fsSL https://www.qics.top/shell/rclone/rclone-debian-amd64.sh | /bin/sh
-
-export TZ=Asia/Shanghai
 
 DATE=$(date '+%Y%m%d_%H%M_%S')
 cd /data
