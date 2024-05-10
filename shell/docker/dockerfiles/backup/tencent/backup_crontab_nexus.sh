@@ -17,8 +17,9 @@ tar -zcvf $BACKUP_NAME nexus
 
 # 备份到onedriver
 echo `date '+%Y-%m-%d %H:%M:%S'` "upload onedriver $BACKUP_NAME package..." >> /var/log/backup.log
-rm -fr /onedriver/backup/nexus/*
+mv /onedriver/backup/nexus/nexus*.tar.gz /onedriver/backup/nexus/nexus.old.tar.gz
 cp $BACKUP_NAME /onedriver/backup/nexus
+rm -fr /onedriver/backup/nexus/nexus.old.tar.gz
 
 rm -fr $BACKUP_NAME
 echo `date '+%Y-%m-%d %H:%M:%S'` "backup nexus end..." >> /var/log/backup.log
