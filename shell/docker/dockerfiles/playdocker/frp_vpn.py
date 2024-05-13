@@ -115,7 +115,7 @@ def init_frp_vpn():
         logger.info('init_frp_vpn set password...')
         browser.find_element(By.ID, 'password').send_keys("Best12167")
         logger.info('init_frp_vpn click login btn...')
-        browser.find_element(By.XPATH, '/html/body/div/main/section/div[1]/div/div/div[1]/div/form/div[2]/button').click()
+        browser.find_element(By.XPATH, '/html/body/div/main/section/div[1]/div/div/form/div[2]/button').click()
         main_window = browser.window_handles[0]
         browser.switch_to.window(main_window)
         logger.info('init_frp_vpn click "Start" btn...')
