@@ -110,7 +110,7 @@ def init_frp_vpn():
         new_window = browser.window_handles[-1]
         browser.switch_to.window(new_window)
         logger.info('init_frp_vpn set username...')
-        browser.find_element(By.ID, 'username').send_keys("qicongsheng")
+        browser.find_element(By.ID, 'username').send_keys("1356630676@qq.com")
         browser.find_element(By.XPATH, '/html/body/div/main/section/div[1]/div/div/div[1]/div/form/div[2]/button').click()
         logger.info('init_frp_vpn set password...')
         browser.find_element(By.ID, 'password').send_keys("Best12167")
