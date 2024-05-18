@@ -2,6 +2,6 @@ docker run -d --restart=always --name=alist -p 5244:5244 -e PUID=0 -e PGID=0 -e 
 docker exec -it alist ./alist admin set Best12167
 
 挂载webdav
-apt-get install davfs2  -y
+apt-get install davfs2 -y
 echo '"http://play.qics.top:19080/dav/" admin Best12167' > /etc/davfs2/secrets
 mount.davfs http://play.qics.top:19080/dav/ /webdav
