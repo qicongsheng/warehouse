@@ -7,4 +7,4 @@ docker run -d --restart=always --net=host ghcr.nju.edu.cn/qicongsheng/cloudflare
 docker run -d --restart=always -p 15672:15672 -p 5672:5672 ghcr.nju.edu.cn/qicongsheng/sc:rabbitmq
 docker run -d --restart=always -e REDIS_PASSWORD=Lhnekj#_83jf -p 6379:6379 ghcr.nju.edu.cn/qicongsheng/sc:redis /bin/sh -c "redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}"
 docker run -d --restart=always -e USER=qics -e PASSWD=Best12167 -p 5902:5902 -p 3388:3389 ghcr.nju.edu.cn/qicongsheng/deepin
-
+docker run -d --restart=always --name=debian -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 --privileged=true -v /d/backup/tmp:/tmp ghcr.nju.edu.cn/qicongsheng/debian
