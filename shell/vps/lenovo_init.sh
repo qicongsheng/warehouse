@@ -30,12 +30,6 @@ curl -fsSL "https://www.qics.top/shell/docker/common/docker_login.sh" | /bin/sh
 # curl -fsSL "https://www.qics.top/shell/docker_set_proxy.sh" | /bin/bash
 # service docker restart
 
-curl -o /tmp/shellngn.tar -L https://snkg2q.sn.files.1drv.com/y4m3awfChqDOXKhEhBUZpsxVlfSCJKW2Z44qUR0miHL_rEBGE1Hbz0dRf8zWl0PLtbbeb_JKl1kpRq9khSNuo3meRQCmBMFPpI_bPhM3w6dn87C3TqQWQFTxE9h1vHEE8vXK54-swQSTLE5DO8QTBBhRk9U04KjYTBrSGPPGh12Y4Ddsko_VJ_g-13GZpS1EvQlsSzaAGqkgu4Y1ZAxcznwEA
-docker load < /tmp/shellngn.tar
-rm -fr /tmp/shellngn.tar
-docker tag ghcr.io/qicongsheng/shellngn ghcr.nju.edu.cn/qicongsheng/shellngn
-docker rmi ghcr.io/qicongsheng/shellngn
-
 docker run -d --restart=always --name=nginx -p 9000:80 --privileged=true -v /tmp:/etc/nginx/html ghcr.nju.edu.cn/qicongsheng/nginx
 docker run -d --restart=always --name=mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# -v /data/mysql:/var/lib/mysql ghcr.nju.edu.cn/qicongsheng/mysql:5.7
 docker run -d --restart=always --name=vaultwarden -p 6068:80 -e SIGNUPS_ALLOWED=false -v /data/vaultwarden:/data ghcr.nju.edu.cn/qicongsheng/vaultwarden
