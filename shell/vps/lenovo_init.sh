@@ -47,5 +47,10 @@ docker run -d --restart=always --name=pickstar -e USER=root -e PASSWD=Star8ks.# 
 docker run -d --restart=always --name=backup -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:3022:22 --privileged=true -v /data:/data ghcr.nju.edu.cn/qicongsheng/backup:tencent
 docker run -d --restart=always --name=debian -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 --privileged=true -v /tmp:/tmp ghcr.nju.edu.cn/qicongsheng/debian
 
+
+docker run -d --restart=always --name lenovo_ssh_20088 -e SERVER_ADDR=play.qics.top -e PROXY_NAME=lenovo_ssh_20088 -e SERVER_PORT=7000 -e TOKEN=badboy -e LOCAL_PORT=10088 -e REMOTE_PORT=20088 --net=host ghcr.io/qicongsheng/frp:client
+docker run -d --restart=always --name lenovo_ssh_29022 -e SERVER_ADDR=play.qics.top -e PROXY_NAME=lenovo_ssh_29022 -e SERVER_PORT=7000 -e TOKEN=badboy -e LOCAL_PORT=9022 -e REMOTE_PORT=29022 --net=host ghcr.io/qicongsheng/frp:client
+
+
 # curl -fsSL "https://www.qics.top/shell/docker_remove_proxy.sh" | /bin/bash
 
