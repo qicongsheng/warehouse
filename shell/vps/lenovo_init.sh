@@ -7,7 +7,8 @@ apt-get install ufw curl wget telnet dnsutils cron nload htop cpu-checker -y
 mkdir -p /var/spool/cron/crontabs
 
 #设置时区
-echo "export TZ=Asia/Shanghai" >> /etc/profile
+echo 'export TZ=Asia/Shanghai' >> /etc/profile
+echo 'export LANG=zh_CN.UTF-8' >> /etc/profile
 source /etc/profile
 
 #修改远程登录端口(22->10088)
