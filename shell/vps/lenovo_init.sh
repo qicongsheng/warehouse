@@ -52,5 +52,5 @@ docker run -d --restart=always --name lenovo_ssh_29022 -e SERVER_ADDR=play.qics.
 
 # apt install ntfs-3g
 # fdisk -l
-# mount /dev/sdd1 /mnt/ssd
+# mount /dev/sdc1 /mnt/ssd
 # umount /mnt/ssd
