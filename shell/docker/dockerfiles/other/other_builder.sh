@@ -17,13 +17,6 @@ docker buildx build -t ghcr.io/qicongsheng/cloudreve --platform linux/amd64,linu
 cd /tmp && rm -fr /tmp/_cloudreve
 curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"nick_name":"gitaction", "subject": "qicongsheng/cloudreve docker image pushed.", "content": "qicongsheng/cloudreve docker image pushed."}'
 
-cd /tmp && rm -fr /tmp/_jellyfin
-mkdir /tmp/_jellyfin && cd /tmp/_jellyfin
-curl -o /tmp/_jellyfin/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/other/Dockerfile_jellyfin
-docker buildx build -t ghcr.io/qicongsheng/jellyfin --platform linux/amd64,linux/arm64/v8 . --push
-cd /tmp && rm -fr /tmp/_jellyfin
-curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"nick_name":"gitaction", "subject": "qicongsheng/jellyfin docker image pushed.", "content": "qicongsheng/jellyfin docker image pushed."}'
-
 cd /tmp && rm -fr /tmp/_pgyvpn
 mkdir /tmp/_pgyvpn && cd /tmp/_pgyvpn
 curl -o /tmp/_pgyvpn/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/other/Dockerfile_pgyvpn
