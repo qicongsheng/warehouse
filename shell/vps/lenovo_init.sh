@@ -50,6 +50,7 @@ docker run -d --restart=always --name lenovo_ssh_29022 -e SERVER_ADDR=play.qics.
 
 # curl -fsSL "https://www.qics.top/shell/docker_remove_proxy.sh" | /bin/bash
 
+# apt install ntfs-3g
 # fdisk -l
 # mount /dev/sdd1 /mnt/ssd
 # umount /mnt/ssd
