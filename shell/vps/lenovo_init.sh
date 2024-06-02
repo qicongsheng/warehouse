@@ -35,7 +35,7 @@ docker run -d --restart=always -e API_KEY=LAdoeJAuaq_uB2kCblxZDtF5wJFrDYHQfSHOFg
 docker run -d --restart=always --name=mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# -v /data/mysql:/var/lib/mysql ghcr.nju.edu.cn/qicongsheng/mysql:5.7
 docker run -d --restart=always --name=vaultwarden -p 6068:80 -e SIGNUPS_ALLOWED=false -v /data/vaultwarden:/data ghcr.nju.edu.cn/qicongsheng/vaultwarden
 docker run -d --restart=always --name=nexus -p 8081:8081 -v /data/nexus:/nexus-data ghcr.nju.edu.cn/qicongsheng/nexus
-docker run -d --restart=always --name=jellyfin -p 8096:8096 --privileged=true -v /tmp:/tmp ghcr.nju.edu.cn/qicongsheng/jellyfin
+docker run -d --restart=always --name=jellyfin -p 8096:8096 --privileged=true -v /data/jellyfin:/data ghcr.nju.edu.cn/qicongsheng/jellyfin
 docker run -d --restart=always --name=qinglong -p 5700:5700 -v /data/qinglong:/ql/data ghcr.nju.edu.cn/qicongsheng/qinglong
 docker run -d --restart=always --name=cloudflared --net=host ghcr.nju.edu.cn/qicongsheng/cloudflared tunnel --no-autoupdate run --token eyJhIjoiZTAwMWM4MzlmMTNiNzU2ZDc0YWI1NjE0MzFlM2ZlZDciLCJ0IjoiNmY2ZjM4Y2EtODI0YS00MzhlLWI3MjctMzIwNTQ0ODRlYzRjIiwicyI6IlltWTBabUV4WW1FdE1ETTNNQzAwWVRsa0xUZzVNemN0TWprM01UQmtPRFZsTVdZMCJ9
 docker run -d --restart=always --name=pickstar -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:8022:22 -p 8082:8082 --privileged=true -v /tmp:/tmp ghcr.nju.edu.cn/qicongsheng/pickstar
