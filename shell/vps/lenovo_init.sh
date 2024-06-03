@@ -47,7 +47,7 @@ docker run -d --restart=always --name=debian -e USER=root -e PASSWD=Star8ks.# -p
 
 docker run -d --restart=always --name lenovo_ssh_20088 -e SERVER_ADDR=play.qics.top -e PROXY_NAME=lenovo_ssh_20088 -e SERVER_PORT=7000 -e TOKEN=badboy -e LOCAL_PORT=10088 -e REMOTE_PORT=20088 --net=host ghcr.nju.edu.cn/qicongsheng/frp:client
 docker run -d --restart=always --name lenovo_ssh_29022 -e SERVER_ADDR=play.qics.top -e PROXY_NAME=lenovo_ssh_29022 -e SERVER_PORT=7000 -e TOKEN=badboy -e LOCAL_PORT=9022 -e REMOTE_PORT=29022 --net=host ghcr.nju.edu.cn/qicongsheng/frp:client
-docker run -d --restart=always --name lenovo_jellyfin_28096 -e SERVER_ADDR=play.qics.top -e PROXY_NAME=lenovo_jellyfin_28096 -e SERVER_PORT=7000 -e TOKEN=badboy -e LOCAL_PORT=8096 -e REMOTE_PORT=28096 --net=host ghcr.nju.edu.cn/qicongsheng/frp:client
+docker run -d --restart=always --name lenovo_pn_28096 -e SERVER_ADDR=play.qics.top -e PROXY_NAME=lenovo_jellyfin_28096 -e SERVER_PORT=7000 -e TOKEN=badboy -e LOCAL_PORT=8096 -e REMOTE_PORT=28096 --net=host ghcr.nju.edu.cn/qicongsheng/frp:client
 docker run -d --restart=always --name lenovo_mysql_23306 -e SERVER_ADDR=play.qics.top -e PROXY_NAME=lenovo_mysql_23306 -e SERVER_PORT=7000 -e TOKEN=badboy -e LOCAL_PORT=3306 -e REMOTE_PORT=23306 --net=host ghcr.nju.edu.cn/qicongsheng/frp:client
 
 
