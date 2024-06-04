@@ -57,7 +57,6 @@ docker run -d --restart=always --name=redis -e REDIS_PASSWORD=Lhnekj#_83jf -p 63
 docker run -d --restart=always --name=frp -e BIND_PORT=7000 -e DASHBOARD_PORT=7777 -e DASHBOARD_USER=qics -e DASHBOARD_PWD=123456 -e TOKEN=badboy --net=host ghcr.nju.edu.cn/qicongsheng/frp:server
 docker run -d --restart=always --name=cloudflared --net=host ghcr.nju.edu.cn/qicongsheng/cloudflared tunnel --no-autoupdate run --token eyJhIjoiZTAwMWM4MzlmMTNiNzU2ZDc0YWI1NjE0MzFlM2ZlZDciLCJ0IjoiMTNjYmI4OTYtNjdkZS00NmY1LTkxOGEtZGE0YjA3NDNjMGE3IiwicyI6IlpUUTJaVGhpWXpjdE9HTXhZeTAwTm1OaUxXSmtZbU10TVRnd1lUZzVOelk0WldKaiJ9
 docker run -d --restart=always --name=netbird -e NB_SETUP_KEY=951ABD0D-6D3D-47BB-AD78-A8F5D26F5DA7 --net=host --privileged=true ghcr.nju.edu.cn/qicongsheng/netbird
-docker run -d --restart=always --name=pickstar -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:8022:22 -p 8082:8082 --privileged=true -v /tmp:/tmp ghcr.nju.edu.cn/qicongsheng/pickstar
 docker run -d --restart=always --name=backup -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:3022:22 --privileged=true -v /data:/data ghcr.nju.edu.cn/qicongsheng/backup:tencent
 docker run -d --restart=always --name=dind -e USER=root -e PASSWD=Star8ks.# -e SSHD_PORT=5022 --net=host --cap-add=NET_ADMIN --privileged=true -v /tmp:/tmp ghcr.nju.edu.cn/qicongsheng/dind
 docker run -d --restart=always --name=kali -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:6022:22 --privileged=true -v /tmp:/tmp ghcr.nju.edu.cn/qicongsheng/kali
