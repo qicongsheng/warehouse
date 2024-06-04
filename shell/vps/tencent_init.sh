@@ -51,8 +51,6 @@ docker run -d --restart=always --name=mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=
 docker run -d --restart=always --name=vaultwarden -p 6068:80 -e SIGNUPS_ALLOWED=false -v /data/vaultwarden:/data ghcr.nju.edu.cn/qicongsheng/vaultwarden
 docker run -d --restart=always --name=shellngn -e HOST=0.0.0.0 -e PORT=8066 -v /data/shellngn:/home/node/server/data --net=host ghcr.nju.edu.cn/qicongsheng/shellngn
 docker run -d --restart=always --name=nexus -p 8081:8081 -v /data/nexus:/nexus-data ghcr.nju.edu.cn/qicongsheng/nexus
-docker run -d --restart=always --name=jellyfin -p 8096:8096 --privileged=true -v /tmp:/tmp ghcr.nju.edu.cn/qicongsheng/jellyfin
-docker run -d --restart=always --name=cloudreve -p 5212:5212 --privileged=true -v /tmp:/tmp ghcr.nju.edu.cn/qicongsheng/cloudreve
 docker run -d --restart=always --name=qinglong -p 5700:5700 -v /data/qinglong:/ql/data ghcr.nju.edu.cn/qicongsheng/qinglong
 docker run -d --restart=always --name=rabbitmq --net=host ghcr.nju.edu.cn/qicongsheng/sc:rabbitmq
 docker run -d --restart=always --name=redis -e REDIS_PASSWORD=Lhnekj#_83jf -p 6379:6379 ghcr.nju.edu.cn/qicongsheng/sc:redis /bin/sh -c 'redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}'
