@@ -37,6 +37,8 @@ docker run -d --restart=always --name=jellyfin -p 8096:8096 --privileged=true -v
 docker run -d --restart=always --name=nexus -p 8081:8081 -v /data/nexus:/nexus-data ghcr.nju.edu.cn/qicongsheng/nexus
 docker run -d --restart=always --name=ddns -e API_KEY=LAdoeJAuaq_uB2kCblxZDtF5wJFrDYHQfSHOFge0 -e ZONE=qics.top -e SUBDOMAIN=home ghcr.nju.edu.cn/qicongsheng/ddns
 docker run -d --restart=always --name=mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# -v /data/mysql:/var/lib/mysql ghcr.nju.edu.cn/qicongsheng/mysql:5.7
+docker run -d --restart=always --name=rabbitmq --net=host ghcr.nju.edu.cn/qicongsheng/sc:rabbitmq
+docker run -d --restart=always --name=redis -e REDIS_PASSWORD=Lhnekj#_83jf -p 6379:6379 ghcr.nju.edu.cn/qicongsheng/sc:redis /bin/sh -c 'redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}'
 docker run -d --restart=always --name=cloudflared --net=host ghcr.nju.edu.cn/qicongsheng/cloudflared tunnel --no-autoupdate run --token eyJhIjoiZTAwMWM4MzlmMTNiNzU2ZDc0YWI1NjE0MzFlM2ZlZDciLCJ0IjoiNmY2ZjM4Y2EtODI0YS00MzhlLWI3MjctMzIwNTQ0ODRlYzRjIiwicyI6IlltWTBabUV4WW1FdE1ETTNNQzAwWVRsa0xUZzVNemN0TWprM01UQmtPRFZsTVdZMCJ9
 docker run -d --restart=always --name=netbird -e NB_SETUP_KEY=951ABD0D-6D3D-47BB-AD78-A8F5D26F5DA7 --net=host --privileged=true ghcr.nju.edu.cn/qicongsheng/netbird
 docker run -d --restart=always --name lenovo_ssh_20088 -e SERVER_ADDR=play.qics.top -e PROXY_NAME=lenovo_ssh_20088 -e SERVER_PORT=7000 -e TOKEN=badboy -e LOCAL_PORT=10088 -e REMOTE_PORT=20088 --net=host ghcr.nju.edu.cn/qicongsheng/frp:client
