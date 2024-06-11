@@ -5,5 +5,4 @@
 FROM registry:2.8.3
 MAINTAINER qicongsheng
 
-ENV AUTH_TYPE=Digest
 
