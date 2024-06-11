@@ -19,4 +19,4 @@ curl --request GET 'https://www.qics.cc/workflow_command' \
 
 curl --request GET 'https://www.qics.cc/workflow_command' \
 --header 'Content-Type: application/json' \
---data '{"cmd": "curl -fsSL https://www.qics.top/shell/docker/dockerfiles/pickstar/pickstar_builder.sh | /bin/sh"}'
+--data '{"cmd": "curl -fsSL https://www.qics.top/shell/docker/dockerfiles/tinyproxy/tinyproxy_builder.sh | /bin/sh"}'

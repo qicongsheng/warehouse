@@ -6,6 +6,7 @@ cd /tmp && rm -fr /tmp/_websehll
 mkdir /tmp/_websehll && cd /tmp/_websehll
 curl -o /tmp/_websehll/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/webshell/Dockerfile
 docker buildx build -t ghcr.io/qicongsheng/webssh --platform linux/amd64,linux/arm64 . --push
+docker buildx build -t registry.cn-hangzhou.aliyuncs.com/qics/webssh --platform linux/amd64,linux/arm64 . --push
 cd /tmp && rm -fr /tmp/_websehll
 
 
