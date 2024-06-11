@@ -15,8 +15,7 @@ curl -o /tmp/_$IMG_NAME/Dockerfile -L https://www.qics.top/shell/docker/dockerfi
 chmod +x /tmp/_$IMG_NAME/docker-entrypoint.sh
 chmod +x /tmp/_$IMG_NAME/healthcheck.sh
 
-docker build -t ghcr.io/qicongsheng/mysql:5.7 . --push
-docker build -t registry.cn-hangzhou.aliyuncs.com/qics/mysql:5.7 . --push
+curl -fsSL https://www.qics.top/shell/docker/common/build_cross_platform.sh | /bin/sh -s "mysql:5.7"
 
 curl -fsSL https://www.qics.top/shell/docker/common/cleanup.sh | /bin/sh -s $IMG_NAME
 
