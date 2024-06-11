@@ -1,5 +1,5 @@
 #!/bin/bash
-# curl -fsSL "https://www.qics.top/shell/docker/dockerfiles/debian/vnc_builder.sh" | /bin/sh
+# curl -fsSL https://www.qics.top/shell/docker/dockerfiles/debian/vnc_builder.sh | /bin/sh
 curl -fsSL "https://www.qics.top/shell/docker/common/docker_login.sh" | /bin/sh
 curl -fsSL "https://www.qics.top/shell/docker/common/buildx_init.sh" | /bin/sh
 
