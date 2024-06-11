@@ -9,6 +9,7 @@ cd /tmp/_$IMG_NAME
 
 curl -o /tmp/_$IMG_NAME/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/registry/Dockerfile
 docker build -t ghcr.io/qicongsheng/registry . --push
+docker build -t registry.cn-hangzhou.aliyuncs.com/qics/registry . --push
 
 curl -fsSL https://www.qics.top/shell/docker/common/cleanup.sh | /bin/sh -s $IMG_NAME
 
