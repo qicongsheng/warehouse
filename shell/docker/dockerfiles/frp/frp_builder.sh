@@ -12,7 +12,6 @@ docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/am
 docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/amd64,linux/arm64 -t ghcr.io/qicongsheng/frp:server . --push
 docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/amd64,linux/arm64 -t registry.cn-hangzhou.aliyuncs.com/qics/frp:server_$FRP_NEW_VERSION . --push
 docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/amd64,linux/arm64 -t registry.cn-hangzhou.aliyuncs.com/qics/frp:server . --push
-
 cd /tmp && rm -fr /tmp/_frpserver
 curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"nick_name":"gitaction", "subject": "ghcr.io/qicongsheng/frp:server docker image pushed.", "content": "ghcr.io/qicongsheng/frp:server docker image pushed."}'
 
