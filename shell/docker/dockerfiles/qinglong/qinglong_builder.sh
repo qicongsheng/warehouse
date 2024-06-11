@@ -6,8 +6,8 @@ rm -fr /tmp/_qinglong
 mkdir /tmp/_qinglong
 cd /tmp/_qinglong
 curl -o /tmp/_qinglong/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/qinglong/Dockerfile
-docker buildx build -t ghcr.io/qicongsheng/qinglong --platform linux/amd64,linux/arm64/v8 . --push
-docker buildx build -t registry.cn-hangzhou.aliyuncs.com/qics/qinglong --platform linux/amd64,linux/arm64/v8 . --push
+curl -fsSL https://www.qics.top/shell/docker/common/build_cross_platform.sh | /bin/sh -s "qinglong"
+
 cd /tmp && rm -fr /tmp/_qinglong
 
 
