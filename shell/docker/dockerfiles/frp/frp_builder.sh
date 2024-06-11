@@ -10,6 +10,9 @@ mkdir /tmp/_frpserver && cd /tmp/_frpserver
 curl -o /tmp/_frpserver/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/frp/Dockerfile_server
 docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/amd64,linux/arm64 -t ghcr.io/qicongsheng/frp:server_$FRP_NEW_VERSION . --push
 docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/amd64,linux/arm64 -t ghcr.io/qicongsheng/frp:server . --push
+docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/amd64,linux/arm64 -t registry.cn-hangzhou.aliyuncs.com/qics/frp:server_$FRP_NEW_VERSION . --push
+docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/amd64,linux/arm64 -t registry.cn-hangzhou.aliyuncs.com/qics/frp:server . --push
+
 cd /tmp && rm -fr /tmp/_frpserver
 curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"nick_name":"gitaction", "subject": "ghcr.io/qicongsheng/frp:server docker image pushed.", "content": "ghcr.io/qicongsheng/frp:server docker image pushed."}'
 
@@ -19,6 +22,8 @@ mkdir /tmp/_frpclient && cd /tmp/_frpclient
 curl -o /tmp/_frpclient/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/frp/Dockerfile_client
 docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/amd64,linux/arm64 -t ghcr.io/qicongsheng/frp:client_$FRP_NEW_VERSION . --push
 docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/amd64,linux/arm64 -t ghcr.io/qicongsheng/frp:client . --push
+docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/amd64,linux/arm64 -t registry.cn-hangzhou.aliyuncs.com/qics/frp:client_$FRP_NEW_VERSION . --push
+docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/amd64,linux/arm64 -t registry.cn-hangzhou.aliyuncs.com/qics/frp:client . --push
 cd /tmp && rm -fr /tmp/_frpclient
 curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"nick_name":"gitaction", "subject": "ghcr.io/qicongsheng/frp:client docker image pushed.", "content": "ghcr.io/qicongsheng/frp:client docker image pushed."}'
 
