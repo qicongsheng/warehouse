@@ -9,6 +9,7 @@ cd /tmp/_$IMG_NAME
 
 curl -o /tmp/_$IMG_NAME/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/backup/huawei/Dockerfile
 docker buildx build -t ghcr.io/qicongsheng/backup:huawei --platform linux/amd64,linux/arm64 . --push
+docker buildx build -t registry.cn-hangzhou.aliyuncs.com/qics/backup:huawei --platform linux/amd64,linux/arm64 . --push
 
 curl -fsSL https://www.qics.top/shell/docker/common/cleanup.sh | /bin/sh -s $IMG_NAME
 
