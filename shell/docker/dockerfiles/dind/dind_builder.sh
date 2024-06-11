@@ -13,8 +13,7 @@ cd /tmp && rm -fr /tmp/_dind_official
 cd /tmp && rm -fr /tmp/_dind
 mkdir /tmp/_dind && cd /tmp/_dind
 curl -o /tmp/_dind/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/dind/Dockerfile
-docker buildx build -t ghcr.io/qicongsheng/dind --platform linux/amd64,linux/arm64/v8 . --push
-docker buildx build -t registry.cn-hangzhou.aliyuncs.com/qics/dind --platform linux/amd64,linux/arm64/v8 . --push
+curl -fsSL https://www.qics.top/shell/docker/common/build_cross_platform.sh | /bin/sh -s "dind"
 cd /tmp && rm -fr /tmp/_dind
 curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"nick_name":"gitaction", "subject": "ghcr.io/qicongsheng/dind docker image pushed.", "content": "ghcr.io/qicongsheng/dind docker image pushed."}'
 
