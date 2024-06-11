@@ -19,6 +19,9 @@ curl --request GET 'https://www.qics.cc/workflow_command' \
 
 curl --request GET 'https://www.qics.cc/workflow_command' \
 --header 'Content-Type: application/json' \
---data '{"cmd": "curl -fsSL https://www.qics.top/shell/docker/dockerfiles/mysql/mysql57_builder.sh | /bin/sh"}'
+--data '{"cmd": "curl -fsSL https://www.qics.top/shell/docker/dockerfiles/nascab/nascab_builder.sh | /bin/sh"}'
 
-docker run -d --restart=always --name pi_ssh_39022 -e SERVER_ADDR=play.qics.top -e PROXY_NAME=pi_ssh_39022 -e SERVER_PORT=7000 -e TOKEN=badboy -e LOCAL_PORT=9022 -e REMOTE_PORT=39022 --net=host registry.cn-hangzhou.aliyuncs.com/qics/frp:client
+
+
+
+
