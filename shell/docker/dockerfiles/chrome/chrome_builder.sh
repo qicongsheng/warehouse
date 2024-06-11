@@ -7,6 +7,7 @@ mkdir /tmp/_chrome
 cd /tmp/_chrome
 curl -o /tmp/_chrome/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/chrome/Dockerfile
 docker build -t ghcr.io/qicongsheng/chrome . --push
+docker build -t registry.cn-hangzhou.aliyuncs.com/qics/chrome . --push
 cd /tmp && rm -fr /tmp/_chrome
 
 
