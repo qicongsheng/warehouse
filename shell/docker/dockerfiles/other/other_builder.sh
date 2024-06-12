@@ -3,13 +3,6 @@
 curl -fsSL https://www.qics.top/shell/docker/common/docker_login.sh | /bin/sh
 curl -fsSL https://www.qics.top/shell/docker/common/buildx_init.sh | /bin/sh
 
-cd /tmp && rm -fr /tmp/_nexus
-mkdir /tmp/_nexus && cd /tmp/_nexus
-curl -o /tmp/_nexus/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/other/Dockerfile_nexus
-curl -fsSL https://www.qics.top/shell/docker/common/build_cross_platform.sh | /bin/sh -s "nexus"
-cd /tmp && rm -fr /tmp/_nexus
-curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"nick_name":"gitaction", "subject": "qicongsheng/nexus docker image pushed.", "content": "qicongsheng/nexus docker image pushed."}'
-
 cd /tmp && rm -fr /tmp/_cloudreve
 mkdir /tmp/_cloudreve && cd /tmp/_cloudreve
 curl -o /tmp/_cloudreve/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/other/Dockerfile_cloudreve
