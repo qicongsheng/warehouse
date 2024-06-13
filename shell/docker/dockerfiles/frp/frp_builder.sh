@@ -23,7 +23,7 @@ docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/ar
 docker push registry.cn-hangzhou.aliyuncs.com/qics/frp:server_amd64
 docker push registry.cn-hangzhou.aliyuncs.com/qics/frp:server_arm64
 docker manifest create registry.cn-hangzhou.aliyuncs.com/qics/frp:server registry.cn-hangzhou.aliyuncs.com/qics/frp:server_amd64 registry.cn-hangzhou.aliyuncs.com/qics/frp:server_arm64
-docker manifest registry.cn-hangzhou.aliyuncs.com/qics/frp:server
+docker manifest push registry.cn-hangzhou.aliyuncs.com/qics/frp:server
 
 cd /tmp && rm -fr /tmp/_frpserver
 curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"nick_name":"gitaction", "subject": "ghcr.io/qicongsheng/frp:server docker image pushed.", "content": "ghcr.io/qicongsheng/frp:server docker image pushed."}'
@@ -45,7 +45,7 @@ docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/ar
 docker push registry.cn-hangzhou.aliyuncs.com/qics/frp:client_amd64
 docker push registry.cn-hangzhou.aliyuncs.com/qics/frp:client_arm64
 docker manifest create registry.cn-hangzhou.aliyuncs.com/qics/frp:client registry.cn-hangzhou.aliyuncs.com/qics/frp:client_amd64 registry.cn-hangzhou.aliyuncs.com/qics/frp:client_arm64
-docker manifest registry.cn-hangzhou.aliyuncs.com/qics/frp:client
+docker manifest push registry.cn-hangzhou.aliyuncs.com/qics/frp:client
 
 cd /tmp && rm -fr /tmp/_frpclient
 curl --location --request POST 'http://www.qics.cc/mail' --header 'Content-Type: application/json' --data '{"nick_name":"gitaction", "subject": "ghcr.io/qicongsheng/frp:client docker image pushed.", "content": "ghcr.io/qicongsheng/frp:client docker image pushed."}'
