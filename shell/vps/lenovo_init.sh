@@ -35,6 +35,7 @@ curl -fsSL "https://www.qics.top/shell/docker/common/docker_login.sh" | /bin/sh
 docker run -d --restart=always --name=nginx -p 9000:80 --privileged=true -v /tmp:/etc/nginx/html registry.cn-hangzhou.aliyuncs.com/qics/nginx
 docker run -d --restart=always --name=jellyfin -p 8096:8096 --privileged=true -v /data/jellyfin:/data registry.cn-hangzhou.aliyuncs.com/qics/jellyfin
 docker run -d --restart=always --name=nexus -p 8081:8081 -v /data/nexus:/nexus-data registry.cn-hangzhou.aliyuncs.com/qics/nexus
+docker run -d --restart=always --name=registry -p 8000:8000 -p 8443:8443 -p 8001:8081 -v /data/registry:/nexus-data ghcr.io/qicongsheng/nexus
 docker run -d --restart=always --name=ddns -e API_KEY=LAdoeJAuaq_uB2kCblxZDtF5wJFrDYHQfSHOFge0 -e ZONE=qics.top -e SUBDOMAIN=home registry.cn-hangzhou.aliyuncs.com/qics/ddns
 docker run -d --restart=always --name=mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# -v /data/mysql:/var/lib/mysql registry.cn-hangzhou.aliyuncs.com/qics/mysql:5.7
 docker run -d --restart=always --name=rabbitmq --net=host registry.cn-hangzhou.aliyuncs.com/qics/sc:rabbitmq
