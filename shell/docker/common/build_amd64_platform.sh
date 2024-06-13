@@ -1,6 +1,6 @@
 #!/bin/bash
 IMG_FULL_NAME=$1
-IMG_FULL_NAME_PLATFORM="$IMG_FULL_NAME_amd64"
+IMG_FULL_NAME_PLATFORM="$IMG_FULL_NAME"_amd64
 docker build -t ghcr.io/qicongsheng/IMG_FULL_NAME_PLATFORM . --push
 docker pull ghcr.io/qicongsheng/IMG_FULL_NAME_PLATFORM
 docker manifest create ghcr.io/qicongsheng/$IMG_FULL_NAME ghcr.io/qicongsheng/IMG_FULL_NAME_PLATFORM
