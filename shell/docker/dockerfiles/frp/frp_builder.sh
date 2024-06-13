@@ -13,26 +13,12 @@ rm -fr /tmp/_frpserver
 mkdir /tmp/_frpserver && cd /tmp/_frpserver
 curl -o /tmp/_frpserver/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/frp/Dockerfile_server
 
-docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/amd64 -t ghcr.io/qicongsheng/frp:server_$FRP_NEW_VERSION_PLATFORM_AMD64 . --load
-docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/arm64 -t ghcr.io/qicongsheng/frp:server_$FRP_NEW_VERSION_PLATFORM_ARM64 . --load
-docker push ghcr.io/qicongsheng/frp:server_$FRP_NEW_VERSION_PLATFORM_AMD64
-docker push ghcr.io/qicongsheng/frp:server_$FRP_NEW_VERSION_PLATFORM_ARM64
-docker manifest create ghcr.io/qicongsheng/frp:server_$FRP_NEW_VERSION ghcr.io/qicongsheng/frp:server_$FRP_NEW_VERSION_PLATFORM_AMD64 ghcr.io/qicongsheng/frp:server_$FRP_NEW_VERSION_PLATFORM_ARM64
-docker manifest push ghcr.io/qicongsheng/frp:server_$FRP_NEW_VERSION
-
 docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/amd64 -t ghcr.io/qicongsheng/frp:server_amd64 . --load
 docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/arm64 -t ghcr.io/qicongsheng/frp:server_arm64 . --load
 docker push ghcr.io/qicongsheng/frp:server_amd64
 docker push ghcr.io/qicongsheng/frp:server_arm64
 docker manifest create ghcr.io/qicongsheng/frp:server ghcr.io/qicongsheng/frp:server_amd64 ghcr.io/qicongsheng/frp:server_arm64
 docker manifest push ghcr.io/qicongsheng/frp:server
-
-docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/amd64 -t registry.cn-hangzhou.aliyuncs.com/qics/frp:server_$FRP_NEW_VERSION_PLATFORM_AMD64 . --load
-docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/arm64 -t registry.cn-hangzhou.aliyuncs.com/qics/frp:server_$FRP_NEW_VERSION_PLATFORM_ARM64 . --load
-docker push registry.cn-hangzhou.aliyuncs.com/qics/frp:server_$FRP_NEW_VERSION_PLATFORM_AMD64
-docker push registry.cn-hangzhou.aliyuncs.com/qics/frp:server_$FRP_NEW_VERSION_PLATFORM_ARM64
-docker manifest create registry.cn-hangzhou.aliyuncs.com/qics/frp:server_$FRP_NEW_VERSION registry.cn-hangzhou.aliyuncs.com/qics/frp:server_$FRP_NEW_VERSION_PLATFORM_AMD64 registry.cn-hangzhou.aliyuncs.com/qics/frp:server_$FRP_NEW_VERSION_PLATFORM_ARM64
-docker manifest push registry.cn-hangzhou.aliyuncs.com/qics/frp:server_$FRP_NEW_VERSION
 
 docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/amd64 -t registry.cn-hangzhou.aliyuncs.com/qics/frp:server_amd64 . --load
 docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/arm64 -t registry.cn-hangzhou.aliyuncs.com/qics/frp:server_arm64 . --load
@@ -49,26 +35,12 @@ rm -fr /tmp/_frpclient
 mkdir /tmp/_frpclient && cd /tmp/_frpclient
 curl -o /tmp/_frpclient/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/frp/Dockerfile_client
 
-docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/amd64 -t ghcr.io/qicongsheng/frp:client_$FRP_NEW_VERSION_PLATFORM_AMD64 . --load
-docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/arm64 -t ghcr.io/qicongsheng/frp:client_$FRP_NEW_VERSION_PLATFORM_ARM64 . --load
-docker push ghcr.io/qicongsheng/frp:client_$FRP_NEW_VERSION_PLATFORM_AMD64
-docker push ghcr.io/qicongsheng/frp:client_$FRP_NEW_VERSION_PLATFORM_ARM64
-docker manifest create ghcr.io/qicongsheng/frp:client_$FRP_NEW_VERSION ghcr.io/qicongsheng/frp:client_$FRP_NEW_VERSION_PLATFORM_AMD64 ghcr.io/qicongsheng/frp:client_$FRP_NEW_VERSION_PLATFORM_ARM64
-docker manifest push ghcr.io/qicongsheng/frp:client_$FRP_NEW_VERSION
-
 docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/amd64 -t ghcr.io/qicongsheng/frp:client_amd64 . --load
 docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/arm64 -t ghcr.io/qicongsheng/frp:client_arm64 . --load
 docker push ghcr.io/qicongsheng/frp:client_amd64
 docker push ghcr.io/qicongsheng/frp:client_arm64
 docker manifest create ghcr.io/qicongsheng/frp:client ghcr.io/qicongsheng/frp:client_amd64 ghcr.io/qicongsheng/frp:client_arm64
 docker manifest push ghcr.io/qicongsheng/frp:client
-
-docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/amd64 -t registry.cn-hangzhou.aliyuncs.com/qics/frp:client_$FRP_NEW_VERSION_PLATFORM_AMD64 . --load
-docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/arm64 -t registry.cn-hangzhou.aliyuncs.com/qics/frp:client_$FRP_NEW_VERSION_PLATFORM_ARM64 . --load
-docker push registry.cn-hangzhou.aliyuncs.com/qics/frp:client_$FRP_NEW_VERSION_PLATFORM_AMD64
-docker push registry.cn-hangzhou.aliyuncs.com/qics/frp:client_$FRP_NEW_VERSION_PLATFORM_ARM64
-docker manifest create registry.cn-hangzhou.aliyuncs.com/qics/frp:client_$FRP_NEW_VERSION registry.cn-hangzhou.aliyuncs.com/qics/frp:client_$FRP_NEW_VERSION_PLATFORM_AMD64 registry.cn-hangzhou.aliyuncs.com/qics/frp:client_$FRP_NEW_VERSION_PLATFORM_ARM64
-docker manifest push registry.cn-hangzhou.aliyuncs.com/qics/frp:client_$FRP_NEW_VERSION
 
 docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/amd64 -t registry.cn-hangzhou.aliyuncs.com/qics/frp:client_amd64 . --load
 docker buildx build --build-arg FRP_VERSION=$FRP_NEW_VERSION --platform linux/arm64 -t registry.cn-hangzhou.aliyuncs.com/qics/frp:client_arm64 . --load
