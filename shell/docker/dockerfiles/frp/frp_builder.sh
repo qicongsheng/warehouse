@@ -4,8 +4,6 @@ curl -fsSL "https://www.qics.top/shell/docker/common/docker_login.sh" | /bin/sh
 curl -fsSL "https://www.qics.top/shell/docker/common/buildx_init.sh" | /bin/sh
 
 FRP_NEW_VERSION=$(wget -qO- -t1 -T2 "https://api.github.com/repos/fatedier/frp/releases/latest" | grep "tag_name" | head -n 1 | awk -F ":" '{print $2}' | sed 's/\"//g;s/v//g;s/,//g;s/ //g')
-FRP_NEW_VERSION_PLATFORM_AMD64="${FRP_NEW_VERSION}_amd64"
-FRP_NEW_VERSION_PLATFORM_ARM64="${FRP_NEW_VERSION}_arm64"
 echo "FRP_NEW_VERSION=$FRP_NEW_VERSION"
 
 # server
