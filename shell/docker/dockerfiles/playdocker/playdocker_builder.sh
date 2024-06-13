@@ -6,7 +6,7 @@ rm -fr /tmp/_playdocker
 mkdir /tmp/_playdocker
 cd /tmp/_playdocker
 curl -o /tmp/_playdocker/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/playdocker/Dockerfile
-curl -fsSL https://www.qics.top/shell/docker/common/build_cross_platform.sh | /bin/sh -s "playdocker"
+curl -fsSL https://www.qics.top/shell/docker/common/build_cross_platform.sh | /bin/sh -s "playdocker" "latest"
 cd /tmp && rm -fr /tmp/_playdocker
 
 

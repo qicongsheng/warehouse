@@ -8,7 +8,7 @@ curl -fsSL https://www.qics.top/shell/docker/common/tmpdir_init.sh | /bin/sh -s 
 cd /tmp/_$IMG_NAME
 
 curl -o /tmp/_$IMG_NAME/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/webdav/Dockerfile
-curl -fsSL https://www.qics.top/shell/docker/common/build_amd64_platform.sh | /bin/sh -s "webdav"
+curl -fsSL https://www.qics.top/shell/docker/common/build_amd64_platform.sh | /bin/sh -s "webdav" "latest"
 
 curl -fsSL https://www.qics.top/shell/docker/common/cleanup.sh | /bin/sh -s $IMG_NAME
 

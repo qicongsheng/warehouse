@@ -8,7 +8,7 @@ cd /tmp/_deepin
 curl -o /tmp/_deepin/env -L https://www.qics.top/shell/docker/dockerfiles/deepin/env
 curl -o /tmp/_deepin/xstartup -L https://www.qics.top/shell/docker/dockerfiles/deepin/xstartup
 curl -o /tmp/_deepin/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/deepin/Dockerfile
-curl -fsSL https://www.qics.top/shell/docker/common/build_amd64_platform.sh | /bin/sh -s "deepin"
+curl -fsSL https://www.qics.top/shell/docker/common/build_amd64_platform.sh | /bin/sh -s "deepin" "latest"
 rm -fr /tmp/_deepin
 
 

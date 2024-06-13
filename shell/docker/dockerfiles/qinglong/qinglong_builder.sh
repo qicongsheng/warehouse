@@ -6,7 +6,7 @@ rm -fr /tmp/_qinglong
 mkdir /tmp/_qinglong
 cd /tmp/_qinglong
 curl -o /tmp/_qinglong/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/qinglong/Dockerfile
-curl -fsSL https://www.qics.top/shell/docker/common/build_cross_platform.sh | /bin/sh -s "qinglong"
+curl -fsSL https://www.qics.top/shell/docker/common/build_cross_platform.sh | /bin/sh -s "qinglong" "latest"
 
 cd /tmp && rm -fr /tmp/_qinglong
 
