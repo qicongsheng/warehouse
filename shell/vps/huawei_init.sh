@@ -43,21 +43,21 @@ curl -fsSL "https://www.qics.top/shell/docker/common/docker_login.sh" | /bin/sh
 curl -o /tmp/shellngn.tar -L https://snkg2q.sn.files.1drv.com/y4m3awfChqDOXKhEhBUZpsxVlfSCJKW2Z44qUR0miHL_rEBGE1Hbz0dRf8zWl0PLtbbeb_JKl1kpRq9khSNuo3meRQCmBMFPpI_bPhM3w6dn87C3TqQWQFTxE9h1vHEE8vXK54-swQSTLE5DO8QTBBhRk9U04KjYTBrSGPPGh12Y4Ddsko_VJ_g-13GZpS1EvQlsSzaAGqkgu4Y1ZAxcznwEA
 docker load < /tmp/shellngn.tar
 rm -fr /tmp/shellngn.tar
-docker tag ghcr.io/qicongsheng/shellngn ghcr.nju.edu.cn/qicongsheng/shellngn
+docker tag ghcr.io/qicongsheng/shellngn registry.cn-hangzhou.aliyuncs.com/qics/shellngn
 docker rmi ghcr.io/qicongsheng/shellngn
 
-docker run -d --restart=always --name=nginx -p 9000:80 --privileged=true -v /tmp:/etc/nginx/html ghcr.nju.edu.cn/qicongsheng/nginx
-docker run -d --restart=always --name=mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# -v /data/mysql:/var/lib/mysql ghcr.nju.edu.cn/qicongsheng/mysql:5.7
-docker run -d --restart=always --name=vaultwarden -p 6068:80 -e SIGNUPS_ALLOWED=false -v /data/vaultwarden:/data ghcr.nju.edu.cn/qicongsheng/vaultwarden
-docker run -d --restart=always --name=shellngn -e HOST=0.0.0.0 -e PORT=8066 -v /data/shellngn:/home/node/server/data --net=host ghcr.nju.edu.cn/qicongsheng/shellngn
-docker run -d --restart=always --name=qinglong -p 5700:5700 -v /data/qinglong:/ql/data ghcr.nju.edu.cn/qicongsheng/qinglong
-docker run -d --restart=always --name=rabbitmq --net=host ghcr.nju.edu.cn/qicongsheng/sc:rabbitmq
-docker run -d --restart=always --name=redis -e REDIS_PASSWORD=Lhnekj#_83jf -p 6379:6379 ghcr.nju.edu.cn/qicongsheng/sc:redis /bin/sh -c 'redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}'
-docker run -d --restart=always --name=frp -e BIND_PORT=7000 -e DASHBOARD_PORT=7777 -e DASHBOARD_USER=qics -e DASHBOARD_PWD=123456 -e TOKEN=badboy --net=host ghcr.nju.edu.cn/qicongsheng/frp:server
-docker run -d --restart=always --name=cloudflared --net=host ghcr.nju.edu.cn/qicongsheng/cloudflared tunnel --no-autoupdate run --token eyJhIjoiZTAwMWM4MzlmMTNiNzU2ZDc0YWI1NjE0MzFlM2ZlZDciLCJ0IjoiOTQ4MmM4ZTgtNzQ0Zi00NjBjLTlmOWMtODQwOTg4NGNlMmE5IiwicyI6IlpEUXdOMlJrTVRZdE1UQTNNQzAwTlRnMUxUZzJaRFV0TlRjM09EVmxNemhsTldWaCJ9
-docker run -d --restart=always --name=netbird -e NB_SETUP_KEY=951ABD0D-6D3D-47BB-AD78-A8F5D26F5DA7 --net=host --privileged=true ghcr.nju.edu.cn/qicongsheng/netbird
-docker run -d --restart=always --name=backup -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:3022:22 --privileged=true -v /data:/data ghcr.nju.edu.cn/qicongsheng/backup:huawei
-docker run -d --restart=always --name=debian -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 --privileged=true -v /tmp:/tmp ghcr.nju.edu.cn/qicongsheng/debian
+docker run -d --restart=always --name=nginx -p 9000:80 --privileged=true -v /tmp:/etc/nginx/html registry.cn-hangzhou.aliyuncs.com/qics/nginx
+docker run -d --restart=always --name=mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# -v /data/mysql:/var/lib/mysql registry.cn-hangzhou.aliyuncs.com/qics/mysql:5.7
+docker run -d --restart=always --name=vaultwarden -p 6068:80 -e SIGNUPS_ALLOWED=false -v /data/vaultwarden:/data registry.cn-hangzhou.aliyuncs.com/qics/vaultwarden
+docker run -d --restart=always --name=shellngn -e HOST=0.0.0.0 -e PORT=8066 -v /data/shellngn:/home/node/server/data --net=host registry.cn-hangzhou.aliyuncs.com/qics/shellngn
+docker run -d --restart=always --name=qinglong -p 5700:5700 -v /data/qinglong:/ql/data registry.cn-hangzhou.aliyuncs.com/qics/qinglong
+docker run -d --restart=always --name=rabbitmq --net=host registry.cn-hangzhou.aliyuncs.com/qics/sc:rabbitmq
+docker run -d --restart=always --name=redis -e REDIS_PASSWORD=Lhnekj#_83jf -p 6379:6379 registry.cn-hangzhou.aliyuncs.com/qics/sc:redis /bin/sh -c 'redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}'
+docker run -d --restart=always --name=frp -e BIND_PORT=7000 -e DASHBOARD_PORT=7777 -e DASHBOARD_USER=qics -e DASHBOARD_PWD=123456 -e TOKEN=badboy --net=host registry.cn-hangzhou.aliyuncs.com/qics/frp:server
+docker run -d --restart=always --name=cloudflared --net=host registry.cn-hangzhou.aliyuncs.com/qics/cloudflared tunnel --no-autoupdate run --token eyJhIjoiZTAwMWM4MzlmMTNiNzU2ZDc0YWI1NjE0MzFlM2ZlZDciLCJ0IjoiOTQ4MmM4ZTgtNzQ0Zi00NjBjLTlmOWMtODQwOTg4NGNlMmE5IiwicyI6IlpEUXdOMlJrTVRZdE1UQTNNQzAwTlRnMUxUZzJaRFV0TlRjM09EVmxNemhsTldWaCJ9
+docker run -d --restart=always --name=netbird -e NB_SETUP_KEY=951ABD0D-6D3D-47BB-AD78-A8F5D26F5DA7 --net=host --privileged=true registry.cn-hangzhou.aliyuncs.com/qics/netbird
+docker run -d --restart=always --name=backup -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:3022:22 --privileged=true -v /data:/data registry.cn-hangzhou.aliyuncs.com/qics/backup:huawei
+docker run -d --restart=always --name=debian -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 --privileged=true -v /tmp:/tmp registry.cn-hangzhou.aliyuncs.com/qics/debian
 
 # curl -fsSL "https://www.qics.top/shell/docker_remove_proxy.sh" | /bin/bash
 

@@ -14,10 +14,10 @@ curl -fsSL "https://www.qics.top/shell/play_frp_ssr.sh" | /bin/sh
 <a href="https://forex.qics.top/orders/open" target="_blank">open orders</a> | <a href="https://forex.qics.top/orders/close" target="_blank">close orders</a>
 
 # debian
-docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 --privileged=true -v /tmp:/tmp ghcr.nju.edu.cn/qicongsheng/debian
-docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:8022:22 -p 8082:8082 --privileged=true -v /tmp:/tmp ghcr.nju.edu.cn/qicongsheng/debian
-docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 -p 9023:5901 -p 9024:6901 --privileged=true ghcr.nju.edu.cn/qicongsheng/debian:vnc
-docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 -p 9023:5901 -p 9024:6901 --privileged=true -v /tmp:/tmp ghcr.nju.edu.cn/qicongsheng/debian:vnc
+docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 --privileged=true -v /tmp:/tmp registry.cn-hangzhou.aliyuncs.com/qics/debian
+docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:8022:22 -p 8082:8082 --privileged=true -v /tmp:/tmp registry.cn-hangzhou.aliyuncs.com/qics/debian
+docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 -p 9023:5901 -p 9024:6901 --privileged=true registry.cn-hangzhou.aliyuncs.com/qics/debian:vnc
+docker run -d --restart=always -e USER=root -e PASSWD=Star8ks.# -p 127.0.0.1:9022:22 -p 9023:5901 -p 9024:6901 --privileged=true -v /tmp:/tmp registry.cn-hangzhou.aliyuncs.com/qics/debian:vnc
 
 # python39_install.sh
 curl -fsSL "https://www.qics.top/shell/debian/python39_install_debian_green.sh" | /bin/bash
@@ -31,7 +31,7 @@ curl -fsSL "https://www.qics.top/shell/maven36_install.sh" | /bin/bash
 # shodowsocks
 ssserver -p 19986 -k mimabujiandan -m aes-128-gcm -d start
 nohup ss-server -s 0.0.0.0 -p 19986 -k mimabujiandan -m aes-128-gcm -t 300 -d 8.8.8.8,8.8.4.4 > /var/log/shadowsocks.log 2>&1 &
-docker run -d --restart=always -e PASSWORD=mimabujiandan -e METHOD=aes-128-gcm -p 19986:8388 -p 19986:8388/udp ghcr.nju.edu.cn/qicongsheng/shadowsocks:server
+docker run -d --restart=always -e PASSWORD=mimabujiandan -e METHOD=aes-128-gcm -p 19986:8388 -p 19986:8388/udp registry.cn-hangzhou.aliyuncs.com/qics/shadowsocks:server
 
 # you-get
 curl -fsSL "https://www.qics.top/shell/debian/youget_debian_install.sh" | /bin/bash

@@ -1,7 +1,7 @@
 # =================================
 # mysql5.7
 docker run -d --restart=always -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# -v /data/mysql:/var/lib/mysql ghcr.io/qicongsheng/mysql:5.7
-docker run -d --restart=always -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# -v /data/mysql:/var/lib/mysql ghcr.nju.edu.cn/qicongsheng/mysql:5.7
+docker run -d --restart=always -p 3306:3306 -e MYSQL_ROOT_PASSWORD=youarebadboy123# -v /data/mysql:/var/lib/mysql registry.cn-hangzhou.aliyuncs.com/qics/mysql:5.7
 
 # 允许root远程登录
 mysql -u root -p
