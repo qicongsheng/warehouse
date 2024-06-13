@@ -6,7 +6,7 @@ rm -fr /tmp/_chrome
 mkdir /tmp/_chrome
 cd /tmp/_chrome
 curl -o /tmp/_chrome/Dockerfile -L https://www.qics.top/shell/docker/dockerfiles/chrome/Dockerfile
-curl -fsSL https://www.qics.top/shell/docker/common/build_amd64_platform.sh | /bin/sh -s "chrome" "latest"
+curl -fsSL https://www.qics.top/shell/docker/common/build_amd64_platform.sh | /bin/sh -s "chrome"
 cd /tmp && rm -fr /tmp/_chrome
 
 
