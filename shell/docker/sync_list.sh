@@ -44,4 +44,5 @@ curl -fsSL https://www.qics.top/shell/docker/common/img_cross_sync.sh | /bin/sh 
 curl -fsSL https://www.qics.top/shell/docker/common/img_cross_sync.sh | /bin/sh -s $REGISTRY_SOURCE $REGISTRY_TARGET "pgyvpn"           "latest"
 curl -fsSL https://www.qics.top/shell/docker/common/img_cross_sync.sh | /bin/sh -s $REGISTRY_SOURCE $REGISTRY_TARGET "privoxy"          "latest"
 curl -fsSL https://www.qics.top/shell/docker/common/img_cross_sync.sh | /bin/sh -s $REGISTRY_SOURCE $REGISTRY_TARGET "samba"            "latest"
-
+curl -fsSL https://www.qics.top/shell/docker/common/img_amd64_sync.sh | /bin/sh -s $REGISTRY_SOURCE $REGISTRY_TARGET "shellngn"           "latest"
+curl -fsSL https://www.qics.top/shell/docker/common/img_amd64_sync.sh | /bin/sh -s $REGISTRY_SOURCE $REGISTRY_TARGET "oracle12c"           "latest"
