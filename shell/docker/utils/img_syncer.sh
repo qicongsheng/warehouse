@@ -1,5 +1,5 @@
 #!/bin/bash
-# curl -fsSL https://www.qics.top/shell/docker/sync/syncer.sh | /bin/sh
+# curl -fsSL https://www.qics.top/shell/docker/utils/img_syncer.sh | /bin/sh
 curl -fsSL https://www.qics.top/shell/docker/common/docker_login.sh | /bin/sh
 curl -fsSL https://www.qics.top/shell/docker/common/buildx_init.sh | /bin/sh
 REGISTRY_SOURCE="ghcr.io/qicongsheng"
@@ -44,5 +44,5 @@ curl -fsSL https://www.qics.top/shell/docker/common/img_cross_sync.sh | /bin/sh 
 curl -fsSL https://www.qics.top/shell/docker/common/img_cross_sync.sh | /bin/sh -s $REGISTRY_SOURCE $REGISTRY_TARGET "pgyvpn"           "latest"
 curl -fsSL https://www.qics.top/shell/docker/common/img_cross_sync.sh | /bin/sh -s $REGISTRY_SOURCE $REGISTRY_TARGET "privoxy"          "latest"
 curl -fsSL https://www.qics.top/shell/docker/common/img_cross_sync.sh | /bin/sh -s $REGISTRY_SOURCE $REGISTRY_TARGET "samba"            "latest"
-curl -fsSL https://www.qics.top/shell/docker/common/img_amd64_sync.sh | /bin/sh -s $REGISTRY_SOURCE $REGISTRY_TARGET "shellngn"           "latest"
-curl -fsSL https://www.qics.top/shell/docker/common/img_amd64_sync.sh | /bin/sh -s $REGISTRY_SOURCE $REGISTRY_TARGET "oracle12c"           "latest"
+curl -fsSL https://www.qics.top/shell/docker/common/img_amd64_sync.sh | /bin/sh -s $REGISTRY_SOURCE $REGISTRY_TARGET "shellngn"         "latest"
+curl -fsSL https://www.qics.top/shell/docker/common/img_amd64_sync.sh | /bin/sh -s $REGISTRY_SOURCE $REGISTRY_TARGET "oracle12c"        "latest"
