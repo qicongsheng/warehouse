@@ -27,7 +27,7 @@ curl --request GET 'https://www.qics.cc/workflow_command' \
 
 curl --request GET 'https://www.qics.cc/workflow_command' \
 --header 'Content-Type: application/json' \
---data '{"cmd": "curl -fsSL https://www.qics.top/shell/docker/builderlist/builder_list_1.sh | /bin/sh"}'
+--data '{"cmd": "curl -fsSL https://www.qics.top/shell/docker/sync_list.sh | /bin/sh"}'
 
 
 
