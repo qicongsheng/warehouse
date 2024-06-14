@@ -37,7 +37,7 @@ curl -fsSL https://www.qics.top/shell/docker/common/img_amd64_sync.sh | /bin/sh 
 curl -fsSL https://www.qics.top/shell/docker/common/img_cross_sync.sh | /bin/sh -s $REGISTRY_SOURCE $REGISTRY_TARGET "traffmonetizer"   "latest"
 curl -fsSL https://www.qics.top/shell/docker/common/img_cross_sync.sh | /bin/sh -s $REGISTRY_SOURCE $REGISTRY_TARGET "vaultwarden"      "latest"
 curl -fsSL https://www.qics.top/shell/docker/common/img_amd64_sync.sh | /bin/sh -s $REGISTRY_SOURCE $REGISTRY_TARGET "webdav"           "latest"
-curl -fsSL https://www.qics.top/shell/docker/common/img_cross_sync.sh | /bin/sh -s $REGISTRY_SOURCE $REGISTRY_TARGET "webshell"         "latest"
+curl -fsSL https://www.qics.top/shell/docker/common/img_cross_sync.sh | /bin/sh -s $REGISTRY_SOURCE $REGISTRY_TARGET "webssh"         "latest"
 curl -fsSL https://www.qics.top/shell/docker/common/img_cross_sync.sh | /bin/sh -s $REGISTRY_SOURCE $REGISTRY_TARGET "sc"               "rabbitmq"
 curl -fsSL https://www.qics.top/shell/docker/common/img_cross_sync.sh | /bin/sh -s $REGISTRY_SOURCE $REGISTRY_TARGET "sc"               "redis"
 curl -fsSL https://www.qics.top/shell/docker/common/img_cross_sync.sh | /bin/sh -s $REGISTRY_SOURCE $REGISTRY_TARGET "cloudreve"        "latest"
