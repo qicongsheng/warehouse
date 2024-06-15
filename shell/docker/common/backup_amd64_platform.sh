@@ -6,7 +6,8 @@ IMG_VERSION=$3
 IMG_FULL_NAME_PLATFORM_AMD64="${IMG_NAME}:${IMG_VERSION}_amd64"
 IMG_TAR_NAME_AMD64="${IMG_NAME}_${IMG_VERSION}_amd64.tar"
 
-mkdir -p /tmp/$IMG_NAME
+rm -fr /tmp/img_bak/$IMG_NAME
+mkdir -p /tmp/img_bak/$IMG_NAME
 
 docker pull $REGISTRY_URI/$IMG_FULL_NAME_PLATFORM_AMD64
 
