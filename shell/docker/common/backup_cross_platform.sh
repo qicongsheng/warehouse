@@ -1,5 +1,5 @@
 #!/bin/bash
-# curl -fsSL https://www.qics.top/shell/docker/dockerfiles/common/img_sync.sh | /bin/sh
+# curl -fsSL https://www.qics.top/shell/docker/dockerfiles/common/backup_cross_platform.sh | /bin/sh
 REGISTRY_SOURCE=$1
 REGISTRY_TARGET=$2
 IMG_NAME=$3

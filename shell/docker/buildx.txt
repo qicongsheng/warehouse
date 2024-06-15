@@ -27,9 +27,13 @@ curl --request GET 'https://www.qics.cc/workflow_command' \
 
 curl --request GET 'https://www.qics.cc/workflow_command' \
 --header 'Content-Type: application/json' \
---data '{"cmd": "curl -fsSL https://www.qics.top/shell/docker/sync_list.sh | /bin/sh"}'
+--data '{"cmd": "curl -fsSL https://www.qics.top/shell/docker/dockerfiles/webshell/webshell_builder.sh | /bin/sh"}'
 
 
 
 
+
+REGISTRY_SOURCE="ghcr.io/qicongsheng"
+REGISTRY_TARGET="registry.cn-hangzhou.aliyuncs.com/qics"
+curl -fsSL https://www.qics.top/shell/docker/common/img_cross_sync.sh | /bin/sh -s $REGISTRY_SOURCE $REGISTRY_TARGET "frp"              "server"
 
