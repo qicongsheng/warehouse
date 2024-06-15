@@ -21,13 +21,13 @@ docker manifest create ghcr.io/qicongsheng/alpine:latest ghcr.io/qicongsheng/alp
 docker manifest push ghcr.io/qicongsheng/alpine:latest
 
 
-curl --request GET 'https://www.qics.cc/workflow_command' \
+curl --request GET 'https://www.qics.cc/workflow_command' \``````````````````
 --header 'Content-Type: application/json' \
 --data '{"cmd": "curl -fsSL https://www.qics.top/shell/test.sh | /bin/sh"}'
 
 curl --request GET 'https://www.qics.cc/workflow_command' \
 --header 'Content-Type: application/json' \
---data '{"cmd": "curl -fsSL https://www.qics.top/shell/docker/dockerfiles/webshell/webshell_builder.sh | /bin/sh"}'
+--data '{"cmd": "curl -fsSL https://www.qics.top/shell/docker/utils/img_syncer.sh | /bin/sh"}'
 
 
 
