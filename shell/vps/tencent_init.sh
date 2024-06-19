@@ -33,7 +33,7 @@ chmod 600 /var/spool/cron/crontabs/root
 /etc/init.d/cron restart
 
 #安装docker并启动文件服务器
-curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+curl -fsSL https://www.qics.top/shell/docker/get_docker.sh | bash -s docker --mirror Aliyun
 service docker start
 systemctl enable docker
 curl -fsSL "https://www.qics.top/shell/docker/common/docker_login.sh" | /bin/sh
